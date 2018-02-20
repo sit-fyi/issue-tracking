@@ -50,7 +50,7 @@ sit-import [-r DEST] -c import.json https://github.com/OWNER/REPO
 Depending on the size of the project, your bandwidth and other parameters, it might take a while.
 
 If you are satisifed with your test run, it is suggested that you disable
-access to your issues/pull requests ([temporary interaction limit](https://github.com/blog/2370-introducing-temporary-interaction-limits( feature might come in handy), make sure other
+access to your issues/pull requests ([temporary interaction limit](https://github.com/blog/2370-introducing-temporary-interaction-limits) feature might come in handy), make sure other
 collaborators/admins are staying off the issues and do a final run, ensuring
 nothing is lost in the transition.
 
