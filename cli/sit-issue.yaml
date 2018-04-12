@@ -1,0 +1,14 @@
+name: SIT Issue Tracking
+version: "0.3.0"
+settings: [ColoredHelp, ColorAuto, DisableHelpSubcommand]
+subcommands:
+  - list:
+  - show:
+      about: Show issue
+      args:
+        - ID:
+            required: true
+            takes_value: true
+            index: 1 
+  - help:
+

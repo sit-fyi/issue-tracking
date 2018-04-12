@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+dir=$(dirname $0)
+cli=$(cat "${dir}/sit-issue.yaml")
+
+output=$(echo "${cli}" | ${SIT} args -- "sit issue" $*)
+command=$(echo "${output}" | head -1)
+matches=$(echo "${output}" | tail -n +2)
+
+case ${command} in
+        list)
+                query=$(${SIT} config -q "'issue-tracking'.cli.oneliner || 'join(\' | \', [id, summary])'" repository)
+                exec ${SIT} items -q "${query}"
+                ;;
+        show)
+                while true; do
+                        next_line=$(echo ${matches} | head -1)
+                        matches=$(echo ${matches} | tail -n +2)
+                        read -r arg occurrences indices values < <(echo ${next_line})
+                        if [ "${arg}" == "ID" ]; then
+                                echo -n "Summary: "
+                                eval ${SIT} reduce -q "summary" ${values}
+                                echo "Details:"
+                                echo
+                                eval ${SIT} reduce -q "details" ${values}
+                                echo
+                                echo -n "Created at "
+                                eval ${SIT} reduce -q "timestamp" ${values}
+                                echo "by "
+                                eval ${SIT} reduce -q "authors" ${values}
+                                exit 0
+                        fi
+                        if [ "${matches}" == '' ]; then
+                                exit 0
+                        fi
+                done
+                ;;
+        *)
+                echo "${cli}" | ${SIT} args --help;
+                exit 0
+                ;;
+ 
+esac
