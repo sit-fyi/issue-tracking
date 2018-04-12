@@ -10,8 +10,6 @@ range=$(git merge-base --fork-point master "${branch}").."${branch}"
 curbranch=$(git rev-parse --abbrev-ref HEAD)
 sit=${SIT}
 
-exit
-
 run() {
   if [ -z "${branch}" ]; then
     echo "Usage: sit mr <branch> [<item>]"
