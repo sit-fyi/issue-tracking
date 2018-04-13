@@ -24,8 +24,8 @@ module.exports = function(state, record) {
         var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : null;
         var merge_request_report = !!record.files[".type/MergeRequestVerificationSucceeded"] ?
             "success" : null;
-        merge_request_report = merge_request_report || !!record.files[".type/MergeRequestVerificationFailed"] ?
-            "failure" : null;
+        merge_request_report = merge_request_report || (!!record.files[".type/MergeRequestVerificationFailed"] ?
+            "failure" : null);
         comments.push({
             text: decoder.decode(record.files.text),
             authors: decoder.decode(record.files[".authors"]),
