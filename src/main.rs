@@ -138,6 +138,8 @@ fn real_main() -> i32 {
         for ext_issue in req {
             let issue = repo.new_named_item(format!("github-issue-{}", ext_issue.number)).unwrap();
 
+            progress_bar.message(&format!("[ #{} {} ] ", ext_issue.number, ext_issue.title));
+
             issue.new_record(Files::from(vec![(".type/SummaryChanged", &b""[..]),
                                               (".timestamp", ext_issue.created_at.as_bytes()),
                                               ("text", ext_issue.title.as_bytes()),
@@ -210,6 +212,7 @@ fn real_main() -> i32 {
         for pr in preq {
 
             let issue = repo.new_named_item(format!("github-pr-{}", pr.number)).unwrap();
+            progress_bar.message(&format!("[ #{} {} ] ", pr.number, pr.title));
 
             issue.new_record(Files::from(vec![(".type/SummaryChanged", &b""[..]),
                                   (".timestamp", pr.created_at.as_bytes()),
