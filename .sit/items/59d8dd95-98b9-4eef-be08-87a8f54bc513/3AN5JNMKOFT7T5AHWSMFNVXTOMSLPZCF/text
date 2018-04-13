@@ -1,0 +1,9 @@
+Solution: group the expression correctly
+
+```javascript
+> "success" || !!null ?  "fail" : null; // before
+'fail'
+> "success" || (!!null ?  "fail" : null); //  after
+'success'
+```
+

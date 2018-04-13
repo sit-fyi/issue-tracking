@@ -1,0 +1,36 @@
+From 66e60279b1935a9c050fc8246a63168e6a74a189 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Thu, 12 Apr 2018 19:12:16 -0700
+Subject: [PATCH] Problem: reducers determine a successful verification to be a
+ falure
+
+Solution: group the expression correctly
+
+```javascript
+> "success" || !!null ?  "fail" : null; // before
+'fail'
+> "success" || (!!null ?  "fail" : null); //  after
+'success'
+```
+---
+ reducers/Commented.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/reducers/Commented.js b/reducers/Commented.js
+index 17e1462..386551b 100644
+--- a/reducers/Commented.js
++++ b/reducers/Commented.js
+@@ -24,8 +24,8 @@ module.exports = function(state, record) {
+         var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : null;
+         var merge_request_report = !!record.files[".type/MergeRequestVerificationSucceeded"] ?
+             "success" : null;
+-        merge_request_report = merge_request_report || !!record.files[".type/MergeRequestVerificationFailed"] ?
+-            "failure" : null;
++        merge_request_report = merge_request_report || (!!record.files[".type/MergeRequestVerificationFailed"] ?
++            "failure" : null);
+         comments.push({
+             text: decoder.decode(record.files.text),
+             authors: decoder.decode(record.files[".authors"]),
+-- 
+2.16.2
+
