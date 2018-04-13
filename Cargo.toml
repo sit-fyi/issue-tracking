@@ -12,10 +12,11 @@ config = { version = "0.8", features = ["json"] }
 xdg = "2.1"
 clap = "2.29"
 console = "0.6"
-sit-core = "0.1"
+sit-core = "0.3"
 askama = "0.5"
 pbr = "1.0"
 regex = "0.2"
+git2 = { version = "0.7", default-features = false, features = ["https","curl"] }
 
 [build-dependencies]
 askama = "0.5"

@@ -16,6 +16,8 @@ extern crate pbr;
 
 extern crate regex;
 
+extern crate git2;
+
 extern crate sit_core;
 
 mod graphql;
@@ -77,14 +79,17 @@ fn real_main() -> i32 {
 
     let working_dir = matches.value_of("working_directory").map(PathBuf::from).unwrap_or(cwd);
 
-    let repo = matches.value_of("repository").map(sit_core::Repository::open)
-            .or_else(|| Some(sit_core::Repository::find_in_or_above(".sit",&working_dir)))
-            .unwrap()
-            .expect("can't open repository");
+    let repo_path = matches.value_of("repository").map(PathBuf::from)
+        .or_else(|| sit_core::Repository::find_in_or_above(".sit",&working_dir))
+        .expect("Can't find a repository");
+    let repo = sit_core::Repository::open(&repo_path)
+        .expect("can't open repository");
 
     let source = matches.value_of("SOURCE").unwrap();
 
     if source.starts_with("https://github.com/") {
+
+        git2::Repository::clone("https://github.com/sit-it/issue-tracking.git", repo.modules_path().join("issue-tracking")).unwrap();
 
         if !matches.is_present("config") {
             eprintln!("-c/--config required for GitHub to configure the token");
@@ -114,7 +119,7 @@ fn real_main() -> i32 {
         let mut preq0 = graphql::PageableRequest::new(GITHUB_GRAPHQL, &configuration.github.as_ref().unwrap().token, pull_requests::Query::new(owner, repository), graphql::MemoryPageHandler::default());
         let preq = graphql::PageableRequest::new(GITHUB_GRAPHQL, &configuration.github.as_ref().unwrap().token, pull_requests::Query::new(owner, repository), graphql::MemoryPageHandler::default());
 
-        use sit_core::Issue;
+        use sit_core::Item;
 
         if req0.next().is_none() {
             // Nothing to see
@@ -131,7 +136,7 @@ fn real_main() -> i32 {
         progress_bar.set(0);
 
         for ext_issue in req {
-            let issue = repo.new_named_issue(format!("github-issue-{}", ext_issue.number)).unwrap();
+            let issue = repo.new_named_item(format!("github-issue-{}", ext_issue.number)).unwrap();
 
             issue.new_record(Files::from(vec![(".type/SummaryChanged", &b""[..]),
                                               (".timestamp", ext_issue.created_at.as_bytes()),
@@ -204,7 +209,7 @@ fn real_main() -> i32 {
 
         for pr in preq {
 
-            let issue = repo.new_named_issue(format!("github-pr-{}", pr.number)).unwrap();
+            let issue = repo.new_named_item(format!("github-pr-{}", pr.number)).unwrap();
 
             issue.new_record(Files::from(vec![(".type/SummaryChanged", &b""[..]),
                                   (".timestamp", pr.created_at.as_bytes()),
