@@ -42,7 +42,7 @@ That's it. Now you can check out the [Getting Started](doc/getting_started.md) g
 
 <center>
 <p align="center">
-<img src="doc/webui_example.png">
+<img src="web/documentation/webui_example.png">
 <small><i>(An example of running sit-web)</i></small>
 </p>
 </center>
