@@ -1,3 +1,9 @@
+# 0.3.0
+
+This is the first separate release of `issue-tracking` modules. No significant
+changes over the embedded version, but from this release it's versioning
+will be detached from SIT itself.
+
 # 0.2.0
 
 The first thing you'll probably notice about this release is the new front

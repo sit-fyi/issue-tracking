@@ -1,3 +1,7 @@
+# 0.3.0
+
+First independent release of `issue-tracking` module. No significant changes.
+
 # 0.2.0
 
 ## Breaking changes
