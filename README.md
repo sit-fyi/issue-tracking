@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="http://sit-it.org"><img src="logo.png" alt="Markdownify" width="150"></a>
+  <a href="http://sit-it.org"><img src="https://raw.githubusercontent.com/sit-it/sit/master/logo.png" alt="Markdownify" width="150"></a>
   <br>
   <br>
   SIT
