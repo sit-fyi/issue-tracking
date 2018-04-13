@@ -10,17 +10,13 @@
 <h4 align="center">Serverless issue tracker for decentralized teams</h4>
 
 <p align="center">
- <a href="https://github.com/sit-it/sit/releases"><img alt="Release" src="https://img.shields.io/github/release/sit-it/sit.svg"></a>
+ <a href="https://github.com/sit-it/issue-tracking/releases"><img alt="Release" src="https://img.shields.io/github/release/sit-it/issue-tracking.svg"></a>
  <a href="https://gitter.im/sit-it/Lobby"><img alt="Chat" src="https://badges.gitter.im/sit-it/Lobby.png"></a>
- <a href="https://travis-ci.org/sit-it/sit"><img alt="Build status" src="https://travis-ci.org/sit-it/sit.svg?branch=master"></a>
- <a href="https://ci.appveyor.com/project/yrashk/sit"><img alt="Windows Build status" src="https://ci.appveyor.com/api/projects/status/0iv6ltgk3pa122hx?svg=true"></a>
- <img alt="issues open/total" src="https://s3-us-west-1.amazonaws.com/sit-badges/issues.svg?refresh">
- <img alt="merge requests open/total" src="https://s3-us-west-1.amazonaws.com/sit-badges/merge_requests.svg?refresh">
 </p>
 
 <p align="center">
   [
-    <a href="https://github.com/sit-it/sit/releases"><b>Download</b></a> |
+    <a href="https://github.com/sit-it/issue-tracking/releases"><b>Download</b></a> |
     <a href="doc/getting_started.md"><b>Getting Started</b></a> |
     <a href="#questions-bug-reports-etc"><b>Issues & Merge Requests</b></a>
   ]
