@@ -6,7 +6,6 @@ comment=$3
 tmpdir="$(mktemp -d)"
 curdir=$(pwd)
 editor=${EDITOR:-nano}
-range=$(git merge-base --fork-point master $branch)..$branch
 curbranch=$(git rev-parse --abbrev-ref HEAD)
 sit=${SIT}
 
@@ -22,10 +21,16 @@ fi
 
 repo=$(${sit} path)
 
-git checkout -b merge-${item}-${mr} || exit 2
+if [ "${curbranch}" != "merge-${item}-${mr}" ]; then
+        git checkout -b merge-${item}-${mr} || exit 2
+        git am -3 $(ls ${repo}/items/${item}/${mr}/git/*.patch) || exit 2
+else
+        echo "Reusing current merge branch"
+fi
 
-git am $(ls ${repo}/items/${item}/${mr}/git/*.patch) || exit 2
-
+# Find the branch we forked from
+forkpoint=$(git merge-base --fork-point HEAD)
+curbranch=$(git branch --contains ${forkpoint}~ --points-at ${forkpoint}~)
 
 pushd $(pwd) >/dev/null
 cd "${tmpdir}"
