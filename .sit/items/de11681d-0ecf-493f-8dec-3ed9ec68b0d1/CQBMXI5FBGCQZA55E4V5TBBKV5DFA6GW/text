@@ -1,0 +1,9 @@
+When a merge request is failed, the user is left
+with the task of re-applying the patch and finishing
+the merging/closure of the issue. This is not a great
+user experience.
+
+Solution: enable three-way merge to allow manual resolution of the
+conflict and detect if the script is called from a merge branch and
+pick it up from where it was left, assuming that the changes were done.
+

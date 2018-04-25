@@ -1,0 +1,52 @@
+From e7e7ac29928600e489d0ac691994838df773b212 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Wed, 25 Apr 2018 12:53:33 -0700
+Subject: [PATCH] Problem: failed merge request merging
+
+When a merge request is failed, the user is left
+with the task of re-applying the patch and finishing
+the merging/closure of the issue. This is not a great
+user experience.
+
+Solution: enable three-way merge to allow manual resolution of the
+conflict and detect if the script is called from a merge branch and
+pick it up from where it was left, assuming that the changes were done.
+---
+ cli/sit-mr-merge | 13 +++++++++----
+ 1 file changed, 9 insertions(+), 4 deletions(-)
+
+diff --git a/cli/sit-mr-merge b/cli/sit-mr-merge
+index 6eab916..c0f7950 100755
+--- a/cli/sit-mr-merge
++++ b/cli/sit-mr-merge
+@@ -6,7 +6,6 @@ comment=$3
+ tmpdir="$(mktemp -d)"
+ curdir=$(pwd)
+ editor=${EDITOR:-nano}
+-range=$(git merge-base --fork-point master $branch)..$branch
+ curbranch=$(git rev-parse --abbrev-ref HEAD)
+ sit=${SIT}
+ 
+@@ -22,10 +21,16 @@ fi
+ 
+ repo=$(${sit} path)
+ 
+-git checkout -b merge-${item}-${mr} || exit 2
+-
+-git am $(ls ${repo}/items/${item}/${mr}/git/*.patch) || exit 2
++if [ "${curbranch}" != "merge-${item}-${mr}" ]; then
++        git checkout -b merge-${item}-${mr} || exit 2
++        git am -3 $(ls ${repo}/items/${item}/${mr}/git/*.patch) || exit 2
++else
++        echo "Reusing current merge branch"
++fi
+ 
++# Find the branch we forked from
++forkpoint=$(git merge-base --fork-point HEAD)
++curbranch=$(git branch --contains ${forkpoint}~ --points-at ${forkpoint}~)
+ 
+ pushd $(pwd) >/dev/null
+ cd "${tmpdir}"
+-- 
+2.16.2
+
