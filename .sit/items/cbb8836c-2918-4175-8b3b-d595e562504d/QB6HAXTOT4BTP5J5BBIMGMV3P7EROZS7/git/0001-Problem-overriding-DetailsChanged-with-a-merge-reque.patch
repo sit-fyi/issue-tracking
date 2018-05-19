@@ -1,0 +1,30 @@
+From bf9196fcfc5e69a1e3137f62e19add104c40c5cb Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Sat, 19 May 2018 08:45:55 -0700
+Subject: [PATCH] Problem: overriding DetailsChanged with a merge request
+
+When overriding DetailsChanged that included a merge request
+inside of it with a new DetailsChanged without a merge request,
+the original merge request is gone.
+
+Solution: ensure previous merge request (if any) is used instead
+of immediately falling back to `null`
+---
+ reducers/DetailsChanges.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/reducers/DetailsChanges.js b/reducers/DetailsChanges.js
+index 86e13ef..ce30397 100644
+--- a/reducers/DetailsChanges.js
++++ b/reducers/DetailsChanges.js
+@@ -1,6 +1,6 @@
+ module.exports = function(state, record) {
+     if (typeof record.files[".type/DetailsChanged"] !== 'undefined') {
+-        var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : null ;
++        var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : state.merge_request;
+         var decoder = new TextDecoder("utf-8");
+         return Object.assign(state, {
+             authors: state.authors || decoder.decode(record.files[".authors"]),
+-- 
+2.16.2
+

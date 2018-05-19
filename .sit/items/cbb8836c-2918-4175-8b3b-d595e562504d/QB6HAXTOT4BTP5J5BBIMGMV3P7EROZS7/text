@@ -1,0 +1,7 @@
+When overriding DetailsChanged that included a merge request
+inside of it with a new DetailsChanged without a merge request,
+the original merge request is gone.
+
+Solution: ensure previous merge request (if any) is used instead
+of immediately falling back to `null`
+
