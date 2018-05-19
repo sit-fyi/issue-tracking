@@ -6,8 +6,8 @@ attach=${item}
 tmpdir="$(mktemp -d)"
 curdir=$(pwd)
 editor=${EDITOR:-nano}
-range=$(git merge-base --fork-point master "${branch}").."${branch}"
 curbranch=$(git rev-parse --abbrev-ref HEAD)
+range=$(git merge-base --fork-point ${curbranch} "${branch}").."${branch}"
 sit=${SIT}
 
 run() {
