@@ -1,6 +1,6 @@
 module.exports = function(state, record) {
     if (typeof record.files[".type/DetailsChanged"] !== 'undefined') {
-        var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : null ;
+        var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : state.merge_request;
         var decoder = new TextDecoder("utf-8");
         return Object.assign(state, {
             authors: state.authors || decoder.decode(record.files[".authors"]),
