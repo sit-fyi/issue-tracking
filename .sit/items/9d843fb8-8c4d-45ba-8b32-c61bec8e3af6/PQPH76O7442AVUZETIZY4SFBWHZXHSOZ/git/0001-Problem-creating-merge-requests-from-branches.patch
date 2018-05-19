@@ -1,0 +1,31 @@
+From aead6e267fdfd996169267e5b6b66ff6543dc31a Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Sat, 19 May 2018 08:48:14 -0700
+Subject: [PATCH] Problem: creating merge requests from branches
+
+When using `sit-mr` to create a merge request from a branch
+it assumes `master` to be its fork point. However, this is
+not always true.
+
+Solution: use current branch as the forkpoint
+---
+ cli/sit-mr | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cli/sit-mr b/cli/sit-mr
+index 0ca8c08..a73684c 100755
+--- a/cli/sit-mr
++++ b/cli/sit-mr
+@@ -6,8 +6,8 @@ attach=${item}
+ tmpdir="$(mktemp -d)"
+ curdir=$(pwd)
+ editor=${EDITOR:-nano}
+-range=$(git merge-base --fork-point master "${branch}").."${branch}"
+ curbranch=$(git rev-parse --abbrev-ref HEAD)
++range=$(git merge-base --fork-point ${curbranch} "${branch}").."${branch}"
+ sit=${SIT}
+ 
+ run() {
+-- 
+2.16.2
+

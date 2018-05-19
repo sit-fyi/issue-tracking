@@ -1,0 +1,6 @@
+When using `sit-mr` to create a merge request from a branch
+it assumes `master` to be its fork point. However, this is
+not always true.
+
+Solution: use current branch as the forkpoint
+
