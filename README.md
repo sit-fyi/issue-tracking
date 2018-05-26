@@ -158,10 +158,6 @@ SIT and this module are distributed under the terms of both the MIT license and 
 
 See LICENSE-APACHE and LICENSE-MIT for details.
 
-## Credits
-
-Shout-out to [Ura Design](https://ura.design/) for designing our logo. They help with [design magic](https://ura.design/request/) for open source projects.
-
 ## Contributing
 
 This project is in its very early days and we will always be welcoming
