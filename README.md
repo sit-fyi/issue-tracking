@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="http://sit-it.org"><img src="https://raw.githubusercontent.com/sit-it/sit/master/logo.png" alt="Markdownify" width="150"></a>
+  <a href="http://sit.fyi"><img src="https://raw.githubusercontent.com/sit-fyi/sit/master/logo.png" alt="Markdownify" width="150"></a>
   <br>
   <br>
   SIT Issue Tracking
@@ -10,13 +10,13 @@
 <h4 align="center">Serverless issue tracker for decentralized teams</h4>
 
 <p align="center">
- <a href="https://github.com/sit-it/issue-tracking/releases"><img alt="Release" src="https://img.shields.io/github/release/sit-it/issue-tracking.svg"></a>
- <a href="https://gitter.im/sit-it/Lobby"><img alt="Chat" src="https://badges.gitter.im/sit-it/Lobby.png"></a>
+ <a href="https://github.com/sit-fyi/issue-tracking/releases"><img alt="Release" src="https://img.shields.io/github/release/sit-fyi/issue-tracking.svg"></a>
+ <a href="https://gitter.im/sit-fyi/Lobby"><img alt="Chat" src="https://badges.gitter.im/sit-fyi/Lobby.png"></a>
 </p>
 
 <p align="center">
   [
-    <a href="https://github.com/sit-it/issue-tracking/releases"><b>Download</b></a> |
+    <a href="https://github.com/sit-fyi/issue-tracking/releases"><b>Download</b></a> |
     <a href="doc/getting_started.md"><b>Getting Started</b></a> |
     <a href="#questions-bug-reports-etc"><b>Issues & Merge Requests</b></a>
   ]
@@ -49,7 +49,7 @@ If you are using a Git repository and don't want to carry the entire contents of
 using `git submodules` is a great way to accomplish this:
 
 ```
-git submodule add https://github.com/sit-it/issue-tracking .sit/modules/issue-tracking
+git submodule add https://github.com/sit-fyi/issue-tracking .sit/modules/issue-tracking
 ```
 
 This allows to pin a specific version of `issue-tracking` and update it when neccessary.
@@ -59,7 +59,7 @@ repository (for example, if you don't want to depend on the availability of the 
 you can simply copy the entire module into `.sit/modules/issue-tracking`:
 
 ```
-git clone --depth=1 https://github.com/sit-it/issue-tracking .sit/modules/issue-tracking
+git clone --depth=1 https://github.com/sit-fyi/issue-tracking .sit/modules/issue-tracking
 rm -rf .sit/modules/issue-tracking/.sit .sit/modules/issue-tracking/.git
 ```
 
@@ -87,7 +87,7 @@ trying out the latest and greatest master branch.
 
 ## Obtaining SIT
 
-All our releases are hosted on [GitHub](https://github.com/sit-it/sit/releases)
+All our releases are hosted on [GitHub](https://github.com/sit-fyi/sit/releases)
 and binary files can be downloaded from there.
 
 ## Build Instructions
@@ -102,7 +102,7 @@ Now, after that has been taken care of, time to check
 out SIT and build it:
 
 ```
-git clone https://github.com/sit-it/sit
+git clone https://github.com/sit-fyi/sit
 cd sit
 cargo build --release
 ```
@@ -130,18 +130,18 @@ you can send the updates to this repository:
 1. Create a branch (as a convention, you can use your issue ID or an added record ID as a branch name, but free to choose anything else, preferrably unique)
 2. Add new files in `.sit` and commit them. Commit message can be simply "Added issue <ISSUE-ID>"
    or, say, "Commented on issue <ISSUE-ID>"
-3. Push it out to the Inbox: `GIT_SSH_COMMAND="ssh -i sit-inbox" git push git@git.sit-it.org:sit-it/issue-tracking-inbox.git <branch>`
+3. Push it out to the Inbox: `GIT_SSH_COMMAND="ssh -i sit-inbox" git push git@git.sit.fyi:sit-fyi/issue-tracking-inbox.git <branch>`
 4. If the commit only contains new records (nothing else is permitted!) the Inbox
    will accept the push and immediately forward it to sit's master repository on GitHub.
    Otherwise, the push will be rejected.
 
 To further simplify the process of sending records to the upstream,
-it's highly recommended to add a remote (such as `issues`) for `git@git.sit-it.org:sit-it/issue-tracking-inbox.git`
+it's highly recommended to add a remote (such as `issues`) for `git@git.sit.fyi:sit-fyi/issue-tracking-inbox.git`
 and this to your `~/.ssh/config`:
 
 ```
-host git.sit-it.org
-  HostName git.sit-it.org
+host git.sit.fyi
+  HostName git.sit.fyi
   IdentityFile /path/to/sit/repo/sit-inbox
   User git
 ```
@@ -150,7 +150,7 @@ This way, pushing out, will be as nice as `git push issues <branch>`
 
 ### Preparing a merge request
 
-Please refer to [CONTRIBUTING](https://github.com/sit-it/issue-tracking/blob/master/CONTRIBUTING.md#preparing-a-merge-request) for the instruction.
+Please refer to [CONTRIBUTING](https://github.com/sit-fyi/issue-tracking/blob/master/CONTRIBUTING.md#preparing-a-merge-request) for the instruction.
 
 ## License
 
