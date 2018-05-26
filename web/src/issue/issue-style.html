@@ -7,7 +7,7 @@
             :host { display: block; }
             app-header {
                 background-color: var(--sit-header-color);
-                color: #fff;
+                color: var(--sit-header-text-color);
             }
 
             paper-card {
@@ -20,9 +20,7 @@
             }
 
             .open {
-                background-color: darkseagreen;
-                color: black;
-                padding: 4pt;
+                display: none;
             }
 
             .closed {
@@ -32,12 +30,12 @@
             }
 
             #reopen {
-                background-color: darkseagreen;
-                color: whitesmoke;
+                background-color: var(--sit-primary-color);
+                color: #000;
             }
 
             paper-button#save {
-                background-color: darkseagreen;
+                background-color: var(--sit-primary-color);
             }
 
         </style>

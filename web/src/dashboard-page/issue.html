@@ -14,10 +14,9 @@
 
         <paper-card id="card" elevation="0">
                  <span class="layout horizontal center-aligned title">
-                    <a class="flex-4" id="link" href="/issue/[[issue.id]]">[[ issue.summary ]]</a>
-                    <span class$="[[ issue.state ]] self-end">[[ issue.state ]]</span>
+                    <a class$="flex-4 [[ issue.state ]]" id="link" href="/issue/[[issue.id]]">[[ issue.summary ]]</a>
                     <template is="dom-if" if="[[ isMergeRequest ]]">
-                        <div class="mr layout self-end">MR</div>
+                            <iron-icon title="Merge Request" id="merge-request" icon="code" alt="merge-request"></iron-icon>
                     </template>
                     <template is="dom-if" if="[[ hasComments ]]">
                             <div class="self-end">

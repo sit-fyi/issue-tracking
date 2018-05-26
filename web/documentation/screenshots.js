@@ -6,7 +6,8 @@ var path = require('path'),
     puppeteer = require('puppeteer'),
     tmpdir = require('unique-temp-dir'),
     process = require('process'),
-    which = require('which');
+    which = require('which'),
+    fs = require('fs');
 
 function launch() {
         // @yrashk: I run NixOS, so bundled chrome is not going to cut it for
@@ -27,6 +28,8 @@ function available(web) {
 async function empty_screen() {
         var temp = tmpdir({create: true});
         child_process.execSync("sit init", {cwd: temp});
+        fs.mkdirSync(path.resolve(temp, ".sit/modules"));
+        child_process.execSync("ln -s " + path.resolve(__dirname, "../..") + " " + path.resolve(temp, ".sit/modules/issue-tracking"), {cwd: temp});
         var web = child_process.spawn("sit-web", ["127.0.0.1:10801"], {cwd: temp});
 
         await available(web);
@@ -43,6 +46,8 @@ async function empty_screen() {
 async function new_issue() {
         var temp = tmpdir({create: true});
         child_process.execSync("sit init", {cwd: temp});
+        fs.mkdirSync(path.resolve(temp, ".sit/modules"));
+        child_process.execSync("ln -s " + path.resolve(__dirname, "../..") + " " + path.resolve(temp, ".sit/modules/issue-tracking"), {cwd: temp});
         var web = child_process.spawn("sit-web", ["127.0.0.1:10802"], {cwd: temp});
 
         await available(web);
@@ -88,6 +93,8 @@ async function new_issue() {
 async function search() {
         var temp = tmpdir({create: true});
         child_process.execSync("sit init", {cwd: temp});
+        fs.mkdirSync(path.resolve(temp, ".sit/modules"));
+        child_process.execSync("ln -s " + path.resolve(__dirname, "../..") + " " + path.resolve(temp, ".sit/modules/issue-tracking"), {cwd: temp});
         var web = child_process.spawn("sit-web", ["127.0.0.1:10803"], {cwd: temp});
 
         await available(web);
