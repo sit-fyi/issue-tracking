@@ -3,7 +3,7 @@
   <a href="http://sit-it.org"><img src="https://raw.githubusercontent.com/sit-it/sit/master/logo.png" alt="Markdownify" width="150"></a>
   <br>
   <br>
-  SIT
+  SIT Issue Tracking
   <br>
 </h1>
 
@@ -22,11 +22,11 @@
   ]
 </p>
 
-SIT is a compact tool to track and share project issues in and between
+SIT Issue Tracking is a compact tool to track and share project issues in and between
 decentralized teams. Its goal is to lower the barrier for having an independently
 operated, shared issue tracker. Instead of having to setup and maintain a server
 and a database, or having to rely on services of an external third party, SIT can
-be initialized and started as simply as this:
+be initialized with it and started as simply as this:
 
 ```
 $ sit init

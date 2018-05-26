@@ -1,3 +1,17 @@
+# 0.4.0
+
+In this release, a couple of issues have been solved. Most importantly,
+`sit-mr-merge` will now allow to manually resolve a conflict. It's now
+doing a three-way merge and if re-ran in a merge request branch, it will
+pick up manual changes and carry on.
+
+Also, it is now possible to create merge requests from branches other than
+`master`.
+
+An important bugfix dealing with displaying merge requests has been applied.
+
+This release also features an updated theme to match new SIT's logo.
+
 # 0.3.0
 
 This is the first separate release of `issue-tracking` modules. No significant

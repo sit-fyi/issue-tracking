@@ -1,3 +1,14 @@
+# 0.4.0
+
+## Improvements
+
+* Allow manual resolution of conflicts in `sit-mr-merge` (de11681d-0ecf-493f-8dec-3ed9ec68b0d1)
+* Allow creating merge requests from any branch (9d843fb8-8c4d-45ba-8b32-c61bec8e3af6)
+
+## Bugfixes
+
+* Updating issue with a merge request for new details hides merge request (cbb8836c-2918-4175-8b3b-d595e562504d)
+
 # 0.3.0
 
 First independent release of `issue-tracking` module. No significant changes.
