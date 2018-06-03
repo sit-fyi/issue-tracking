@@ -1,0 +1,10 @@
+In order for existing projects to adopt SIT, currently
+they'd have to abandon their existing issue tracker,
+which is not a great course of action, especially for
+an active project.
+
+And there is a tool that solves this (at least for GitHub
+projects), sit-import, but it is a separate project that
+is not developed in sync with issue-tracking.
+
+Solution: merge it in

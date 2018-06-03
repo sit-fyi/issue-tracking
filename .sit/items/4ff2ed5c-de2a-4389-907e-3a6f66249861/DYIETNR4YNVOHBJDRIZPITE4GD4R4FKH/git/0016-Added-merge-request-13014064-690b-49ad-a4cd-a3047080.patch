@@ -1,0 +1,2118 @@
+From 9a6df130a648a0c258909015e0f4d52c20f93b2b Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Sat, 2 Jun 2018 22:44:42 -0700
+Subject: [PATCH 16/16] Added merge request:
+ 13014064-690b-49ad-a4cd-a304708097dd
+
+---
+ .../UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.authors      |    1 +
+ .../.prev/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ         |    0
+ .../UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.signature    |   17 +
+ .../UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.timestamp    |    1 +
+ .../.type/DetailsChanged                           |    0
+ .../.type/MergeRequested                           |    0
+ ...oblem-sit-issue-import-has-its-own-issues.patch | 1965 ++++++++++++++++++++
+ .../UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/text          |    6 +
+ .../VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.authors      |    1 +
+ .../VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.signature    |   17 +
+ .../VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.timestamp    |    1 +
+ .../.type/SummaryChanged                           |    0
+ .../VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/text          |    1 +
+ 13 files changed, 2010 insertions(+)
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.authors
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.prev/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.signature
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.timestamp
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.type/DetailsChanged
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.type/MergeRequested
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/git/0001-Problem-sit-issue-import-has-its-own-issues.patch
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/text
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.authors
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.signature
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.timestamp
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.type/SummaryChanged
+ create mode 100644 .sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/text
+
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.authors b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.prev/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.prev/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.signature b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.signature
+new file mode 100644
+index 0000000..98f0408
+--- /dev/null
++++ b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTgEoOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf/0Ow//SGJlmIZC3+wz5HHtplNUgk50QE+xvJT1LdsN
++9/UFt43xsDLqG0e6j2fu8SeXzog3dS/Bt2lpYd0LYBaRPMG2T3cxv3eCq1wsO2rE
++KLFshct9M98nkBOXPxsvzKM/xeaY02Ymq+OhhitdF+cl0zG9fo9irh/AwTam9nqF
++DLW7KpIIOP8PrALrCOig2ZZ5tkt6P8cFRocuL+Hw7MbXdGgaABlXms0gCEkCZY3Z
++ItJij3irn1mnlSTPDyZIh2emG5p4BHrS9UQvLaRUg408SBJOOx6jrJ/9TsciNXnR
++0TmUHCGU4QumTxKrCD1m+N/nygY2J55s4mYzqcbsN0X1Synhuy668RYb47jWYQkb
++8l+weYpegKbFfykEw13HcZYMc8lbAjUHRkD22q5LxSQDC86T9FMKoWPPbs+L4AZG
++ua4lwMlWlr6og2aZ6J17VoNO+VwUl3nc55qkNTvl0Zv9LXHIPIu0ai+pKKpIPGrI
++p8XCJjZWBBLcA4f+iKJUd/nfkCSmdyQNHTP4F4wVTCu9jG4RWRg1XXK2vtykkkoA
++18AduY9OEycqTnQDmS+L3cGWlNTPiCOF5H+KUJAoYVfmVkBRhT5XHzT7l7luf5tn
++SioAySUPFTPOwcypRM+pQxwZED0PavcCvZYYyRR3tDoUMqikECnXC9RoT/CiLZF0
++qSVzdro=
++=kl3d
++-----END PGP SIGNATURE-----
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.timestamp b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.timestamp
+new file mode 100644
+index 0000000..b428648
+--- /dev/null
++++ b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.timestamp
+@@ -0,0 +1 @@
++2018-06-03T05:44:42.210224032Z
+\ No newline at end of file
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.type/DetailsChanged b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.type/MergeRequested b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/.type/MergeRequested
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/git/0001-Problem-sit-issue-import-has-its-own-issues.patch b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/git/0001-Problem-sit-issue-import-has-its-own-issues.patch
+new file mode 100644
+index 0000000..8468a1b
+--- /dev/null
++++ b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/git/0001-Problem-sit-issue-import-has-its-own-issues.patch
+@@ -0,0 +1,1965 @@
++From 5928fec16ba3f9b0342dc3f073f86ad6dc81a4d1 Mon Sep 17 00:00:00 2001
++From: Yurii Rashkovskii <yrashk@gmail.com>
++Date: Sat, 2 Jun 2018 22:42:22 -0700
++Subject: [PATCH] Problem: sit-issue-import has its own issues
++
++It separates it from the umbrella project of issue-tracking.
++
++Solution: move the issues into the main repository
++---
++ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors           |  0
++ .../.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG              |  0
++ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature         |  0
++ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../.type/MergeRequested                                |  0
++ .../git/0001-Problem-sit-core-0.1.2-is-outdated.patch   |  0
++ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text               |  0
++ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors           |  0
++ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature         |  0
++ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text               |  0
++ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors           |  0
++ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature         |  0
++ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text               |  0
++ .../GGLG3YHGKFLEIK777C4LXFGTOFP4222B}/.authors          |  0
++ .../.prev/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD              |  0
++ .../.prev/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT              |  0
++ .../GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.signature         | 17 +++++++++++++++++
++ .../GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.timestamp         |  1 +
++ .../.type/SummaryChanged                                |  0
++ .../GGLG3YHGKFLEIK777C4LXFGTOFP4222B/text               |  1 +
++ .../N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H}/.authors          |  0
++ .../.prev/GGLG3YHGKFLEIK777C4LXFGTOFP4222B              |  0
++ .../N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.signature         | 17 +++++++++++++++++
++ .../N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.timestamp         |  1 +
++ .../.type/DetailsChanged                                |  0
++ .../N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/text               |  1 +
++ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT}/.authors          |  0
++ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature         |  0
++ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text               |  0
++ .../J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV}/.authors          |  0
++ .../.prev/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q              |  0
++ .../J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.signature         |  0
++ .../J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.timestamp         |  0
++ .../J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV}/.type/Closed      |  0
++ .../J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV}/.type/Merged      |  0
++ .../J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/record             |  0
++ .../KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW}/.authors          |  0
++ .../KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.signature         |  0
++ .../KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/text               |  0
++ .../OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q}/.authors          |  0
++ .../.prev/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW              |  0
++ .../OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.signature         |  0
++ .../OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../.type/MergeRequested                                |  0
++ ...m-sit-import-uses-a-very-outdated-version-of-S.patch |  0
++ .../OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/text               |  0
++ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI}/.authors          |  0
++ .../.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66              |  0
++ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature         |  0
++ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../.type/MergeRequested                                |  0
++ ...1-Problem-progress-bar-is-not-very-informative.patch |  0
++ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text               |  0
++ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66}/.authors          |  0
++ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature         |  0
++ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text               |  0
++ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G}/.authors          |  0
++ .../.prev/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI              |  0
++ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature         |  0
++ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp         |  0
++ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Closed       |  0
++ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Merged       |  0
++ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record             |  0
++ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q}/.authors          |  0
++ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature         |  0
++ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text               |  0
++ .../6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K}/.authors          |  0
++ .../.prev/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ              |  0
++ .../6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.signature         | 17 +++++++++++++++++
++ .../6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.timestamp         |  1 +
++ .../.type/SummaryChanged                                |  0
++ .../6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/text               |  1 +
++ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU}/.authors          |  0
++ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature         |  0
++ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text               |  0
++ .../DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI}/.authors          |  0
++ .../.prev/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K              |  0
++ .../DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.signature         | 17 +++++++++++++++++
++ .../DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.timestamp         |  1 +
++ .../.type/DetailsChanged                                |  0
++ .../DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/text               |  3 +++
++ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ}/.authors          |  0
++ .../.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q              |  0
++ .../.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU              |  0
++ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature         |  0
++ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp         |  0
++ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented    |  0
++ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text               |  0
++ .../7EBKENXZDKRBZHR23XWD45WX4JODBSYG}/.authors          |  0
++ .../.prev/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI              |  0
++ .../.prev/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG              |  0
++ .../7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.signature         | 17 +++++++++++++++++
++ .../7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.timestamp         |  1 +
++ .../.type/SummaryChanged                                |  0
++ .../7EBKENXZDKRBZHR23XWD45WX4JODBSYG/text               |  1 +
++ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI}/.authors          |  0
++ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature         |  0
++ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text               |  0
++ .../Q2O35HB4RQ3723RBDAF2577I53W6BTUX}/.authors          |  0
++ .../.prev/7EBKENXZDKRBZHR23XWD45WX4JODBSYG              |  0
++ .../Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.signature         | 17 +++++++++++++++++
++ .../Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.timestamp         |  1 +
++ .../.type/DetailsChanged                                |  0
++ .../Q2O35HB4RQ3723RBDAF2577I53W6BTUX}/text              |  0
++ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG}/.authors          |  0
++ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature         |  0
++ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text               |  3 +++
++ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z}/.authors          |  0
++ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature         |  0
++ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text               |  0
++ .../ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7}/.authors          |  0
++ .../.prev/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z              |  0
++ .../.prev/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R              |  0
++ .../ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.signature         | 17 +++++++++++++++++
++ .../ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.timestamp         |  1 +
++ .../.type/SummaryChanged                                |  0
++ .../ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/text               |  1 +
++ .../NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA}/.authors          |  0
++ .../.prev/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7              |  0
++ .../NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.signature         | 17 +++++++++++++++++
++ .../NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.timestamp         |  1 +
++ .../.type/DetailsChanged                                |  0
++ .../NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA}/text              |  0
++ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R}/.authors          |  0
++ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature         |  0
++ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text               |  1 +
++ .../2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.authors           |  1 +
++ .../.prev/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN              |  0
++ .../2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.signature         | 17 +++++++++++++++++
++ .../2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.timestamp         |  1 +
++ .../.type/DetailsChanged                                |  0
++ .../2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR}/text              |  0
++ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors           |  1 +
++ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature         |  0
++ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text               |  0
++ .../L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.authors           |  1 +
++ .../.prev/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK              |  0
++ .../.prev/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET              |  0
++ .../L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.signature         | 17 +++++++++++++++++
++ .../L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.timestamp         |  1 +
++ .../.type/SummaryChanged                                |  0
++ .../L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/text               |  1 +
++ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors           |  1 +
++ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature         |  0
++ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text               |  1 +
++ .../6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.authors           |  1 +
++ .../.prev/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3              |  0
++ .../6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.signature         | 17 +++++++++++++++++
++ .../6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.timestamp         |  1 +
++ .../.type/DetailsChanged                                |  0
++ .../6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY}/text              |  0
++ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors           |  1 +
++ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature         |  0
++ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text               |  0
++ .../S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.authors           |  1 +
++ .../.prev/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH              |  0
++ .../.prev/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG              |  0
++ .../S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.signature         | 17 +++++++++++++++++
++ .../S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.timestamp         |  1 +
++ .../.type/SummaryChanged                                |  0
++ .../S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/text               |  1 +
++ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors           |  1 +
++ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature         |  0
++ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text               |  1 +
++ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors           |  1 +
++ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature         |  0
++ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text               |  0
++ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors           |  1 +
++ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature         |  0
++ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text               |  0
++ .../G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.authors           |  1 +
++ .../.prev/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO              |  0
++ .../G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.signature         | 17 +++++++++++++++++
++ .../G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.timestamp         |  1 +
++ .../.type/DetailsChanged                                |  0
++ .../G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/text               |  5 +++++
++ .../UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.authors           |  1 +
++ .../.prev/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC              |  0
++ .../.prev/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB              |  0
++ .../UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.signature         | 17 +++++++++++++++++
++ .../UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.timestamp         |  1 +
++ .../.type/SummaryChanged                                |  0
++ .../UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/text               |  1 +
++ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors           |  1 +
++ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature         |  0
++ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp         |  0
++ .../.type/SummaryChanged                                |  0
++ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text               |  0
++ .../6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.authors           |  1 +
++ .../.prev/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY              |  0
++ .../.prev/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB              |  0
++ .../6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.signature         | 17 +++++++++++++++++
++ .../6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.timestamp         |  1 +
++ .../.type/SummaryChanged                                |  0
++ .../6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/text               |  1 +
++ .../DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.authors           |  1 +
++ .../.prev/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7              |  0
++ .../DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.signature         | 17 +++++++++++++++++
++ .../DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.timestamp         |  1 +
++ .../.type/DetailsChanged                                |  0
++ .../DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE}/text              |  0
++ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors           |  1 +
++ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature         |  0
++ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp         |  0
++ .../.type/DetailsChanged                                |  0
++ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text               |  1 +
++ tools/sit-issue-import/.sit/config.json                 | 10 ----------
++ tools/sit-issue-import/.sit/modules/issue-tracking      |  1 -
++ 245 files changed, 328 insertions(+), 11 deletions(-)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text (100%)
++ rename {tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT => .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B}/.authors (100%)
++ rename tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged => .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.prev/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD (100%)
++ rename tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.prev/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q => .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.prev/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT (100%)
++ create mode 100644 .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.signature
++ create mode 100644 .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.timestamp
++ rename {tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW => .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B}/.type/SummaryChanged (100%)
++ create mode 100644 .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/text
++ rename {tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV => .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H}/.authors (100%)
++ rename tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.type/Closed => .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.prev/GGLG3YHGKFLEIK777C4LXFGTOFP4222B (100%)
++ create mode 100644 .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.signature
++ create mode 100644 .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.timestamp
++ rename {tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q => .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H}/.type/DetailsChanged (100%)
++ create mode 100644 .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/text
++ rename {tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW => .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66 => .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT}/.type/SummaryChanged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text (100%)
++ rename {tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q => .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV}/.authors (100%)
++ rename tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.type/Merged => .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.prev/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G => .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV}/.type/Closed (100%)
++ rename {tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G => .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV}/.type/Merged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/record (100%)
++ rename {tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI => .sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q => .sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW}/.type/SummaryChanged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/text (100%)
++ rename {tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66 => .sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.prev/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI => .sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q}/.type/DetailsChanged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.type/MergeRequested (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/git/0001-Problem-sit-import-uses-a-very-outdated-version-of-S.patch (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/text (100%)
++ rename {tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G => .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66 (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU => .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI}/.type/DetailsChanged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text (100%)
++ rename {tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q => .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI => .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66}/.type/SummaryChanged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text (100%)
++ rename {tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU => .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.prev/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp (100%)
++ rename tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q => .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Closed (100%)
++ rename tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU => .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Merged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record (100%)
++ rename {tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q}/.type/SummaryChanged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text (100%)
++ rename {tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K}/.authors (100%)
++ rename tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.prev/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ (100%)
++ create mode 100644 .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.signature
++ create mode 100644 .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.timestamp
++ rename {tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K}/.type/SummaryChanged (100%)
++ create mode 100644 .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/text
++ rename {tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp (100%)
++ rename {tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU}/.type/DetailsChanged (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text (100%)
++ rename {tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI}/.authors (100%)
++ rename tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.prev/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K (100%)
++ create mode 100644 .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.signature
++ create mode 100644 .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.timestamp
++ rename {tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI}/.type/DetailsChanged (100%)
++ create mode 100644 .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/text
++ rename {tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ}/.authors (100%)
++ rename tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q (100%)
++ rename tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp (100%)
++ rename tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged => .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text (100%)
++ rename {tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK => .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG}/.authors (100%)
++ rename tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged => .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.prev/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI (100%)
++ rename tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged => .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.prev/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG (100%)
++ create mode 100644 .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.signature
++ create mode 100644 .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.timestamp
++ rename tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged => .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.type/SummaryChanged (100%)
++ create mode 100644 .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/text
++ rename {tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET => .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp (100%)
++ create mode 100644 .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged
++ rename {tools/sit-issue-import/.sit => .sit}/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text (100%)
++ rename {tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH => .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX}/.authors (100%)
++ create mode 100644 .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.prev/7EBKENXZDKRBZHR23XWD45WX4JODBSYG
++ create mode 100644 .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.signature
++ create mode 100644 .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.timestamp
++ create mode 100644 .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.type/DetailsChanged
++ rename {tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG => .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX}/text (100%)
++ rename {tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG => .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp (100%)
++ create mode 100644 .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged
++ create mode 100644 .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text
++ rename {tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC => .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp (100%)
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged
++ rename {tools/sit-issue-import/.sit => .sit}/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text (100%)
++ rename {tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB => .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7}/.authors (100%)
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.prev/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.prev/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.signature
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.timestamp
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.type/SummaryChanged
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/text
++ rename {tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY => .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA}/.authors (100%)
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.prev/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.signature
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.timestamp
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.type/DetailsChanged
++ rename {tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R => .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA}/text (100%)
++ rename {tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB => .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R}/.authors (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp (100%)
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged
++ create mode 100644 .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.authors
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.prev/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.signature
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.timestamp
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.type/DetailsChanged
++ rename {tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET => .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR}/text (100%)
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors
++ rename {tools/sit-issue-import/.sit => .sit}/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp (100%)
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged
++ rename {tools/sit-issue-import/.sit => .sit}/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text (100%)
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.authors
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.prev/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.prev/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.signature
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.timestamp
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.type/SummaryChanged
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/text
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors
++ rename {tools/sit-issue-import/.sit => .sit}/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp (100%)
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged
++ create mode 100644 .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.authors
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.prev/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.signature
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.timestamp
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.type/DetailsChanged
++ rename {tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG => .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY}/text (100%)
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors
++ rename {tools/sit-issue-import/.sit => .sit}/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp (100%)
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged
++ rename {tools/sit-issue-import/.sit => .sit}/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text (100%)
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.authors
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.prev/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.prev/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.signature
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.timestamp
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.type/SummaryChanged
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/text
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors
++ rename {tools/sit-issue-import/.sit => .sit}/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp (100%)
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged
++ create mode 100644 .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors
++ rename {tools/sit-issue-import/.sit => .sit}/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp (100%)
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged
++ rename {tools/sit-issue-import/.sit => .sit}/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text (100%)
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors
++ rename {tools/sit-issue-import/.sit => .sit}/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp (100%)
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged
++ rename {tools/sit-issue-import/.sit => .sit}/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text (100%)
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.authors
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.prev/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.signature
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.timestamp
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.type/DetailsChanged
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/text
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.authors
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.prev/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.prev/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.signature
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.timestamp
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.type/SummaryChanged
++ create mode 100644 .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/text
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors
++ rename {tools/sit-issue-import/.sit => .sit}/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp (100%)
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged
++ rename {tools/sit-issue-import/.sit => .sit}/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text (100%)
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.authors
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.prev/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.prev/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.signature
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.timestamp
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.type/SummaryChanged
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/text
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.authors
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.prev/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.signature
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.timestamp
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.type/DetailsChanged
++ rename {tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB => .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE}/text (100%)
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors
++ rename {tools/sit-issue-import/.sit => .sit}/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature (100%)
++ rename {tools/sit-issue-import/.sit => .sit}/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp (100%)
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged
++ create mode 100644 .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text
++ delete mode 100644 tools/sit-issue-import/.sit/config.json
++ delete mode 160000 tools/sit-issue-import/.sit/modules/issue-tracking
++
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged
++diff --git a/tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text
++rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text
++diff --git a/tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors
++diff --git a/tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature
++diff --git a/tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged
++diff --git a/tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text
++diff --git a/tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.authors
++diff --git a/tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.prev/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.prev/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.prev/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.prev/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.prev/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.prev/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT
++diff --git a/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.signature b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.signature
++new file mode 100644
++index 0000000..5d3d713
++--- /dev/null
+++++ b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf0IOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf9ogRAAlVcy+w6MJW7LZvTMkXVLGaH7E+xT9g0H+kY4
+++aIbUUGiMQcOdup54TwcAcv7EQn8diRyqSfPV++5Q2TCfC10/ttxoeG5rUic+hGDC
+++1PdbUrWqdNXBayAbczV2jsAzFxg5jwzCAyMPe6jyhhmXOI6IGgDyQSy1XLMxsWSE
+++lgvWrx7WRtcCb0AwyD2KdA6/bbGX3gTlChtogJQNPvMxF/SDxBHZJCvVoCCfLHeY
+++f2hfEc4azGFPMNTNCF8w1gNAQ/onUKezMBvl0wBQDvigfTtXKKpXeN6+KTJkiDfU
+++uO69UBk2vIEx7pLUj7ohwt9EVtKrQugmX/V9kdPkM1oHE6KVbBxmJVnFRY9zKzFe
+++rQe2z97xIL1RGseVfSZAmerqcfjs8uQ6iyTKknSijbYAgHjOHptjTESuEd8a30NJ
+++74gue4ow/jRyBOclhq8S8uCvqMx4UMoujg0fBByPKFrrOiZhlaEQ9cW46z/ndgQG
+++K73kWeypOG20Esd5C+vHZ/6s4KUehfiDlOMJbFXGoBEZVNq2DN/DWulAyOYrJoih
+++Oish2MSkIg5rRxqTpcwnl0YklCzhy3bc2LFDr6XvWH7HqWkvVm+c4jowTRluukku
+++tGaSINUqaFW3cu7319pIYY9gUODZgL6lx76gC+UM6G2gGjb4a3dmPUgeE+CFB6Jp
+++Ax4Z7AU=
+++=IbIG
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.timestamp b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.timestamp
++new file mode 100644
++index 0000000..0330790
++--- /dev/null
+++++ b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:40:18.350Z
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.type/SummaryChanged b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.type/SummaryChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.type/SummaryChanged
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/.type/SummaryChanged
++diff --git a/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/text b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/text
++new file mode 100644
++index 0000000..a0ff55a
++--- /dev/null
+++++ b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/GGLG3YHGKFLEIK777C4LXFGTOFP4222B/text
++@@ -0,0 +1 @@
+++Problem: GitHub assignments are not supported yet [sit-issue-import]
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.authors b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.authors
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.authors
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.type/Closed b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.prev/GGLG3YHGKFLEIK777C4LXFGTOFP4222B
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.type/Closed
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.prev/GGLG3YHGKFLEIK777C4LXFGTOFP4222B
++diff --git a/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.signature b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.signature
++new file mode 100644
++index 0000000..667cc4a
++--- /dev/null
+++++ b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf0IOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf/0wQ//Ryxx7Q8m8onxZs13q0Grc8GTTau+pPTXLdzL
+++k3IomKH+151W1DI0/69+3BqHcRp7C/pjDNvTu1PHEyAsKD6D9tWptTGD+dR/An9B
+++xCtwiQ/GGZermrFMG8tMRnr4o5QuWNrb+UAV2d3/12eYK6+nvyfPlW2y0zTkco0b
+++hF5j7DoRupWGZlXVJ2NoA5ehTbeRvox/tUHzdmHRLoXSEPGxeY+wB15SDNrDOsnl
+++rIlGIB0Bfo99j8pU54DnaPEFcszecippe04zs9yNVksi48DjY3hXyKkRei3fsPTR
+++cWRMAMixyRyOmRHKztrUQA8fh1Fbo5ofdF/s9hyWCz6wUJwYh+0+goqNHm1HvjV/
+++bk3Sisn47PLvHHB8/0bfpctpjeGqop1Bvjxu5JRBaxpI3EPmOutt5UpDK31J33wD
+++uGbLPlhCjEu28j6EoGHPSe6lN7PHJzWQw/k21FJNbG0IhcSR3Juqxern7rf1N/in
+++DnUBP39ZCCXtpgYrQ0mk93SCS2tgPnCGdb4fRAQvv0u5PoG4TsswvXJt4L+jvUQv
+++gH9085fb+Fi14KumyBZeK7Yx+kWw9/8f2c/3ATWMcspvnqcbzzBlFvvAy3y5g7Gr
+++kCsCV4mVAxSPKzg6DZ640L93vBPmvqtTEDXhZclamJd+qM+KQlEMm92YwpInNnos
+++BynAxCs=
+++=Iti3
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.timestamp b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.timestamp
++new file mode 100644
++index 0000000..0330790
++--- /dev/null
+++++ b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:40:18.350Z
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.type/DetailsChanged b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.type/DetailsChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.type/DetailsChanged
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/.type/DetailsChanged
++diff --git a/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/text b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/text
++new file mode 100644
++index 0000000..b48f7f7
++--- /dev/null
+++++ b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/N46PBO4UMHABI4FD6TARCSVLGVSJ2J3H/text
++@@ -0,0 +1 @@
+++These are important for retaining who's working on what. We don't have a convention for assignments in SIT yet.
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.authors b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.authors
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors
++diff --git a/tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature
++diff --git a/tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged
++diff --git a/tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text
++rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.authors b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.authors
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.authors
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.type/Merged b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.prev/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.type/Merged
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.prev/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.signature b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.signature
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.signature
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.timestamp b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.timestamp
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Closed b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.type/Closed
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Closed
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.type/Closed
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Merged b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.type/Merged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Merged
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/.type/Merged
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/record b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/record
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/record
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/J3JGLNAQ7CHT4HMOTMQAGJBFBBXXDHCV/record
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.authors
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.signature b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.signature
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.signature
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.timestamp b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.timestamp
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.type/SummaryChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/.type/SummaryChanged
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/text b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/text
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW/text
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.authors
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.prev/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.prev/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.prev/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.prev/KK52QQBPMQSFGNTKQANFYWMAF2D2ZTZW
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.signature b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.signature
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.signature
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.timestamp b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.timestamp
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.type/DetailsChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.type/DetailsChanged
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.type/MergeRequested b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.type/MergeRequested
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.type/MergeRequested
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/.type/MergeRequested
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/git/0001-Problem-sit-import-uses-a-very-outdated-version-of-S.patch b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/git/0001-Problem-sit-import-uses-a-very-outdated-version-of-S.patch
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/git/0001-Problem-sit-import-uses-a-very-outdated-version-of-S.patch
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/git/0001-Problem-sit-import-uses-a-very-outdated-version-of-S.patch
++diff --git a/tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/text b/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/text
++rename to .sit/items/297bd633-b087-46df-8392-b10de7b324f5/OLXO2QPHF65OX2HIHECXIIG4JZCK6L2Q/text
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.authors b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.authors
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66 b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.authors
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.prev/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.prev/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.prev/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.prev/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Closed
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Closed
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Merged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Merged
++diff --git a/tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record
++rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text
++diff --git a/tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.authors
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.prev/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.prev/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ
++diff --git a/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.signature b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.signature
++new file mode 100644
++index 0000000..93cbdf2
++--- /dev/null
+++++ b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTfyEOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf+zDhAAh1duUcEfjgdNEWN3MwUDHEalioijTJKuJfDJ
+++rYM3/xYne3cvB3Nb4aCdxGFzJdlP0AjF0Bok/Fao+KVX5wnDFX6mbTdT0Oi4Vrjm
+++PFEt5L2bYfZAZ6iKq1qnqxtWfLEO6X4a1n5+6M/LYIg/8BLDFfQNinsulr2oyBZP
+++YYJY2K2lJexPbGGA5Wb7GeBaCvHuNvtwQQs11s9a9UREAZd/794ndQT5k5+3Krtt
+++JC6LBzQwuy1sHUbdPtC1zxqa0iEUscuKtWbaCdtthioVjryrUACg2c0FgEioN4xb
+++bZUb8IyWPxjZQaljND//RRqZnmuE6/PgdyyBXcHCO1R6qYQ6tzYl6uyGwUtnrltr
+++DFRXJWH6+mLDJp3hQvSnY1UuvMHgFWAf2T0dp43nIWmuoBje4BEw1CPe84LS6Bz1
+++mC605g4jXcSd67tE2W1+ga2m8Cj9Hv6s1eN3A/18azpg850OOsltWDphrSMD6xjY
+++7f3bohowtmIVlOZIVvxMBBGLMpenCAHpVeUEkUNusKnh3eVF+b3ddGpQ3umhF2/X
+++BcfmhZ1AErI5ecBpcqzhELjEcjI7AH5GVwR/Y8VUIoJEnC6jSYenv/bjkfsmnmxH
+++AXuBhjstnsk5yOYgqIZm2tlg7QPTMUTGmWHvat5pIoBa9EFjvu7svHgcL5aHf2TT
+++V+M/X2s=
+++=gQjH
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.timestamp b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.timestamp
++new file mode 100644
++index 0000000..a3e84dc
++--- /dev/null
+++++ b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:39:45.296Z
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.type/SummaryChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/.type/SummaryChanged
++diff --git a/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/text b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/text
++new file mode 100644
++index 0000000..f215041
++--- /dev/null
+++++ b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K/text
++@@ -0,0 +1 @@
+++Problem: GitHub API rate limit
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text
++diff --git a/tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.authors
++diff --git a/tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.prev/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.prev/6ECCAM2VRVIDD2BPQCJ3MPP3UI4YFH4K
++diff --git a/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.signature b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.signature
++new file mode 100644
++index 0000000..6889407
++--- /dev/null
+++++ b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTfyEOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf8QZxAA3UvYW5IkBd3uq8nDh3oirjZGkzaVDgeVJGA5
+++69hSkzTTdwUr6PuH9Xke+Rz/CYSgF09Q7C9ING/12ACbXX7kZe7FOXXheYIi6PKl
+++lQMkB46QXQ8EJm8uLg9DvbRWyaArdgba0oz9o8ViWlJhv39iSXuua8WuEZ0DpCfA
+++FbLQ7W0xb5uz1CWWYDo+xHLLsTICyn/Rs3OSVmGkENbij2W7judatIG0VzfURjiF
++++tpnAUZKh8bL7LICf0CmjrR9OQGman48FwnxEQNHqDTelO/r2LgQiX2AIMABp6Cn
+++/ojKl95XOiacXiSX7PC62bK25k78cTxBTQ5ZHUwPL27e7IZHjfAzP2gEtnRxZ0wR
+++n8AtQGiAQiljOXZ5s7vOAbqzr9rfO9Kp32uFDxT5liVUPctRKT5F8aqT5Cr5LoZC
+++UGD1eGhekGzUHphQ/l37NShMgdkO0NFCYirOC8D0tQW2DVPGHwC5FR/jMbN9Sree
+++jTFxJm0MtJQZO2DqmqDDQCmqaLUFVzhKcy7XO4SwSjyelUrGktCL/IkM+FNh7B1T
+++hMGC1hAFYJm1AXgFyHkrfhuqSm5Gy3Y0xu3KL+q9YIjzjhTB67XDtpSsvuGgRLSO
+++f8zHZAQ7HqeTMVbeAKQTwJSH4b1jDs5B/lUs+UoVpzJHa0pSNFm5wIjtjW9WYtMm
+++pU8j3wY=
+++=RL5A
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.timestamp b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.timestamp
++new file mode 100644
++index 0000000..a3e84dc
++--- /dev/null
+++++ b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:39:45.296Z
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.type/DetailsChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/.type/DetailsChanged
++diff --git a/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/text b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/text
++new file mode 100644
++index 0000000..e7438d7
++--- /dev/null
+++++ b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/DDVAARDZDZIFR6LUZXXGWRH5LI37OBWI/text
++@@ -0,0 +1,3 @@
+++There's no support for the rate limit in `sit-issue-import` right now
+++
+++Proposed solution: pause the tool for an hour when encountering a rate limit
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors
++diff --git a/tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q
++diff --git a/tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp
++diff --git a/tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented
++diff --git a/tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text
++rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text
++diff --git a/tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.authors
++diff --git a/tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.prev/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.prev/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI
++diff --git a/tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.prev/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.prev/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG
++diff --git a/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.signature b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.signature
++new file mode 100644
++index 0000000..51a2152
++--- /dev/null
+++++ b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf3wOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf9waQ//RR6IIx+IrcVQ1oEaX/ODr8Ut3ovJmZdtJ+9V
+++TQZenYvZE/dDtQpXT4mg6apvE7glUX+XnpuYDulM4mAzTGALcrILc9ufb4SmVAFX
+++Ef7NLI09/ZEaRGT/y7Kv/QgBA4NNfeKkRAv+vq8OC1diBr1VA5n0HYk/viVi3i/H
+++B+AiOMEC58PFwobE1N67uB8p+OvhDrPlgT0ndpKbqYKQzBg9fIf338nhmUVtbiMQ
+++8TOYRG/YClFVO5T5MkIq66SNS6SxmZwY4hmA5yO8tyTckGNnZ0MgLV2mXuXhGAhS
+++QZ5O2sePz6HlVrnhEhF5rNBDbbywn76x67ZAchbP6UJGQYcijIaKpDCaf5MVnraM
+++iURRHAbBe8D21IYeIftSGfk40EJRSOrfMUHBpgHzGurxhtqyzZcGM1eKJHUQqHqh
+++G3p1pIIQ1m2HD1W1Zuv0Q7B9X+SxxiYxOjKRnOrcsAZmI7pSWF5BgiPnSP7ujChT
+++tw9oASWhIMh7zbqBMTi/Sa9gjZb/F4wlJo7Rnx4i0QdKp/hfs822sLhvNxm/YXcQ
+++J0w6T39ppDFvA1tJKcyyQKIQTNR2QG/r1cZIW2Te2SOICWlxadkYRYqpUAwDTKT2
+++C1ryZ6Lai1m7Eh4qNnCrX7LzpO2EP/drSzTsFdXoSZul/MkPKbJt+00mRSzdEUek
+++qG0kazU=
+++=zag/
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.timestamp b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.timestamp
++new file mode 100644
++index 0000000..ec34c54
++--- /dev/null
+++++ b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:41:16.091Z
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.type/SummaryChanged
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/.type/SummaryChanged
++diff --git a/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/text b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/text
++new file mode 100644
++index 0000000..af4619f
++--- /dev/null
+++++ b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/7EBKENXZDKRBZHR23XWD45WX4JODBSYG/text
++@@ -0,0 +1 @@
+++Problem: GitHub milestones are not supported [sit-issue-import]
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors
++diff --git a/tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature
++diff --git a/tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp
++diff --git a/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text
++diff --git a/tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.authors
++diff --git a/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.prev/7EBKENXZDKRBZHR23XWD45WX4JODBSYG b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.prev/7EBKENXZDKRBZHR23XWD45WX4JODBSYG
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.signature b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.signature
++new file mode 100644
++index 0000000..ad22fa1
++--- /dev/null
+++++ b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf3wOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf/uRBAAi4p0hM1+HHcyXGJmtI8su6kfD75HKV/uNO7D
+++hnsk9+0N9AVYEWxdlSqq0PhYA14PBEmTt2uGJxxsHFsH8kLgSoLgYWsvxovaT6vb
++++kg6+fb5ISJxSZNm3MhMocLgXmLKcNBthsF7m+7kh80HFVl7GGkGZQWpO44i+k83
+++lHUFcg8mM5giPyep+H6Edth5/EztQsJx+0EmC0nHy0nyO7eIzGMM5yk+7jPMw0em
+++FeOrjPRYDmcHAq8J1GZ+Y6P2e9vpStgDwGYsCFJ8q5V12ZahwobSnpPmyntWX5C4
+++9hX3tGl9X80wh+CeHLAdoLjI2Tup8NJDllC4MXGIOSf+HllhFNhS/ggXNhoZTFQn
+++AUEGxlEI5UrQy8gK3zIdvja7NtqkoQzSxLu8WTaytlTFfoLG+FJX3UsDoropZA24
+++ZG85eBMG7wANzuDX4O/y0WaJUvwzwuMt/HgVAha10uylR0wAuFUtFseif01ng9XU
+++B/fZ8k/jKaRKJ+OGILzoKkvIsSoUfhg1PEmEI10Ri6rGIKhWOD8QqDG3p6IgtTu1
+++rZFiqkguNc2Jcqg8qVwGTOAb1sV+tppb+Jd0aAJ/iN66jaxJNARpWYP8GjoXFZ+V
+++9LZcw4ZZmv9tGF9gVs90L2+5IGgAIkY2wjVTcfvzMZn8tfLEh5A7aRnLFgvWLQd2
+++Dw3Rs8M=
+++=VQhc
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.timestamp b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.timestamp
++new file mode 100644
++index 0000000..ec34c54
++--- /dev/null
+++++ b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:41:16.091Z
++\ No newline at end of file
++diff --git a/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.type/DetailsChanged b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/Q2O35HB4RQ3723RBDAF2577I53W6BTUX/text
++diff --git a/tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors
++diff --git a/tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature
++diff --git a/tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp
++rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp
++diff --git a/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text
++new file mode 100644
++index 0000000..5c8aaca
++--- /dev/null
+++++ b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text
++@@ -0,0 +1,3 @@
+++These are important for maintaining a work plan. 
+++
+++There's no convention for this in SIT yet. There were some thoughts that milestones might not belong to the issue itself but it might make sense to create "milestone" issues and reference issues in there. Not sure if it is worthwhile, but worth considering.
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors
++rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors
++diff --git a/tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature
++rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature
++diff --git a/tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp
++rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text
++rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text
++diff --git a/tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors
++rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.authors
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.prev/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.prev/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.prev/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.prev/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.signature b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.signature
++new file mode 100644
++index 0000000..e85f573
++--- /dev/null
+++++ b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf2IOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf9YyRAApbxiNF49XlntnYjNMpn7aBGh8WVsQPUvkstM
+++LJriJwADVTjmES4MsxYYn0iDrvhqF3aWf9NUcYoMkY1iEcfbW1Wo6I0aXD/M28eu
+++Z1wOCqV+Sv+d6GAaOUSl5hXhhWYO33+a/OUUmAj+h+AOaybV1Dri8W18Z+7Nk9WS
+++Mv2EgINAI+AQyJeHTx+fm3/I2ah+1cgIF7FEXWVSfrxYt2I9Lh3yStYtPWc3zRy1
+++Tmm1We3YZ+ZphRfGY3x2x3wYW/yj9zWTRKhaLpb3FYIxmlPWQEBwFYOYIwjtvZsA
+++Ct/S07ny3X/MWzQ7VPclunnKJJqJq5y1KaJj1I4apuMUajwyV83dfDhFXPI9LEek
+++w0tvSDOPMdVn5yTEDIuuPtABCOoJCtCcRhRgjkez0XKhryNloF2L0W7ZcHIlEKIX
+++y/APZ72LDQznLgMzdP/mb3Ge49xZYH9igdsnPlcrplpJC/xOAKKk3BplJk/bGP3u
+++2zIkjB0B81UDmiNkY59rERejbLFuMSdbC0fXZt4Mw2WbQz2A8nckrKdsIG2rHZPj
+++1oI89RDw3as7C3Ic/CEOU040sS2wZhKtp9soEkMo4Z2WZvq1MBmzm2it7kF4X+56
+++G3QJRc3VDAYzVN+Spk4AjAM2t3Ygls6IbV7j+ad/aHuAz8rKU0kWxnvqYC2Euol0
+++JMKV/QE=
+++=JHk4
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.timestamp b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.timestamp
++new file mode 100644
++index 0000000..b9ef6d0
++--- /dev/null
+++++ b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:40:50.378Z
++\ No newline at end of file
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.type/SummaryChanged b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/text b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/text
++new file mode 100644
++index 0000000..b00a434
++--- /dev/null
+++++ b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7/text
++@@ -0,0 +1 @@
+++Problem: GitHub labels are not supported [sit-issue-import]
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors
++rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.authors
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.prev/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7 b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.prev/ILLSDIQJLAVLOYGPRVKY6ESCKA7LOXY7
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.signature b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.signature
++new file mode 100644
++index 0000000..ccf7caa
++--- /dev/null
+++++ b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf2IOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf9c8w//QJxWdav8C44xT5JLiISzbdvwvtSQv7fXkzCG
+++b8fD0qimaJk2K+/lWqpbkQYtV6VQiZpflhDYZNw+0mt0dgtnrDN2ye7OILo9QzQZ
+++WYWCcqQoq8RG3kEzgsbPJ59FGFhEcwaA5WcMMQDyi9Bs9gPPQ6Lw7SaPw4erbtMj
+++toof29q1oDt7lg9nlCQ6rJXivJhKIBhAhM9mqpKzai41tS+o8zWfztEOzmkhyl23
+++0c/UoKcGXN1780y2SqJG1Tg/OtKk3QZfRxFaC+a9BAONTnSg3JATxmQq6GOpRNPA
+++fStTVhUxE/a+aiHSsuWgIFUbTAEUzEDyW9U9bdEYnJe6+wYQwkTYM+xTy+9uh4lR
+++w4aYi65SHnCo6maXug0cxY/Ej9uQarwZVzKjoYJnARiEMTuu2t2Cd80qn5oCNkeN
+++zCso8kWOEQm4EVyVTgcC87Na5Szvri24poiIZ5f/ukG6eJI0yJvEfuYviWuNle7+
+++QrK8+NaERWXp0fburNx+x98SAMZU3XPi0i4TbXUGLu7sFa1sEeG0NB9XHES7fOY5
+++V5gp0blphQmtlhwAXg9qHMubB+lG5awFozZgv15qzwpYo8PQCLTF4hzeoG7adwSm
+++LgiZn7xogI+H8lWKG9GDa2STxttkw1Fw0gRF9yU+C+qjLw5FPbbEReE2zbJ0KEl2
+++nJ89I4k=
+++=DDb1
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.timestamp b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.timestamp
++new file mode 100644
++index 0000000..b9ef6d0
++--- /dev/null
+++++ b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:40:50.378Z
++\ No newline at end of file
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.type/DetailsChanged b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text
++rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/NB7EYZ6DBRNHJQNFHRAV2USY5B7K6AIA/text
++diff --git a/tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors
++rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors
++diff --git a/tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature
++rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature
++diff --git a/tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp
++rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text
++new file mode 100644
++index 0000000..6f5fee7
++--- /dev/null
+++++ b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text
++@@ -0,0 +1 @@
+++These are important for issue categorization and search. We don't have an established convention for labels in SIT yet.
++\ No newline at end of file
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.authors b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.prev/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.prev/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.signature b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.signature
++new file mode 100644
++index 0000000..43817b2
++--- /dev/null
+++++ b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf3QOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf8Pug/8D7WHrxei4UQ/GQ8cCUbivlDu+6v7k4OY9l+6
+++KMog/V3SLNppEdlUK4ss4qJtTqr4KFIWLdx2dkuzfnODCq1A3sNL/1KceZ1yt/on
+++YZcHfk6av9UIobJlTispBMopGvS6+geNzwInHSxvOxgnJdD2SA3CNJQCIvt0VL69
+++tKuguBMAir8Rn2bRJEZUDwrWQ8uMy9T7HfilVgtiUa3/lp2Ezu2qxLgV1xSLk1gV
+++dxlmJV0pzHMQrAFJQgnYLHcDdGx4BVA2OcieAQRYTxi/ajWLi7QROfh4kj/5JLYX
+++IGUDRVgMm0f9YT4NglLRMHjy+Sj1tl4tKzeaLcTt3izCrvqTIyY7W2f592cXA/3n
+++/o3TyEAF1BSD9Fn9TUehUGJP/nRZClP+fG8XKZTSqv+apTEFZFBY8a7Y4CM/bDES
+++6skZRv1AUWeAhoUfNhln9WxAKg5gaOHciIRwAB4P08hPFeYIuIUujzeSM6ii559L
+++NbJEdHi74R6qusOTfpbk9M98Gd4IRGXaLeV9V4Lrf5c3CV3837YzqRek1L7fxJSB
+++7v16lkf7myP09sxmWENPlo1LLQnLt5XPJJ3eXbtzRrIEAc27JvCSxaHaFDD2Hd01
+++9VifQerIg5jjz77yMN9xD7Rk/mXuM67pAjjzSUrS6UVTsfvHSGIqyWp7nDDCxn0R
+++AYZc/CQ=
+++=ehd4
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.timestamp b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.timestamp
++new file mode 100644
++index 0000000..f1f6501
++--- /dev/null
+++++ b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:41:08.063Z
++\ No newline at end of file
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.type/DetailsChanged b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text
++rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/2JNLUODIT2UVXP2DTU3NTQIVYX2OKJTR/text
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature
++rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature
++diff --git a/tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp
++rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text
++rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.authors b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.prev/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.prev/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.prev/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.prev/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.signature b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.signature
++new file mode 100644
++index 0000000..bdfdafd
++--- /dev/null
+++++ b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf3QOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf+ZPRAA1Q5GJSoY3hbYrUfeEZdZisBURr1nCT6EJU0I
+++U8xeMlIvYUi6+jZE0R/4LPEiaZAS5K3sn0zx9mewgvpB/HNsrnnR9Nh5/yYhvjFD
+++RehnDYljG+h2HBdHNVa5xmcPfx6VMR3bkSqO6E8bYWDnbugzVFlGWwS+am3EsB1c
+++ojSaBXGONGS/K/qaSPq6TFMQQNukjmr2d4tlH1DP6y3Zy9DOIhrUHMaGbpK7BrmC
+++3HNbMVVl3BsdKjKmS5Pr6CWNPRLQJgp2eB/+WL240U1f1kRp/iH5VwLNlQoKHume
+++zl7R78HeB8RGl6sZk0JEieq4oVQH9LnPW2EDDOljffCNytYjwaxT3YuaClAWTnFZ
++++rDdGGohns+FWF+Jsn6UHbOE9Ge9xYDVJ514UgxGRp5fiUehFg9Fo35G8oqCBhQi
+++R9wBICdmlDc/J1bKOf1mJVV6i9F3HzMZyjHgnvoAMswdGQd5Pk4HZTRICcgc1qGO
+++KDuC4bz5kXNNMl+7Aof9fnVoX4Pn/EJIiYgahHoekkTtNa752Jb2BsPfcdRJ35mu
+++9PVWTKO5cxYr6DP7j/AcFk+64XhJJbtr3rpPlAHd8djN7xXiSDeQdpJx415OxNva
+++yUvhBAJbejwp+ZoeFeYmrUO10MGjEk8a9j2u0e+Q/h0tQuSIRmw6vsltJy8vFWs9
+++C/94V/Y=
+++=Hy75
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.timestamp b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.timestamp
++new file mode 100644
++index 0000000..f1f6501
++--- /dev/null
+++++ b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:41:08.063Z
++\ No newline at end of file
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.type/SummaryChanged b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/text b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/text
++new file mode 100644
++index 0000000..ced7ac7
++--- /dev/null
+++++ b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/L2736GZH2GH5WTPZ6GXFUSFZONOUWGGN/text
++@@ -0,0 +1 @@
+++Problem: GitHub deploy event is not supported [sit-issue-import]
++\ No newline at end of file
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature
++rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature
++diff --git a/tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp
++rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text
++new file mode 100644
++index 0000000..f3756e0
++--- /dev/null
+++++ b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text
++@@ -0,0 +1 @@
+++Proposed solution: convert it into a comment event. Or should there be a separate convention for deployments?
++\ No newline at end of file
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.authors b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.prev/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3 b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.prev/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.signature b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.signature
++new file mode 100644
++index 0000000..b9e080d
++--- /dev/null
+++++ b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf1kOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf+EdBAApPTEOy8zNZe0ahJj2Ri9/sahMaVsamhffgUV
+++wxl7Uzq2sAm+QMlNVUc2BsgCfsb3Wn2isapjKHBS0TwGARfCglVjTFYi4vtz4gxO
+++01NW6cQSMDJprrFYfBEHIJfOmet4V7syYNAWdsXvxCueSmYyMcp+MBVyLPm64AU7
+++AbY9npGcpNBVrDkys8Wcl96GGmf8XkBKa6lK2OQVvOvW/+vTZcHkrLG4sKqYvfuP
+++Ss+5Eychom52w4QLd55JsplvDjj6S7e6vwSaFiV2eLvlaNFvRMkl5mU/k+a7c3+K
+++uDHrlTv59f91xbaOlRd+MOs4NVg9WAl9K8APz1wPMC6wE3701XBbjftDs/2s4guC
+++6XpxRmyWWdUjIq7/B2H2k1ygkABv4ck86WL/nKUc3xLQzlILBzq6oEAX4907A+b1
+++8W6mXBjzVZmFwpxK6mOexwHPHvE0bN0BUym/RGTwvWfAEHRmR40e6zgP2zUBc+Y2
+++/qvoU4g3enRY0u7exu5YNtbWW5O58kq7uNcEntmaSInsrHEpv760qskCGTtKCYPx
+++CV1s5nub96sfgbetwmSVRGpGXwXwXQOP1UTvXnYI5PqloJYJHieFyHkzHTuAxKbD
+++wasMukX/+Mvo/AA6g4HXuAxVIeo0ixoQDRCQnNFyM4xOjMqFPrn1AWT1eJ0OdGTa
+++ST5jqFk=
+++=BgI+
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.timestamp b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.timestamp
++new file mode 100644
++index 0000000..37e46b7
++--- /dev/null
+++++ b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:40:41.106Z
++\ No newline at end of file
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.type/DetailsChanged b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text
++rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/6PQSZHER7Z4IRHST7RTTMG6KOP5WVQWY/text
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature
++rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature
++diff --git a/tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp
++rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text
++rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.authors b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.prev/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.prev/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.prev/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.prev/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.signature b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.signature
++new file mode 100644
++index 0000000..d3c9264
++--- /dev/null
+++++ b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf1kOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf8zthAAhkiA461j5q66TnJbXf3J7WNZbuqmCLZxxQBF
+++q26rSxkQhF+khrIUn9LqCFIe1Vte51TCcUr0lk1vXSeMX4LEJdJQS/DgWqlBU0ki
+++LbQ9FbgPTxw+nzqzcrQJbJTU4IWfgSFAcJVhIPm6S6J8qELjITyYtJqk3KQ8Dj3H
+++3xVC8dJUI9uxEeSUnOi9Nc9ZNAd301k0hmCg+yngkXQcI7eG96mpCFjGDYh31kNc
+++ylyamA0t+CzLSiJG7NGJMR05IYeP8tHnMHxpkxJz3qD/S3j286iz57b240eMaphx
+++UuQviiZaCG4DxHa9vBtHlsVkqdDbkK8PtNSdWsfn2G81qaizo0jT9vMRBFkf+6Cy
+++qpLvU78knE86dHBMQJZ8GuNMlZoTgJVziopKm2SNpb8bvEMFdj0XSufeqZrnlhif
+++DUsOx2lxeEuM2A//gXH7tQ5F/Uq4KqSckj0Bxns1ShbY8BFmvBsm1yQVp6SQCkuH
+++mbrtVuY12HoBlD7mKl/FRCsM+ppnczfpFb2Rfmle2cuwRhQ8tJSoUlKr9ZduQdiY
+++sXE8O6YpNq57V9JAyqlLIE8CbYK/2on1tG3Uc815JnQQRvIhkgwJkA2PMOXHuc1h
+++HfvlFBsDLBK7DUjncOPNwZvMGR/aZchINVb1XT3Y0b54URMRQ0vE11+jZpiBoqjw
+++YFxpnVs=
+++=tBZD
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.timestamp b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.timestamp
++new file mode 100644
++index 0000000..37e46b7
++--- /dev/null
+++++ b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:40:41.106Z
++\ No newline at end of file
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.type/SummaryChanged b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/text b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/text
++new file mode 100644
++index 0000000..87aa62e
++--- /dev/null
+++++ b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/S6Q7WZJO2YEBC2YUZGQZF6HD5JDHZWV3/text
++@@ -0,0 +1 @@
+++Problem: GitHub subscription events are not supported [sit-issue-import]
++\ No newline at end of file
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature
++rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature
++diff --git a/tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp
++rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text
++new file mode 100644
++index 0000000..ae089f1
++--- /dev/null
+++++ b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text
++@@ -0,0 +1 @@
+++Not sure if there's utility behind these in SIT, but this is something to consider.
++\ No newline at end of file
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature
++rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature
++diff --git a/tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp
++rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text
++rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature
++rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature
++diff --git a/tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp
++rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text
++rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.authors b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.prev/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.prev/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.signature b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.signature
++new file mode 100644
++index 0000000..19cba81
++--- /dev/null
+++++ b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf2sOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf9ZvBAAg5r60NyMF4KoucqpYMHDyHkUtq7E69uvae/p
+++o0IV0B/YsESLOYzmqlnHdN0zLN090L0BzMYIK6DKXaR6+zDEfxYp2a86mBExn/Kc
+++6B/aOBs/sAH1SWl4WrkenwSll/Vi5oPs9YWtAhgirtipW6Rqx6FXwXUS/SNKH3+r
+++0g3mlJUnd+NDm8MW8/w5f/1uCRMc+N8q6wL6wjikYaZ3kADLV8qWOLBAKfFKI7rv
+++shv39x1/402Xgo7QouAW/lDjw+s+FUQR59/5RAY6ZLbAgQxYNVdDwqrRE7JTUJuo
+++r1CZhVfXgD2q1lGuDfJdrpuUf3jhL08cbSYhkpFIqq42msaX0xpOd3CQHpPwof3i
+++OjmvWKDRHVm7oqM3HcFep8RC8AmlaSpLZSFAOfrSAa61pX9E7XvKVGjIu5yo3DI5
+++8Zhw2GLOwipS3j0tN69SNhQY7TJ2UlSy0BP1Y/C2Wthznml7G0hjdzvj3QFQcITo
+++fYbqiSsv+51DzZRBUsZt3wK4wjjB18MaWtKA8fkkT6zGqyaJ60eqfFN5GnZy1UL1
+++mvylYkgy+JjZRqQTyFTsDaPexNo26aUwyXd2rpBqxe0l5J+fGpqK88pVvr9yd6Cs
+++HX2vCn7NNiu3HfRtd+2GDl7n9+2LfG7eYHX7k14LRlIcHZvosM5+zb/5Gdsowtw2
+++SfD9aj4=
+++=GVxA
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.timestamp b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.timestamp
++new file mode 100644
++index 0000000..7657ca4
++--- /dev/null
+++++ b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:40:59.172Z
++\ No newline at end of file
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.type/DetailsChanged b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/text b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/text
++new file mode 100644
++index 0000000..259899d
++--- /dev/null
+++++ b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/G73Q5ANR7L24W22DPJOXDH3RB6XB7GPZ/text
++@@ -0,0 +1,5 @@
+++```
+++thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: Error { kind: Json(ErrorImpl { code: Message("unknown variant `ReviewRequestRemovedEvent`, expected one of `Commit`, `IssueComment`, `CrossReferencedEvent`, `ClosedEvent`, `MergedEvent`, `ReopenedEvent`, `SubscribedEvent`, `UnsubscribedEvent`, `ReferencedEvent`, `AssignedEvent`, `UnassignedEvent`, `LabeledEvent`, `UnlabeledEvent`, `MilestonedEvent`, `DemilestonedEvent`, `RenamedTitleEvent`, `LockedEvent`, `UnlockedEvent`, `HeadRefDeletedEvent`, `HeadRefRestoredEvent`, `HeadRefForcePushedEvent`, `BaseRefForcePushedEvent`, `ReviewRequestedEvent`, `ReviewRequestedRemovedEvent`, `ReviewDismissedEvent`, `DeployedEvent`, `CommitCommentThread`, `PullRequestReview`, `PullRequestReviewThread`, `PullRequestReviewComment`"), line: 1, column: 801 }), url: None }', /checkout/src/libcore/result.rs:916:5
+++```
+++
+++Proposed solution: ignore it (for now, as review requests are not supported yet)
++\ No newline at end of file
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.authors b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.prev/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.prev/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.prev/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.prev/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.signature b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.signature
++new file mode 100644
++index 0000000..284548f
++--- /dev/null
+++++ b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf2sOHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf8vjhAAlWopV5DcBPQLyXASGR4OwkI1jqNBHXZmrW1z
+++BYQgAWTSfmr1VEcQIGxhEGy9g3jryFuKRsy2K8HLeO0jSrFCZDZ8RN4IdMtOKqvo
+++xy+k9y4k16LO6/Z2fFy6c4CauV3nWtxFkvVtgUiMFpt99VjYCUnxDBeHvX6FEegz
+++/mlReeHx1iUglQkjOoAKLpkvmsxxt4C+Qlw/tYUJyj9lQwwgYS7xQYFPFDaRXf7h
+++CXNZdTIeYvjESYZFp53cg4LD+bTIx7jfxAGnf0bgl4DjF8BRIHhyeVMs+fcKjMow
+++PcFC2jhQH3cUdSjaDAEbjpnGk2Am74dp7OF7didH2UDDcJjji3aAwC3H8r+6V8Oo
+++mARcNAHyQi3b9pS87dbxtFAHyq00tVHRIbOVGRuu92HHYKLo4Pf7i5XKabt1SN8y
+++OlqWL/f113uTJVn3adv1dhed94tqX5ZVy/lVCqfiAlR7KzvFZHemiwDd6q0g2TYS
+++heQCWZJPn9lX2mSIG8vF6cYl9pjfwPqflyOEivSCCGSi2s5h+AjQBrf6k65R+eiy
+++KpYNRH1nK7hn89qrKxj+bw4Cu1qXoHF/mOvDNvXeEZMQZm+880zpgPKsxg/5/kQp
+++6hYVgXqmQYg2mOpBBPgAnvFdH9IqdzWvq8KZv+cfLT4F6WgD/HCna8jTZovxtOVy
+++qPMkfSE=
+++=2FcC
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.timestamp b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.timestamp
++new file mode 100644
++index 0000000..7657ca4
++--- /dev/null
+++++ b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:40:59.172Z
++\ No newline at end of file
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.type/SummaryChanged b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/text b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/text
++new file mode 100644
++index 0000000..2752f34
++--- /dev/null
+++++ b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/UWWC3OTYL6HA56H7IW7N7XTPKWVBOJHO/text
++@@ -0,0 +1 @@
+++Problem: ReviewRequestRemovedEvent event is not handled [sit-issue-import]
++\ No newline at end of file
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature
++rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature
++diff --git a/tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp
++rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text
++rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.authors b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.prev/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.prev/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.prev/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.prev/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.signature b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.signature
++new file mode 100644
++index 0000000..ed1fc43
++--- /dev/null
+++++ b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf08OHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf/kARAAzmsOIRIR85su6qbTl6vHwI/t+LWgGajPFZCy
+++eKBTIY722cvXY4+YHd0kPrEv8lFplWA6ZQVpeioJBCTCOXaMg+bHMBrxxlGa+7Za
+++5QJrZKOi/a8cBSE2hxF0rJhxhgU5gr+VGv+j1PxN9a4qxm5Wiztzbtdl6vDsVYli
+++M24Fc9f69nvzXLvqTMXXdLS4u940WHM7TRvsYl5rlT6pgbd4ptv7Pjca7d0E4JGZ
+++P26K7BUroAGPX6M3UstRWOh0hCu0vitu7ud/UvLTEhCF4U5PBz+LVu1uuU4njD53
+++nlfuBlmPu/kJeW9VotmuAGD7Qu/6Piz8DqHwTg1FcyavoP66mrquEZAW6vKx8LMO
+++R61DIUsBZUymO7dDdHp21ZBc1aLyllPEl74JGA/3rDiSHQCqCTf0FuGMQPeQU8N5
+++nMoRAjWm4TWGVzaN4mpR7t4PTE1evV1aYfMnLSXg5lEJUMiVYh1xLER1bjgJ1p7J
+++VlORv16zl+VZkK8RrQ0Lq664esRRPjtP4vp6sQVAogaVuOG61zPbGT54pcIMfq3t
+++QK7R8tUYdSCC1jZ8XDDFXXSUILsI6LOuaDm10rAejwA2GmbCMiGD0XD9UXOBl+Ka
+++b+deKzOUxysuYsmu1ouA3p+3XW4TuNY7pXhVMUqP8P5dmD0obeRGFvSGDc62FcKc
+++yu2Opao=
+++=blkN
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.timestamp b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.timestamp
++new file mode 100644
++index 0000000..51741b1
++--- /dev/null
+++++ b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:40:31.084Z
++\ No newline at end of file
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.type/SummaryChanged b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/.type/SummaryChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/text b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/text
++new file mode 100644
++index 0000000..f3f8a8a
++--- /dev/null
+++++ b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7/text
++@@ -0,0 +1 @@
+++Problem: GitHub code review / commit comments are not supported [sit-issue-import]
++\ No newline at end of file
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.authors b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.prev/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7 b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.prev/6XXZS54EN5CJCHEVQMVJO6LQL3MDEVA7
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.signature b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.signature
++new file mode 100644
++index 0000000..6e76f7a
++--- /dev/null
+++++ b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.signature
++@@ -0,0 +1,17 @@
+++-----BEGIN PGP SIGNATURE-----
+++
+++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTf08OHG1lQHlyYXNo
+++ay5jb20ACgkQHWDXz9gIRf+MtQ/9EOpzCnqDIEKKAxNYaUsRkjDupITRalndqyE2
+++Q63Hxet5SIQNf32dSNkS2KeLAX3vjFGuLv4WfTbXmMD3pRy80LW90LDrQ+ebbQ/4
+++K0gapGtMtXffz7iHxU4YfXZIA6Py98WG7xtfW7hwN/G9ch3rKixTaU8ISWDi6Th1
+++fw8eGxVsVrJNZJdoZuo8cAb9NQMflsLilsDOd7AfnMg6RZE/EdXR7ND0GQqM7KqO
+++cln+vPHygY+/NQr8s6N16gJ9x7E7ar/yiePSmZ35+Efg2SBHklHRyibOr0yvvoSx
+++bX7aZ2KAkjaqXo+qjoNYxuWmNyf8c81aN8eQN9IACEuK0efHwoSVYillYnJi4rbA
+++QH/SvGq+jkqyAsUgfutV7VQ/ewpw/BQ9g05a1N606xn8mb3glPtPsmtC1cp2/Gfg
+++MfX0V0tpQ4BzMHPMyWmthPiW80rbPHqKtgHCMHuGZG1cqjaGyJBRBbhJDCyKuaiG
+++my9ZJa0tuCTI8mueoX3kQyaf7EFOLzTpAEq/53BzQC0avr1i/ssQxb2FABWn4mae
+++L/JU22OaAtMWra5rHRsdaHRamgocDz0XHkw73Vv7LIqLVdcRgIltbaUAjbqNcBir
+++Q5ofVTuTFwwprn4eNAlKMy9+PdXhIo92znOgNGub6bYbbg/eTkiwO3tnyuC2XeBj
++++W59y6o=
+++=BLQs
+++-----END PGP SIGNATURE-----
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.timestamp b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.timestamp
++new file mode 100644
++index 0000000..51741b1
++--- /dev/null
+++++ b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.timestamp
++@@ -0,0 +1 @@
+++2018-06-03T05:40:31.084Z
++\ No newline at end of file
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.type/DetailsChanged b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/text
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text
++rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/DAQVKLS24YTIF6M6IRGPCYQ7GNSNQ7LE/text
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors
++new file mode 100644
++index 0000000..8022052
++--- /dev/null
+++++ b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors
++@@ -0,0 +1 @@
+++Yurii Rashkovskii <me@yrashk.com>
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature
++rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature
++diff --git a/tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp
++similarity index 100%
++rename from tools/sit-issue-import/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp
++rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text
++new file mode 100644
++index 0000000..657e7e3
++--- /dev/null
+++++ b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text
++@@ -0,0 +1 @@
+++These might be important for preserving work context. Note, though, that it looks like importing these will be a bit more hassle and they might slow down import of pull requests.
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/config.json b/tools/sit-issue-import/.sit/config.json
++deleted file mode 100644
++index 8a0dbca..0000000
++--- a/tools/sit-issue-import/.sit/config.json
+++++ /dev/null
++@@ -1,10 +0,0 @@
++-{
++-  "hashing_algorithm": {
++-    "blake2b": {
++-      "size": 20
++-    }
++-  },
++-  "encoding": "base32",
++-  "id_generator": "uuiv4",
++-  "version": "1"
++-}
++\ No newline at end of file
++diff --git a/tools/sit-issue-import/.sit/modules/issue-tracking b/tools/sit-issue-import/.sit/modules/issue-tracking
++deleted file mode 160000
++index 4782ebd..0000000
++--- a/tools/sit-issue-import/.sit/modules/issue-tracking
+++++ /dev/null
++@@ -1 +0,0 @@
++-Subproject commit 4782ebd0c978c9ea2cb81e05c01ca2a6ab81ce04
++-- 
++2.16.2
++
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/text b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/text
+new file mode 100644
+index 0000000..1dc341f
+--- /dev/null
++++ b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/UZDL6XWU3NBELQJ7ALDOWKLJTVB6LP5Q/text
+@@ -0,0 +1,6 @@
++It separates it from the umbrella project of issue-tracking.
++
++Attached patch moves the issues into the main repository. However,
++I am not yet sure this is the right thing to do -- but in case if it is,
++this is the way to do it.
++
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.authors b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.signature b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.signature
+new file mode 100644
+index 0000000..f421711
+--- /dev/null
++++ b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlsTgEoOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf/VTA/9FJKrbO0y5KvymAHwhUyPuzUG39f0CjsZSE+3
++ayrmOG15kcnu8T29c7Bp6vRmj57HTt4YDM7j31La4VJFT8acjs5h+4utNlqNHAW5
++gaXrraKJZwomB+H/S3D0cuJgETkZre3LdQTykU7HNGdNgsAncSRiIKSd9ZVyoPy4
++VtBUO3mb8tTsXgfctcdcuBgGluTlyPpNrxRLUZ0gkY5c3yps158wNW5B4aWIo55M
++a7x5Plbc/xBjmWvlYU9BBfdsE/477zfA5y/bx/vO1eA0XW44Kf0TBv+lQqRN+Obt
++c88JsN9TZb5iA0AFDFRwdIHXU/sHW752vt9sa06UImRcbVhaaBLUNgAOC3OMMjFr
++78KX2WdYt12By8o19unDmMGEVqgSjo8lbCm2Qiv2MAnal/7v+M4GoJTYtU6Rq4FJ
++m2UimfbnxQq5iATkNt/HD0AZaw1iDQOP288471y4oCb0KJ+zYTic4mBAJv7sGlgk
+++gu7BgF6BepCLw/lNa2bRw8VTKJKiYVm56Ol6fi3s/86k78Nkp1TH/F43Y6SN6wB
++wCxuvL+yde5LWmSS7OifKyiQXdeBsj94BzjLnkGju7ifWwWmxIISOQ2hpk6SkVAN
++PJhK78c/qpaOgp7SRlPg1H2LABnONcxt9cTfGTuAQOnlwzptQmtwWBesMy/0KR0M
++aj4YHjA=
++=Zs/O
++-----END PGP SIGNATURE-----
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.timestamp b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.timestamp
+new file mode 100644
+index 0000000..7ddff70
+--- /dev/null
++++ b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.timestamp
+@@ -0,0 +1 @@
++2018-06-03T05:44:42.076154499Z
+\ No newline at end of file
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.type/SummaryChanged b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/text b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/text
+new file mode 100644
+index 0000000..e654686
+--- /dev/null
++++ b/.sit/items/13014064-690b-49ad-a4cd-a304708097dd/VVGRNGN3YWNQ222ZMDJ345O4TYR7TFRJ/text
+@@ -0,0 +1 @@
++Problem: sit-issue-import has its own issues
+-- 
+2.16.2
+

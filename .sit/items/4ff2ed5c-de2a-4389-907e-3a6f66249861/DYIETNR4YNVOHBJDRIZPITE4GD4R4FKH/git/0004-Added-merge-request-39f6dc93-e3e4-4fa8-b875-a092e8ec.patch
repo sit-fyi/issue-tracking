@@ -1,0 +1,187 @@
+From 0517138814068a2b523eb5bd62feb27f05b66414 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Fri, 23 Feb 2018 17:37:37 +0700
+Subject: [PATCH 04/16] Added merge request:
+ 39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5
+
+---
+ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors      |  1 +
+ .../.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66         |  0
+ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature    | 17 ++++++++++
+ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp    |  1 +
+ .../.type/DetailsChanged                           |  0
+ .../.type/MergeRequested                           |  0
+ ...blem-progress-bar-is-not-very-informative.patch | 36 ++++++++++++++++++++++
+ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text          |  4 +++
+ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors      |  1 +
+ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature    | 17 ++++++++++
+ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp    |  1 +
+ .../.type/SummaryChanged                           |  0
+ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text          |  1 +
+ 13 files changed, 79 insertions(+)
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged
+ create mode 100644 .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text
+
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66 b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature
+new file mode 100644
+index 0000000..8f03842
+--- /dev/null
++++ b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqP7vEOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf8c/RAAtdYwZTou+JZ9diYQcp3LWlqUpDjI7fPUceif
++43miY4x15MEANml0t3QvPtmiz+OTzo2QdGdROMQF3TT9WpSBPFzIm3mZ7bnEHszS
++hkNcWMQQFBNKL7WvSA+kw53y8xjvkzrCTeXrtfETTkU+usoXHdhElPJvJv+qDoP3
++3xsDupeyBw0T53l5M9v4NB0YQO4iZx28xD/bQlImmLEOipwWhOQoyJvMcHa+iifE
++GjgQ2a+dHBQ2qg83TQFSm8QWLYELPx8YAVKju+Qgm/D2Tiyruft8DNn4ARyYrt+r
+++Tqjx4egp7nH5G2TyilDsxnplA7W2rbCZBiXhroXiZ/d+ZOklgr5K8ARzawtWNrD
++aybYQ83Np+KmNZlbn1z8J6+9jYdPPufLkykxlpEMVvcaLgzSBnFmO0H76eIZEL5q
++k5qIHxJ/jLx0zavMY4sFN2f3Akk0mm5YuaY0LN96Em8HsZKyToluh1mPh56CCfbe
++WU4s6SWb3WfFxFSI/ZgkpfdW5K0n0F55DdBvQ1DXUQaZ3lim1bUGK/C9JD+t4P5y
++QMlKV12kwQA+Kwi4XL8ScGkPPwmRXfL9gOZeeKI1no8P8yS7ii+FMU0PLaiQeOgi
++LlhDJ0iu//NUpeGD4eZie5mssYrItPcSeOfQh1iQRxfEQKuj8uvv//HludyW2w9U
++XGbCj5A=
++=iYDp
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp
+new file mode 100644
+index 0000000..14ddb0c
+--- /dev/null
++++ b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp
+@@ -0,0 +1 @@
++2018-02-23T10:37:37.614762161Z
+\ No newline at end of file
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch
+new file mode 100644
+index 0000000..b98194f
+--- /dev/null
++++ b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch
+@@ -0,0 +1,36 @@
++From cbda79de8e4397d65f860d50a70c4eb9f91b28ce Mon Sep 17 00:00:00 2001
++From: Yurii Rashkovskii <yrashk@gmail.com>
++Date: Fri, 23 Feb 2018 17:36:28 +0700
++Subject: [PATCH] Problem: progress bar is not very informative
++
++It does show how far along it is but that's about it
++
++Solution: show current item being imported
++---
++ src/main.rs | 3 +++
++ 1 file changed, 3 insertions(+)
++
++diff --git a/src/main.rs b/src/main.rs
++index 4846068..1ad9068 100644
++--- a/src/main.rs
+++++ b/src/main.rs
++@@ -133,6 +133,8 @@ fn real_main() -> i32 {
++         for ext_issue in req {
++             let issue = repo.new_named_issue(format!("github-issue-{}", ext_issue.number)).unwrap();
++ 
+++            progress_bar.message(&format!("[ #{} {} ] ", ext_issue.number, ext_issue.title));
+++
++             issue.new_record(Files::from(vec![(".type/SummaryChanged", &b""[..]),
++                                               (".timestamp", ext_issue.created_at.as_bytes()),
++                                               ("text", ext_issue.title.as_bytes()),
++@@ -205,6 +207,7 @@ fn real_main() -> i32 {
++         for pr in preq {
++ 
++             let issue = repo.new_named_issue(format!("github-pr-{}", pr.number)).unwrap();
+++            progress_bar.message(&format!("[ #{} {} ] ", pr.number, pr.title));
++ 
++             issue.new_record(Files::from(vec![(".type/SummaryChanged", &b""[..]),
++                                   (".timestamp", pr.created_at.as_bytes()),
++-- 
++2.15.0
++
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text
+new file mode 100644
+index 0000000..dec745e
+--- /dev/null
++++ b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text
+@@ -0,0 +1,4 @@
++It does show how far along it is but that's about it
++
++Solution: show current item being imported
++
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature
+new file mode 100644
+index 0000000..587eb8d
+--- /dev/null
++++ b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqP7vEOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf9nWRAAt7ju3tqorXjWjMCWbC81Akvqh0EizBUK6Ryf
++J+qnv5fhld1zXpDZDjQpyf2T2On7KSBRziuywWssMlJlZgbdPoPdvhRjJHXKfTYr
++TJf9ow4csDFwfHSLHBzeBsU3neIrHBdXbDCs+AilUvG5KXDqY1yns2r21eIoP5xZ
++1Ch5pyJVwk311Awc99ABMzVN6bl4vZsxLGWVREAgkgJtJ9xLzZfDxRwSD3eph/xO
++5wmwgqmCG7S9x5elbvIClmM04wTuYdGIGaZLtV6ZaecNLDrOMyiSoDDca06kJRbj
++ZpeIko6SeBcU2K/EPczwzJKlI7RchxQ6qu1g0jZvyTPcelIcGvrHnxxYlOxghKlZ
++W9Jv8+S39Y84PooSLW37fpDyu+6lUSrjns1qkCj3cxHXkOmusM+goIuTbTdW8DIk
++unyU/BYCVDpSI4G3wGnAkvH4yO7CRGhdiSEd1FdTlELEoAcku3SXvQOKVCEKOWf3
++G6SEDSWkn1GIpAWe53HDswSasG1wyKGygZ+eFBgSaYFPe+89oayu0dgJBphcE7pX
++5TeMi2cErhfjdVIvFJnIlvB87hjysmApink8wSSMyxbPXJE/HVNeL3qygV5VsYkc
++sIaVgoN1FUt8fO3VXP6QP1mfyJbjeVtt9L8qufZguqyOpadFrqT0p8w9t3kk8etv
++4ut5seA=
++=L62S
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp
+new file mode 100644
+index 0000000..1eb32bb
+--- /dev/null
++++ b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp
+@@ -0,0 +1 @@
++2018-02-23T10:37:37.465286536Z
+\ No newline at end of file
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text
+new file mode 100644
+index 0000000..15f5c21
+--- /dev/null
++++ b/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text
+@@ -0,0 +1 @@
++Problem: progress bar is not very informative
+-- 
+2.16.2
+

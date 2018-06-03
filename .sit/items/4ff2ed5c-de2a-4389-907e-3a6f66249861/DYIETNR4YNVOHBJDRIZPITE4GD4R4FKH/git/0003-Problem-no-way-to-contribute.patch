@@ -1,0 +1,288 @@
+From 64658854bc7482ff0573d6b1a5cbb249952e14db Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Tue, 20 Feb 2018 15:44:44 +0700
+Subject: [PATCH 03/16] Problem: no way to contribute
+
+Solution: prepare the contributon process
+---
+ CONTRIBUTING.md               | 69 ++++++++++++++++++++++++++++++++++
+ PULL_REQUEST_TEMPLATE.md      |  4 ++
+ scripts/merge-merge-request   | 49 ++++++++++++++++++++++++
+ scripts/prepare-merge-request | 87 +++++++++++++++++++++++++++++++++++++++++++
+ sit-inbox                     | 27 ++++++++++++++
+ 5 files changed, 236 insertions(+)
+ create mode 100644 CONTRIBUTING.md
+ create mode 100644 PULL_REQUEST_TEMPLATE.md
+ create mode 100755 scripts/merge-merge-request
+ create mode 100755 scripts/prepare-merge-request
+ create mode 100644 sit-inbox
+
+diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+new file mode 100644
+index 0000000..122b64b
+--- /dev/null
++++ b/CONTRIBUTING.md
+@@ -0,0 +1,69 @@
++**This project does not accept GitHub Pull Requests**. This is done intentionally,
++as it allows us to maintain the entire history of submitted patches in SIT itself. Any
++opened Pull Requests will be closed. The contributors will be asked to use our
++own merge request procedure (see below).
++
++Our goal is to encourage frictionless contributions to the project. In order to
++achieve that, we use Unprotocols' [C4 process](https://rfc.unprotocols.org/spec:1/C4)
++as an inspiration. Please read it, it will answer a lot of questions. Our goal is to
++merge patches as quickly as possible and make new stable releases regularly.
++
++In a nutshell, this means:
++
++* We merge patches rapidly (try!)
++* We are open to diverse ideas
++* We prefer code now over consensus later
++
++It is highly recommended to watch [Pieter Hintjens' talk on building open
++source communities](https://www.youtube.com/watch?v=uzxcILudFWM) as well as
++read his [book on the same
++matter](https://www.gitbook.com/book/hintjens/social-architecture/details).
++
++# Submitting an issue
++
++According to C4's [development process](https://rfc.unprotocols.org/spec:1/C4#24-development-process),
++the issue should describe a documented and provable. What this means is that an
++issue should strive to have a clear, understandable problem statement. Just like
++a patch, it SHOULD be titled "Problem: ..." and have a detailed description
++describing evidence behind it, be it a bug or a feature request, or a longer
++term "exploratory" issue.
++
++Unlike C4, we're not using GitHub (or any other well-known platform) for issues.
++Instead, we're using SIT itself. Please refer to [README](https://github.com/sit-it/sit#open-an-issue)
++section that covers this process.
++
++# Preparing a patch
++
++According to [patch requirements](https://rfc.unprotocols.org/spec:1/C4#23-patch-requirements),
++the patch should be a minimal and accurate answer to exactly one identified and
++agreed problem. A patch commit message must consist of a single short (less
++than 50 characters) line stating the problem ("Problem: ...") being solved,
++followed by a blank line and then the proposed solution ("Solution: ...").
++
++```
++Problem: short problem statement
++
++Optional longer explanation of the problem that this patch
++addresses, giving necessary details for the reader to be
++able to understand it better.
++
++Solution: explanation of the solution to the problem. Could
++be longer than one line.
++```
++
++# Preparing a merge request
++
++Once you have a branch (BRANCH) with your patch ready:
++
++Run `./scripts/prepare-merge-request <BRANCH>` script 
++and either use the suggested text as is or edit it.
++Please keep in mind that currently it expects the first
++line of your commit to be a one-line problem statement
++(it will copy it to the summary), the second line to be
++empty and the rest to be a description (you can see
++an example right above).
++
++Then, at the end, it will give you a command line
++to copy-paste to push the request out.
++
++<img src="https://github.com/sit-it/sit/raw/master/doc/merge_request.gif">
+diff --git a/PULL_REQUEST_TEMPLATE.md b/PULL_REQUEST_TEMPLATE.md
+new file mode 100644
+index 0000000..7e284ab
+--- /dev/null
++++ b/PULL_REQUEST_TEMPLATE.md
+@@ -0,0 +1,4 @@
++# Pull Requests Are Not Supported
++
++Please refer to [contribution guidelines](https://github.com/sit-it/sit-import/blob/master/CONTRIBUTING.md)
++for the merge request workflow.
+diff --git a/scripts/merge-merge-request b/scripts/merge-merge-request
+new file mode 100755
+index 0000000..967d2d7
+--- /dev/null
++++ b/scripts/merge-merge-request
+@@ -0,0 +1,49 @@
++#!/usr/bin/env bash
++
++issue=$1
++mr=$2
++tmpdir="$(mktemp -d)"
++curdir=$(pwd)
++editor=${EDITOR:-nano}
++range=$(git merge-base --fork-point master $branch)..$branch
++curbranch=$(git rev-parse --abbrev-ref HEAD)
++sit=$(which sit)
++
++if [ -z ${issue} ]; then
++        echo "Usage: merge-merge-request <issue> <mr>"
++        exit 1
++fi
++
++if [ -z ${mr} ]; then
++        echo "Usage: merge-merge-request <issue> <mr>"
++        exit 1
++fi
++
++if [ -z ${sit} ]; then
++        echo "sit not found"
++        exit 1
++fi
++
++repo=$(${sit} path)
++
++git checkout -b merge-${issue}-${mr} || exit 2
++
++git am $(ls ${repo}/issues/${issue}/${mr}/git/*.patch) || exit 2
++
++
++pushd $(pwd) >/dev/null
++cd "${tmpdir}"
++
++echo "${mr}" > record
++${sit} -d ${curdir} record -t Merged,Closed ${issue} record || exit 2
++
++popd >/dev/null
++
++rm -rf "${tmpdir}"
++
++git add .sit/issues/${issue} || exit 2
++git commit -m "Closed merge request ${issue}/${mr}" || exit 2
++git checkout ${curbranch} || exit 2
++git merge --no-ff merge-${issue}-${mr}
++
++echo You can push to upstream now
+diff --git a/scripts/prepare-merge-request b/scripts/prepare-merge-request
+new file mode 100755
+index 0000000..cb505e8
+--- /dev/null
++++ b/scripts/prepare-merge-request
+@@ -0,0 +1,87 @@
++#!/usr/bin/env bash
++
++branch=$1
++issue=$2
++attach=${issue}
++tmpdir="$(mktemp -d)"
++curdir=$(pwd)
++editor=${EDITOR:-nano}
++range=$(git merge-base --fork-point master "${branch}").."${branch}"
++curbranch=$(git rev-parse --abbrev-ref HEAD)
++sit=$(which sit)
++
++run() {
++  if [ -z "${branch}" ]; then
++    echo "Usage: prepare-merge-request <branch> [<issue>]"
++    exit 1
++  fi
++
++  if [ -z "${sit}" ]; then
++    echo "sit not found"
++    exit 1
++  fi
++
++  git format-patch "${range}"  -o "${tmpdir}/git" || exit 2
++
++
++  if [ -z "${attach}" ]; then
++          # Summary
++          echo " Summary of the merge request (typically, one line)" > "${tmpdir}/summary"
++          echo "  If your patchset contained more than one commit, you will see a few options below. Please choose one." >> "${tmpdir}/summary"
++          echo "  (ALL LINES STARTING WITH '#' WILL BE REMOVED)" >> "${tmpdir}/summary" 
++          git log --reverse --pretty=format:"%s" "${range}" >> "${tmpdir}/summary" || exit 2
++          sed -i 's/^/#/' "${tmpdir}/summary"
++          sed -i '4s/^#//' "${tmpdir}/summary"
++          $editor "${tmpdir}/summary" || exit 2
++          sed -i '/^#/ d'  "${tmpdir}/summary"
++
++          # Details
++          echo "# Details of the merge request" >> "${tmpdir}/details"
++          echo "#  (ALL LINES STARTING WITH '#' WILL BE REMOVED)" >> "${tmpdir}/details" 
++          git log --reverse --pretty=format:"%b%n" "${range}" >> "${tmpdir}/details" || exit 2
++          $editor "${tmpdir}/details" || exit 2
++          sed -i '/^#/ d'  "${tmpdir}/details"
++
++          issue=$(${sit} issue)
++          issue_branch=${issue}
++  else
++          # Comment
++          echo "# Comment to accompany your merge request" >> "${tmpdir}/text"
++          echo "#  (ALL LINES STARTING WITH '#' WILL BE REMOVED)" >> "${tmpdir}/text" 
++          git log --reverse --pretty=format:"%s%n%n%b" "${range}" >> "${tmpdir}/text" || exit 2
++          $editor "${tmpdir}/text" || exit 2
++          sed -i '/^#/ d'  "${tmpdir}/text"
++
++          last_record=$(${sit} records ${issue} | tail -1)
++          issue_branch="${issue}-${last_record}-$(date +%s)"
++  fi
++
++  git checkout -b "${issue_branch}" master || exit 2
++
++  pushd "$(pwd)" >/dev/null || exit 2
++  cd "${tmpdir}" || exit 2
++
++  if [ -z "${attach}" ]; then
++          mv -f summary text
++          "${sit}" -d "${curdir}" record -t SummaryChanged "${issue}" text || exit 2
++
++          mv -f details text
++          "${sit}" -d "${curdir}" record -t DetailsChanged,MergeRequested "${issue}" text git/*.patch || exit 2
++  else
++          "${sit}" -d "${curdir}" record -t Commented,MergeRequested "${issue}" text git/*.patch || exit 2
++  fi
++
++  popd >/dev/null || exit 2
++
++  rm -rf "${tmpdir}"
++
++  git add .sit/issues/"${issue}" || exit 2
++  git commit -m "Added merge request: ${issue}" || exit 2
++  git checkout "${curbranch}" || exit 2
++
++  echo You can push the merge request:
++  echo
++  echo git push git@git.sit-it.org:sit-it/sit-import-inbox.git "${issue_branch}"
++}
++
++run
+diff --git a/sit-inbox b/sit-inbox
+new file mode 100644
+index 0000000..e195188
+--- /dev/null
++++ b/sit-inbox
+@@ -0,0 +1,27 @@
++-----BEGIN RSA PRIVATE KEY-----
++MIIEowIBAAKCAQEA6DbplsVUqm4UvAd/6m5g7dc/9Juu8otsAvIKDmUByJpbJ7AW
++V5J5FUvRsqf9DEpjl+a2tnglpFAB/DDJuOSXs9o4C5E9jBW+FpEoFXDy3yNkOxUJ
++1o/0oqCpBy/+Gswi41/xh2jLNrM7xQpdjg6yoncVK0RlNxkfusSYoFFbUF1C8U/+
++87iOdRz1s3XAasS1Mh2EeVw0WggvpKFVtyzusadsgFAX8IAVJUDUhU+g3e1fi4Rw
++ptrJLPgBy8mNE4VAwLVZ/4ydlgPMTBpim919UdUgdGmrxS0WOxCzLfF//YJgQS9K
++sxja+4XX/sI9iUUIIv1dAluwbpaMpTw5isg78wIDAQABAoIBAH1ZjxRtJvvs+lJZ
++tgolVTtuUz7Gf1S8QC0C3LzSd3kDIau12Qmirqv5RpQrLGTjDwnjZ8Pt7VvaOIgb
++Cfk9pEpYxKIx38hrwDXMW5ffZatgHm3qOGpTQRo8oaGYnZF3mmmk0+tlfTTk4aHG
++q6PQeUtL/uhhPkXU0RTvpPf9ks440mD59ZwDj/Qf0hNZJhBO4lBM0O8BE/GQQotK
++W07UPfDCplzklpoOUY+yCm6xTWuNswkmITMpxr1CTqibC5npmYKM6S1fQfdA5LgC
++BOudCdpEpzz+4cBn9cAothwxVwLfCUz14PvEj30zO3fxCNwercb4lqj6kqeeAVcD
++X7QNx5ECgYEA+tboYIsj3IBoWiYdBK4VeCdh7iYxta2sKFSFSqKRDh4k/lU8Fs1c
++Uzzl2HwLWtOxSf14gMQmpUIzexTIiBPeEKi3As82z3hKgnP7ZBbJWKV8eW8sl5MZ
++2fILRRmjQrqzLJtK1ZHeDyXeW3a1oxaiF7i0G5SF4j7cJrYdAWlPz3sCgYEA7P3p
++sBC817PxH6ouiuGXGcrZcywJ/VOILTwO8PEGGeUuid9OiR4u8LvgYrFeaRJ4AuS4
++6XjX6t9rtxkAKgUjA1fWMgGmgJqd5ivtUTgp9vWEOdsHNMdc6FQPfmmVJ2m2K4WJ
++lYAhXam9KWRR3R9QOKTEgfGziWkv5vU3jp+ln+kCgYAaIzyxmq4Q8vxssF4Dt9Qa
++4hetRiOV59Pxm+ULwubUjsWSDvWk9p8xOT5GEZ7pRvfJWvUsjcPtInnU0HSY4WEZ
++YUs4qrjuY314HHfMlSdD6nKPAMunu7dM45DTEXnWoTe8ZS4mFP4LnAmQhE0nAlu/
++lwqFeTN+QMiV7BIXrI6ZcwKBgQCZBlb3bcdSDIl8ZbnJyWJ0sAt6l4wXu/EpLCeF
++okvLOrWzJrKiTRAIN3fqohaRB/DgBWn0ryfUK9F0l7sIZuq1xOi0v2YQkkW0ktaY
++5AgMw3lOlkPv627tQSIEAQ7jNRoAvigZlXN19B0FdhZ6DjcRbCrKsRO5fWcF3X6z
++JBigyQKBgASbRlu2Qx3MT3Ejf/q6/gHnZaOABr2XxCPpKmAp8qHlCsgXRjFLEYYS
++wroMGgGNH54KVnv/6KA7KT4AOcPmj0mB43fBt6a1El51+jctiXDFszEIfUJe2y0x
++LAktW+mVd39Iu/8uC9kX3Xyiz5pppYDmcHzqUEMuYMWuln16k06J
++-----END RSA PRIVATE KEY-----
+-- 
+2.16.2
+

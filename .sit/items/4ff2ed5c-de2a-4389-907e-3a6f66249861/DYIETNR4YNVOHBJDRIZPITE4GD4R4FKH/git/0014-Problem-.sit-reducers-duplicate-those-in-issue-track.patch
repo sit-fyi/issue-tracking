@@ -1,0 +1,189 @@
+From 7009a8d74c1eb509df23f4bf91c9565a3eb36e42 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Wed, 18 Apr 2018 14:47:33 -0700
+Subject: [PATCH 14/16] Problem: .sit/reducers duplicate those in
+ `issue-tracking` module
+
+Solution: remove these reducers
+---
+ .sit/reducers/Commented.js      | 41 -----------------------------------------
+ .sit/reducers/DetailsChanges.js | 14 --------------
+ .sit/reducers/MergeRequested.js |  8 --------
+ .sit/reducers/Merged.js         | 20 --------------------
+ .sit/reducers/State.js          | 14 --------------
+ .sit/reducers/SummaryChanged.js | 12 ------------
+ .sit/reducers/activity.js       |  5 -----
+ 7 files changed, 114 deletions(-)
+ delete mode 100644 .sit/reducers/Commented.js
+ delete mode 100644 .sit/reducers/DetailsChanges.js
+ delete mode 100644 .sit/reducers/MergeRequested.js
+ delete mode 100644 .sit/reducers/Merged.js
+ delete mode 100644 .sit/reducers/State.js
+ delete mode 100644 .sit/reducers/SummaryChanged.js
+ delete mode 100644 .sit/reducers/activity.js
+
+diff --git a/.sit/reducers/Commented.js b/.sit/reducers/Commented.js
+deleted file mode 100644
+index 17e1462..0000000
+--- a/.sit/reducers/Commented.js
++++ /dev/null
+@@ -1,41 +0,0 @@
+-module.exports = function(state, record) {
+-    var state = state;
+-
+-    // Handle Merged as a comment, too
+-    if (typeof record.files[".type/Merged"] !== 'undefined') {
+-        var comments = this.comments || [];
+-        var decoder = new TextDecoder("utf-8");
+-        var merge_request = state.merge_request || "";
+-        if (typeof record.files["record"] !== 'undefined') {
+-            merge_request = decoder.decode(record.files["record"]);
+-        }
+-        comments.push({
+-            text: ("Merged " + merge_request).trim(),
+-            authors: decoder.decode(record.files[".authors"]),
+-            timestamp: decoder.decode(record.files[".timestamp"]),
+-        });
+-        this.comments = comments;
+-        state = Object.assign(state, {comments: comments});
+-    }
+-
+-    if (typeof record.files[".type/Commented"] !== 'undefined') {
+-        var comments = this.comments || [];
+-        var decoder = new TextDecoder("utf-8");
+-        var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : null;
+-        var merge_request_report = !!record.files[".type/MergeRequestVerificationSucceeded"] ?
+-            "success" : null;
+-        merge_request_report = merge_request_report || !!record.files[".type/MergeRequestVerificationFailed"] ?
+-            "failure" : null;
+-        comments.push({
+-            text: decoder.decode(record.files.text),
+-            authors: decoder.decode(record.files[".authors"]),
+-            timestamp: decoder.decode(record.files[".timestamp"]),
+-            merge_request: merge_request,
+-            merge_request_report: merge_request_report,
+-        });
+-        this.comments = comments;
+-        state = Object.assign(state, {comments: comments});
+-    }
+-
+-    return state;
+-}
+\ No newline at end of file
+diff --git a/.sit/reducers/DetailsChanges.js b/.sit/reducers/DetailsChanges.js
+deleted file mode 100644
+index 86e13ef..0000000
+--- a/.sit/reducers/DetailsChanges.js
++++ /dev/null
+@@ -1,14 +0,0 @@
+-module.exports = function(state, record) {
+-    if (typeof record.files[".type/DetailsChanged"] !== 'undefined') {
+-        var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : null ;
+-        var decoder = new TextDecoder("utf-8");
+-        return Object.assign(state, {
+-            authors: state.authors || decoder.decode(record.files[".authors"]),
+-            merge_request: merge_request,
+-            details: decoder.decode(record.files.text).trim(),
+-            timestamp: state.timestamp || decoder.decode(record.files[".timestamp"]),
+-        });
+-    } else {
+-        return state;
+-    }
+-}
+diff --git a/.sit/reducers/MergeRequested.js b/.sit/reducers/MergeRequested.js
+deleted file mode 100644
+index 70bef57..0000000
+--- a/.sit/reducers/MergeRequested.js
++++ /dev/null
+@@ -1,8 +0,0 @@
+-module.exports = function(state, record) {
+-    if (typeof record.files[".type/MergeRequested"] !== 'undefined') {
+-        var merge_requests = record.merge_requests || [];
+-        merge_requests.push(record.hash);
+-        return Object.assign(state, {merge_requests: merge_requests});
+-    }
+-    return state;
+-}
+\ No newline at end of file
+diff --git a/.sit/reducers/Merged.js b/.sit/reducers/Merged.js
+deleted file mode 100644
+index 92564b7..0000000
+--- a/.sit/reducers/Merged.js
++++ /dev/null
+@@ -1,20 +0,0 @@
+-module.exports = function(state, record) {
+-
+-    if (typeof record.files[".type/Merged"] !== 'undefined') {
+-        var decoder = new TextDecoder("utf-8");
+-        var merges = this.merges || [];
+-
+-        var merge_request = state.merge_request || "";
+-
+-        if (typeof record.files["record"] !== 'undefined') {
+-            merge_request = decoder.decode(record.files["record"]);
+-        }
+-
+-        merges.push({hash: record.hash, record: merge_request});
+-
+-        this.merges = merges;
+-
+-        return Object.assign(state, {merges: merges});
+-    }
+-    return state;
+-}
+\ No newline at end of file
+diff --git a/.sit/reducers/State.js b/.sit/reducers/State.js
+deleted file mode 100644
+index eabf1d8..0000000
+--- a/.sit/reducers/State.js
++++ /dev/null
+@@ -1,14 +0,0 @@
+-module.exports = function(state, record) {
+-    if (typeof this.state == 'undefined') {
+-        this.state = 'open';
+-    }
+-    if (typeof record.files[".type/Closed"] !== 'undefined') {
+-        this.state = 'closed';
+-        return Object.assign(state, {state: 'closed'});
+-    }
+-    if (typeof record.files[".type/Reopened"] !== 'undefined') {
+-        this.state = 'open';
+-        return Object.assign(state, {state: 'open'});
+-    }
+-    return Object.assign(state, {state: this.state});
+-}
+\ No newline at end of file
+diff --git a/.sit/reducers/SummaryChanged.js b/.sit/reducers/SummaryChanged.js
+deleted file mode 100644
+index 22bfd26..0000000
+--- a/.sit/reducers/SummaryChanged.js
++++ /dev/null
+@@ -1,12 +0,0 @@
+-module.exports = function(state, record) {
+-    if (typeof record.files[".type/SummaryChanged"] !== 'undefined') {
+-        var decoder = new TextDecoder("utf-8");
+-        return Object.assign(state, {
+-            authors: state.authors || decoder.decode(record.files[".authors"]),
+-            summary: decoder.decode(record.files.text).trim(),
+-            timestamp: state.timestamp || decoder.decode(record.files[".timestamp"]),
+-        });
+-    } else {
+-        return state;
+-    }
+-}
+\ No newline at end of file
+diff --git a/.sit/reducers/activity.js b/.sit/reducers/activity.js
+deleted file mode 100644
+index e1c2eea..0000000
+--- a/.sit/reducers/activity.js
++++ /dev/null
+@@ -1,5 +0,0 @@
+-module.exports = function(state, record) {
+-    if (typeof record.files[".timestamp"] !== 'undefined') {
+-        return Object.assign(state, {last_updated_timestamp: new TextDecoder('utf-8').decode(record.files[".timestamp"])})
+-    }
+-}
+\ No newline at end of file
+-- 
+2.16.2
+

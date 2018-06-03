@@ -1,0 +1,4072 @@
+From 4c00ca5bcc19def498c0e3fa3e89440471d9b4b4 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Mon, 19 Feb 2018 01:23:24 +0700
+Subject: [PATCH 01/16] Problem: existing projects have an adoption barrier
+
+In order for existing projects to adopt SIT, currently
+they'd have to abandon their existing issue tracker,
+which is not a great course of action, especially for
+an active project.
+
+Solution: provide a tool that would allow importing
+existing issues and pull request from GitHub.
+
+At least this allows most of open source projects
+to migrate easily.
+---
+ .gitignore                                         |    3 +
+ .sit/config.json                                   |   10 +
+ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors      |    1 +
+ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature    |   17 +
+ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp    |    1 +
+ .../.type/DetailsChanged                           |    0
+ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text          |    1 +
+ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors      |    1 +
+ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature    |   17 +
+ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp    |    1 +
+ .../.type/SummaryChanged                           |    0
+ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text          |    1 +
+ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors      |    1 +
+ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature    |   17 +
+ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp    |    1 +
+ .../.type/SummaryChanged                           |    0
+ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text          |    1 +
+ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors      |    1 +
+ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature    |   17 +
+ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp    |    1 +
+ .../.type/DetailsChanged                           |    0
+ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text          |    3 +
+ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors      |    1 +
+ .../.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q         |    0
+ .../.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU         |    0
+ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature    |   17 +
+ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp    |    1 +
+ .../.type/Commented                                |    0
+ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text          |    1 +
+ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors      |    1 +
+ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature    |   17 +
+ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp    |    1 +
+ .../.type/SummaryChanged                           |    0
+ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text          |    1 +
+ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors      |    1 +
+ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature    |   17 +
+ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp    |    1 +
+ .../.type/DetailsChanged                           |    0
+ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text          |    3 +
+ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors      |    1 +
+ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature    |   17 +
+ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp    |    1 +
+ .../.type/SummaryChanged                           |    0
+ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text          |    1 +
+ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors      |    1 +
+ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature    |   17 +
+ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp    |    1 +
+ .../.type/DetailsChanged                           |    0
+ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text          |    1 +
+ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors      |    1 +
+ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature    |   17 +
+ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp    |    1 +
+ .../.type/SummaryChanged                           |    0
+ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text          |    1 +
+ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors      |    1 +
+ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature    |   17 +
+ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp    |    1 +
+ .../.type/DetailsChanged                           |    0
+ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text          |    1 +
+ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors      |    1 +
+ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature    |   17 +
+ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp    |    1 +
+ .../.type/SummaryChanged                           |    0
+ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text          |    1 +
+ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors      |    1 +
+ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature    |   17 +
+ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp    |    1 +
+ .../.type/DetailsChanged                           |    0
+ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text          |    1 +
+ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors      |    1 +
+ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature    |   17 +
+ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp    |    1 +
+ .../.type/SummaryChanged                           |    0
+ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text          |    1 +
+ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors      |    1 +
+ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature    |   17 +
+ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp    |    1 +
+ .../.type/DetailsChanged                           |    0
+ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text          |    1 +
+ .sit/reducers/Commented.js                         |   36 +
+ .sit/reducers/DetailsChanges.js                    |   14 +
+ .sit/reducers/MergeRequested.js                    |    8 +
+ .sit/reducers/Merged.js                            |   20 +
+ .sit/reducers/State.js                             |   14 +
+ .sit/reducers/SummaryChanged.js                    |   12 +
+ .sit/reducers/activity.js                          |    5 +
+ Cargo.lock                                         | 1584 ++++++++++++++++++++
+ Cargo.toml                                         |   21 +
+ README.md                                          |   56 +
+ build.rs                                           |    5 +
+ src/actor.rs                                       |   32 +
+ src/author.rs                                      |   93 ++
+ src/files.rs                                       |   38 +
+ src/graphql.rs                                     |  197 +++
+ src/issues.rs                                      |   81 +
+ src/main.rs                                        |  300 ++++
+ src/pull_requests.rs                               |   83 +
+ src/timeline.rs                                    |  186 +++
+ templates/actor.graphql                            |   12 +
+ templates/author.graphql                           |    8 +
+ templates/issues.graphql                           |   22 +
+ templates/pull_requests.graphql                    |   24 +
+ templates/timeline.graphql                         |   54 +
+ 103 files changed, 3222 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .sit/config.json
+ create mode 100644 .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors
+ create mode 100644 .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature
+ create mode 100644 .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp
+ create mode 100644 .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged
+ create mode 100644 .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text
+ create mode 100644 .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors
+ create mode 100644 .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature
+ create mode 100644 .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp
+ create mode 100644 .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged
+ create mode 100644 .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented
+ create mode 100644 .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text
+ create mode 100644 .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors
+ create mode 100644 .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature
+ create mode 100644 .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp
+ create mode 100644 .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged
+ create mode 100644 .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text
+ create mode 100644 .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors
+ create mode 100644 .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature
+ create mode 100644 .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp
+ create mode 100644 .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged
+ create mode 100644 .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text
+ create mode 100644 .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors
+ create mode 100644 .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature
+ create mode 100644 .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp
+ create mode 100644 .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged
+ create mode 100644 .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text
+ create mode 100644 .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors
+ create mode 100644 .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature
+ create mode 100644 .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp
+ create mode 100644 .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged
+ create mode 100644 .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text
+ create mode 100644 .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors
+ create mode 100644 .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature
+ create mode 100644 .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp
+ create mode 100644 .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged
+ create mode 100644 .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text
+ create mode 100644 .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors
+ create mode 100644 .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature
+ create mode 100644 .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp
+ create mode 100644 .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged
+ create mode 100644 .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text
+ create mode 100644 .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors
+ create mode 100644 .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature
+ create mode 100644 .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp
+ create mode 100644 .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged
+ create mode 100644 .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text
+ create mode 100644 .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors
+ create mode 100644 .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature
+ create mode 100644 .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp
+ create mode 100644 .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged
+ create mode 100644 .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text
+ create mode 100644 .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors
+ create mode 100644 .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature
+ create mode 100644 .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp
+ create mode 100644 .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged
+ create mode 100644 .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text
+ create mode 100644 .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors
+ create mode 100644 .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature
+ create mode 100644 .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp
+ create mode 100644 .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged
+ create mode 100644 .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text
+ create mode 100644 .sit/reducers/Commented.js
+ create mode 100644 .sit/reducers/DetailsChanges.js
+ create mode 100644 .sit/reducers/MergeRequested.js
+ create mode 100644 .sit/reducers/Merged.js
+ create mode 100644 .sit/reducers/State.js
+ create mode 100644 .sit/reducers/SummaryChanged.js
+ create mode 100644 .sit/reducers/activity.js
+ create mode 100644 Cargo.lock
+ create mode 100644 Cargo.toml
+ create mode 100644 README.md
+ create mode 100644 build.rs
+ create mode 100644 src/actor.rs
+ create mode 100644 src/author.rs
+ create mode 100644 src/files.rs
+ create mode 100644 src/graphql.rs
+ create mode 100644 src/issues.rs
+ create mode 100644 src/main.rs
+ create mode 100644 src/pull_requests.rs
+ create mode 100644 src/timeline.rs
+ create mode 100644 templates/actor.graphql
+ create mode 100644 templates/author.graphql
+ create mode 100644 templates/issues.graphql
+ create mode 100644 templates/pull_requests.graphql
+ create mode 100644 templates/timeline.graphql
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..6d5e98b
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,3 @@
++.idea
++/target/
++**/*.rs.bk
+diff --git a/.sit/config.json b/.sit/config.json
+new file mode 100644
+index 0000000..8a0dbca
+--- /dev/null
++++ b/.sit/config.json
+@@ -0,0 +1,10 @@
++{
++  "hashing_algorithm": {
++    "blake2b": {
++      "size": 20
++    }
++  },
++  "encoding": "base32",
++  "id_generator": "uuiv4",
++  "version": "1"
++}
+\ No newline at end of file
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature
+new file mode 100644
+index 0000000..9ac5237
+--- /dev/null
++++ b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1EkOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf8gnBAAv52t75HxH8K2q50gXk5co1ce/8K9A1lxFjUO
++mXadD0GJYdjjfDOeuI0ZjDOM7WAnaICYrVBcyZrLEW0KIhcoc0Q8y8iAOOevXymD
++DNLQK8axxQ6wR6MKxhuIIomnE3g8uLPA7BxxSRbP6HSLQuvx6CopbLKpa2EKwB/L
++IqLEXejQ4aqzzlqObxhW58O/5GFtmk2vGePKqfdWvMlXsym58+xnU4j0EVThGJaR
++y/0srC/dQopCwKCDJI1AVPXjhuW9aFvIyMxzMpzD/cRiLTI79Zpun1TZZZG4Mb/e
++IWRqv/lsAJisNW1fTX+iEYJ2R7iYrCTtWChj2AFqecUJVJ5fc+Du4Rq5OWIKZvj0
++qWV/3LzdlL2JGW7p9JUcEp/pe3fOY7y4oWdGkUrBiklaUFFRPN8jLF4zxFQzXVpB
++o7qmnJLr/JzcEfC0EFUGanSHY6uVEYpt+amLgPFfQY6sJyhmGsENGb9T3GMnE4Bb
++njEacnR3hrzFZ47L+00AsPsND5F/frPOmdudW/7y85UZyc5ZDhfEqtsvZUKJL0RL
++se2xkqhvlTVMGW6v3bdsjshVcIw7KU/h/TNB2Ll+3+XfsFzS8YQLW21j1cuUeKml
++7Et2HqLxBJKDGknsM3zEDJhVDOGCecM6vCKB8Dds7hF+EAMYkCJ3U8tKoPS/YFfJ
++2/35tgI=
++=nTTj
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp
+new file mode 100644
+index 0000000..3df0b2b
+--- /dev/null
++++ b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T07:54:47.339Z
+\ No newline at end of file
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text
+new file mode 100644
+index 0000000..b48f7f7
+--- /dev/null
++++ b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text
+@@ -0,0 +1 @@
++These are important for retaining who's working on what. We don't have a convention for assignments in SIT yet.
+\ No newline at end of file
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature
+new file mode 100644
+index 0000000..4466fe3
+--- /dev/null
++++ b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1EkOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf+rVg/9H9H0IzhYLnP3LJhrxmksNcxRaQlD0N0vLVUq
++tWDto2JoNww5leDDBZjrYSoDQp5VnimHZ/gYLr63ZBcLS4AxsadkM14gqa4+bCiE
++OA53/1RXQCeCNa7bnBAgDhOHg2t7OmmxNALL3ZmLGhuUi2c1O1wqwu1zFG3ivUGq
++Q3K296xSBuyZsZ44LOObIMQaCpU4qKVW+DCIT9hTdeUb9orpXGI/LpTNDKLsQylI
++rVvsSziQ6JcxmPqozNbpqlQer/19+tciP9k0UudO5auH1ARX4mVZ+uQPHW8tgmQy
++ABRA18CyYfZggIBKjMIzxYF5exj3qB/XyJNTj+4RF/smmSpx4vdOLkDqvDFXXmgN
++XJxQ95u0UQ8InkhqmjmtQqTFNuq0NopR1sQOcoGx5pIDYmcIoRdX3Dkxm//8nNq8
++KEfsbEq6HWmvIrEYMf+/uDwy8iw2zPorgKAFcLztYmXumWddvy/WHhNpoG60oF3L
++Eo/1wDZDCuFUVPrePGkgEfScLCaadIvWn5fBuTR1qEGada6sufxfQgQazuH7ozVF
++EFJyaTj7b9QsK+EQNdQhFtaQ1B1GChl2K52vRF8dVeRHnjZ/1DbNCuVwljVC1kB3
++qDr0XYOyjBYvvcQwaIg89f31qZ9wOhext9IRivcRxrNSxUlDvZVCJFfyivbNlbFJ
++LdA+yq8=
++=wqy6
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp
+new file mode 100644
+index 0000000..3df0b2b
+--- /dev/null
++++ b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T07:54:47.339Z
+\ No newline at end of file
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text
+new file mode 100644
+index 0000000..05fdf75
+--- /dev/null
++++ b/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text
+@@ -0,0 +1 @@
++Problem: GitHub assignments are not supported yet
+\ No newline at end of file
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature
+new file mode 100644
+index 0000000..b57b513
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1hEOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf8V7w/9Fe2tmqhC3HKUUIMUXB3dGTrgkgcztQEWG+SF
++/dj/v2HqOHITo9qaSotvL4i4pjixUYzk7PDSppbOBRwjjxmI+3RYFd34XsioMUZw
++RS7ErKXkwWganSvxdA2HMW4W1y7YGmtbxS6hqwddmnraPwJqQ7r7Jp2RH1Q1W2FG
++fDIBRkoZcRtDf8kuaaxTYQgbHJ/k4G8CSCmpv5qcNKnx3NFo2zZQ4Cov1FQKK/M+
++HlpZZl9grJCfGuunIldwKfC2aIKDUi7ORKW9v4ptbgvI77jktA+RBJSRm5Oyfggm
++DtaIWfak1RJhtgmBckbPsGH6fufYSwt5IS5qJU/iPaZ0ap4ZpBfzxWS0mhAnMpAG
++pF8D3OLoMFDzMi1sBdFViuapsGaOoVocpXMByTaztiawnVjYZh4Da4hr9N/i4T1Z
++J00M9sv1B6WKDgWxtgrd32swj4A/WKjkfKRuV1s+BlO0y2H48pTnSed8TxjLy8Q9
++q5REmKXktZTBHyYS/YUX1cqaZh+NcAQlcbNxb5Yt4GB5FEWL98EH5u5Y6orxu3JZ
++fjUZfpZDAuAdRol1m7T+SBp/ZZ15O3ffywDgiCcI30I2OQLDtazqk9PgpPgpN3Sh
++wtvq4zTdYpiq5wdjH/yAiAzBnLhHFXpDjJLTbZA061vPwbqPIP6l1cYONYhBKlvs
++So6mT+w=
++=cvrs
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp
+new file mode 100644
+index 0000000..7e864f6
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T08:02:24.137Z
+\ No newline at end of file
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text
+new file mode 100644
+index 0000000..f215041
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text
+@@ -0,0 +1 @@
++Problem: GitHub API rate limit
+\ No newline at end of file
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature
+new file mode 100644
+index 0000000..4cd54b5
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1hEOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf92SRAAzNLvHHeCyRKFq1bmx74sl5SU1nZ6UKykkq4j
++WScCIwvSyKXsjsNhrcU5HGsHuNg8GKSePRsC5d0WXsLC07+lQyk6thbhlW86C9x3
++oekv1DrBwnc2RI6duO0jASaFb14BWzotppdX4y1Wz1Cg82Xc4hYtiOdwhGl1wjl+
++TPRcRtxqU38OM2oaJNSMofKQNI+N9YH176p+0vH+kTroOxbctMWYTEeJNiaVhcw+
++jVONgwJZsJpqpQ4CrmTHGtndc2kR69Xv4AMKDt3z7V8W/ra4hZWqq6OF6XBCdXZG
++jZN7CXyMNH5Qme6lUVrv7ywPWa4KrhkcVyfd5HGDN9PX1WubkYDmJM/bR3vKZt1Q
+++0xCdVG5CAQWaL1o287qLZ0YPPAdwA80Ccj6b5YU7/LJ27RYJeQqxlB/i2vlbwIc
++4A+QHnH1+ucOXNizqm0TON05zj6j8K3nqh39aMmyRjfew0rSfayoqSRIN/KKzK2u
++mvTXDzABHCxe56AFRTrKxsa17kcA2c/2QHLteeyNx5XaEYnNmboJZhx+hYjafjtx
++oUS3lISQiPazVFEW/RW6+SsfdUu890ysDweI9J+CAyDscr7m66k3/NPgLM5wrHHg
++KpswsGASz4I3RzsyuhmmwyrXuEX8eOX61uThezDpVwUEjnW7SxSPDTvC1tVeekHj
++4PwJ3Pk=
++=333W
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp
+new file mode 100644
+index 0000000..7e864f6
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T08:02:24.137Z
+\ No newline at end of file
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text
+new file mode 100644
+index 0000000..3d61224
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text
+@@ -0,0 +1,3 @@
++There's no support for the rate limit in `sit-import` right now
++
++Proposed solution: pause the tool for an hour when encountering a rate limit
+\ No newline at end of file
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature
+new file mode 100644
+index 0000000..ca33ad2
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1i8OHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf9VDBAAqdBL+and/lsxB3TVwYcxt5JxPezmWYrIIzqd
++weXW0B0Vzz4PRJHyybFsnC/geWq9U/ZD/KZ25a0idhBflNCljpe8b/zITmiP6wf/
++5HZeUB/mL/ASSglF1X6TVm0nayRwj9TEIkjhl6Zx9ksnBySqEtDvMqicf5VjLdpS
++n8mpETIkPKlJ+BoBdwPcY8JtNy8ZkyfNrzIpbR1q9TxgORZhOu4elaIz47yauvEX
++FrcisPsMOXWUzsMSVf/XSumpG4x7Tzs/RVn+zLhJF+0M4dAZrTLZfnZnYPIUpLuP
++yYS11kbi7bt+OsRfVtpp3khSo/Bv8AJfWZJ6GQEwIyW7QsorWrzbSnZj9IlOrw1V
++O+ssRg6AGBCmVAG+MmAf8Rpe92Ln2eYEORK3zDxlO0xnwAxV4iy8RUjVC5y9KH4L
++Ddm2KtwrKZz8l74h3MOw5e0ag0fkaurCgOOyWb3C5MJ77hAbt94wR2PBuqalE2hD
++3OQbE68ILaiurUvoXTG33du2bi0YrfriyRQ4MJcB2cn5Ud0WxmXfU3l3jPixery+
++xSCp9EwEgEeu5HZYAbWi31saX5y9naLmhT8XQQ7T3B2HM+Bupq4BAiVWpDBIfJlc
++1OP9H2ziZI7qGhrVYQM4kWtzF740scPdjx9p6sa0x8TKvovVGpswoEfc0QXtTT7U
++aZ3bx6E=
++=5zBQ
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp
+new file mode 100644
+index 0000000..56ed340
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T08:02:53.977Z
+\ No newline at end of file
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text
+new file mode 100644
+index 0000000..8e7fd93
+--- /dev/null
++++ b/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text
+@@ -0,0 +1 @@
++That said, I am currently importing a larger project as a test, and I am yet to hit this limit at over 6,000 issues and pull requests.
+\ No newline at end of file
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature
+new file mode 100644
+index 0000000..769abc3
+--- /dev/null
++++ b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1QwOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf+BhhAAoDRG4oN/cM/t/tAhl9zEiHFAAZA/Rdpkdi87
++mJtooLoyMnajaNKy649fQzfVt4VoRD41tLGp1CR5KYwYmFSr3UdHqS73UlmwRd5W
++cLlEeLKZ4bzhtpzTm9/XcbPnTcdVmqngjgTt7BpyElTSlyRSoxSomQKTaTJNuYwO
++rXvzMYPm9NweXbqiolFGdN0Tait67TmQEdv9+Z9vdgohVUck05TAuEoRUDmBuInW
++Dr+RbctLCTgHXCcjfeermn3kBKCsDI/4H40EaaSQAWcda5tzzp0+fWgbmc1H/vdq
++IbnjIFsYw00yFQzbHera/sbgYKrKOa3RANmuYt6FDjsyGElXfzuKN+f7XSJBINc8
++88z4zsBqXPT78A0PPktmMi0Xl/kjF+htLEyN8YeDhdqrrvSXc5j4uo/7gxpOK0A2
++JWIs4PTyHVBOCdDmuRKI4vv+JvI4teGrzNnJcI1A6aJfAKWyomPXxCbahKVqBX3H
++i/mkYlJpPV5DAIhwwLIkkyVBGiKliDsIUcB4upRpnAMMuV7cOxXWMrW6paLm3IJ+
++yqAwhy3bMpsw/WnXmFvxgAc03piN0pPBQ7s8DsQa/w0wRF7E9k9DjwCO6QbO74tF
++WJh4fcYZ392hMJvv+Mcf15rDK8miZpJWwN23wpzafE/mbNWiK/5u87PZrvsmfbpE
++2UBmT+U=
++=a3Cr
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp
+new file mode 100644
+index 0000000..ab069ca
+--- /dev/null
++++ b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T07:58:02.677Z
+\ No newline at end of file
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text
+new file mode 100644
+index 0000000..8898c3c
+--- /dev/null
++++ b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text
+@@ -0,0 +1 @@
++Problem: GitHub milestones are not supported
+\ No newline at end of file
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature
+new file mode 100644
+index 0000000..4d2da79
+--- /dev/null
++++ b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1QwOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf/Z5g/+L+1TNq3PdrtZ2d4yJHnhFW4nkRUM3D3lwjZe
++1b5qkskK0TNxg+V8vE/5Dbz6pYwq8mrF7EpF0wv5zuP6DfyolPkrrODKRJmDN7Xg
++8bzxNCi7HDi45khDdzqMNM5CFe+fEedyfYJYdVUOlkhRkyiyWgC7bLKh79OaQ6zV
++C/057/IzBMgN0IHE4wY9xznZCHI1RoCb7WOtDxoXY1crq/LuadUvWTtWbyqttV4E
++4f3bNRTxkkU4h6Wv0F3RfAuRa/deMMoTV/6ijxDFWsRwJ/XZUKIj+hp1tm2zxo0M
++1MsSTmO+FxwhoGcbIDankd2VHQE0ZcrCY0SG+ypOXTg2a5P5X0hmkqevk815QkNK
++V0D3HZF6miBeSmaURX2jYUiXUwYMxS0tvdaPyHYWujqa4yw3YNA9U++n6eZpr1uR
++xjgBSWr7GeQgRakgCneuHy23qOg0Y1mdhc6/n4jy8GJ+IBoHAIZX+qLwgX8GbN9U
++kGBZ3CNbSMYXuyTnW9DunjpB1qgShwm3VduYbuKcwSy9vMQNr57QBSUQTju7un6A
++7sljqVf3cQpmiyQ4VzkUWdoBDjDb6Gsjx5kvadfRrpTamiaoLGh2C+Xrn6yb1bQe
++mOhZRU+cG81bSFw6zY9ZSr1sbvVBnk1pllppbycXd/prH2FzfFzCCJlaABwD7l1K
++FrcGuAo=
++=30sb
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp
+new file mode 100644
+index 0000000..ab069ca
+--- /dev/null
++++ b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T07:58:02.677Z
+\ No newline at end of file
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text
+new file mode 100644
+index 0000000..5c8aaca
+--- /dev/null
++++ b/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text
+@@ -0,0 +1,3 @@
++These are important for maintaining a work plan. 
++
++There's no convention for this in SIT yet. There were some thoughts that milestones might not belong to the issue itself but it might make sense to create "milestone" issues and reference issues in there. Not sure if it is worthwhile, but worth considering.
+\ No newline at end of file
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature
+new file mode 100644
+index 0000000..0611b72
+--- /dev/null
++++ b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1BgOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf/aWhAAmUGoIYXg1y8xt3oVeP9Xv5rEeVV4AiLDMYOr
++Iul7lr3xziRBAnaVGdrLDdkR90Vvq1fIPNZW6SWcZ3cdfHc8W0BU8I5cUV3KJLIq
++un7fk2+iGHqMPZQSBvFW1swzxIaH+uaFds47N1QLH0TZIKB310NfCX903s59i7pD
++kG8yrSbD6yfcArUA3gImbWZB9Pe47VyfEkKxloc1jSTIjxDb3q+X6f+bra9gKxbC
++a09KC6UlcEFV3qnbJCm7wdJhnsCt86xVBn+3Q4vH/ZEw1y5dpmXyRca552Scy2Cq
++6b3O8BWRPpVrGd4Q4Tx3w9jrARIvg8cKl+c8LSqgQ9/n7nSV4R4W0dwacq4LIs7x
++I/r+QCTlS848Tcsz8FPBdBqtpqfvxDPxB3/IH0yvfD4olblUqirlFWsC0cf4hUgc
++aVd8vlBsRFhLNLaEkE9KmLP07vUQrFULGJSqzBO35O5GgTksNLuVivziVExAH4q5
++1jVJwGTK9STQTaOwadMdhqk7aPicbGFdFw0FScaYBbc+R9mNALNwblQMKdqB3tfX
++qLAu3hQSPkioDGExJo8Sje6IDqZ15f9z6j28Ibh+9I1e73g4tevHWVrc/hYLcNHy
++knvY0OMgRFnUjly/ZWRhGnnmCPhChpUAsqTEQiyJ+O+6jxCOJAGpGcaSj9ZuBl1A
++w0XqZeA=
++=3HCN
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp
+new file mode 100644
+index 0000000..3373666
+--- /dev/null
++++ b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T07:53:58.911Z
+\ No newline at end of file
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text
+new file mode 100644
+index 0000000..3168c07
+--- /dev/null
++++ b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text
+@@ -0,0 +1 @@
++Problem: GitHub labels are not supported
+\ No newline at end of file
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature
+new file mode 100644
+index 0000000..041fac7
+--- /dev/null
++++ b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1BgOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf+knRAAn5BR7KjxBwDZ3InI0yI0vAniQdNxOxgfTu8l
++772wL6dxMlGfCNIIwsWDjS3WRw/hN3hJD6rcL825zUyVForK3X7IfngtyHG9MYA6
++eiQcOhg/yDRmXbDanm/fRKoIhHkstGFsFnn2YR7xm7EnF/5gVdPJm3ho+WSwekHR
++d4ohJwlpyrQICy7DEHKJD5p03T3LvLY8Dt4L0ioXx+HhQwUNSg6Jkb7OoWzvRb8E
++sCvK9/0S9zgMwXEiAuDxMujl/yyuWzbiaLIZYCH6NUM5kxxTgiSiNvUfnUl86ORp
++pWv2iDXqpgtWDGhSaBl/wdO258a5IPsWuqlH9ZgOIgTPqpVm8CXecAqgjgEMM23g
++X7s6MK451GoHC6m1TnKN6HqLfYoZ+lnGWL9L4L+SzNRuTxse7KMr8wEwBKenKF54
++wEQBXv03TEnwwyeB4FFtGUBshltkxJ99qw1OtJzG9g9XV/jfZKSr6CpL38xlvlvc
+++MmVrxnEDFw1Wn0w0cr2MTmjo2UB1zW61+Z+YrOWvTVfZWWYJm0kiOAHozAIgsAu
++UrDKiqujelzUMHdilO9Aspg7ewDuaul3LWftXwDgOnLpyPAbL+3AVxrOk67uzTPH
++Y+IPMhs2KlDbBpWQQ4+gkb+DEcGYA7ycYuXVcDyRdg6BwD7str1q6UOKryf4ouZU
++FAPxEiI=
++=6tFs
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp
+new file mode 100644
+index 0000000..3373666
+--- /dev/null
++++ b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T07:53:58.911Z
+\ No newline at end of file
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text
+new file mode 100644
+index 0000000..6f5fee7
+--- /dev/null
++++ b/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text
+@@ -0,0 +1 @@
++These are important for issue categorization and search. We don't have an established convention for labels in SIT yet.
+\ No newline at end of file
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature
+new file mode 100644
+index 0000000..0ef71f6
+--- /dev/null
++++ b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1dsOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf8ttBAAjz847xyalbhvPJCii5v+4cxYEbiZNvuWKpzE
++v61jhOHrBQUrBDpWhz+niQsDgCt9bZDypD1D8dJ5W09cRki9+qwNtoJgFjUgzkdl
++PmwZwJWSNjGjGRtD9sPGXFLiMW/o2QAT7NWuCYF3YTi2jlN73GsQkTVi/94sHvBb
++KcZF/NSQUutJ4E4xwoIEhW6dGqSaQjJLww8pa41ppsA996Fcic6F3FqekqkIoqT8
++6dXEejKKlaqyHbLTH61EJ/g4Y+FrAfr7hOJVH2TJ2Xf1RgmILTbi/nG4DFfwmdyy
+++CJyKuqTb2rWJJOtRFywMhBpB6P+EUAytpZGsJSUAbdRhUuIIVeHIQ1itqPZxb2n
++btmlI/dCU1XnjoAR8x7RfNYCoQgfo6tSTIPlf3V3dyDu4RImE6v0EqXV5I8dO4Lm
++JsXLfQEr1dAyDP21b7zVgPGoX6MP6+8sk+ZzS/vUMykz3RWLgkPkrcbKp2F6ILX/
++NWgjPeccBGQpqNEBNCqQqs3anzsgpk24tkwbmiYAiMRprLBAwmtXOW4xfJhhrfWE
++PKOzE/2TB6YwHjTUND8mQuEuzVJz9A8oqVHa8wzQ05/cD80u4NqGPDQMr/IwfFuN
++nlaEzF/vI3Dp9LttPZuU3xwiAE+2edCJZv62HMFIZ/TReXIio4rdTsh5eEtOjUcw
++WZ9h/aY=
++=TAJi
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp
+new file mode 100644
+index 0000000..e3d64b8
+--- /dev/null
++++ b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T08:01:29.745Z
+\ No newline at end of file
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text
+new file mode 100644
+index 0000000..806ba74
+--- /dev/null
++++ b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text
+@@ -0,0 +1 @@
++Problem: GitHub deploy event is not supported
+\ No newline at end of file
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature
+new file mode 100644
+index 0000000..a09df8b
+--- /dev/null
++++ b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1dsOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf9B8hAAu+apAAi6synEWnBDhKsnplBzg9wvcczuTtkC
++GLU5p/EXkPxi4vV3P0qbg2Gg+Faim/9xG0+vtUihwea9bh0UosA+RhwGp6dWVVIP
++YJVq6bK6DeJwsyhCiki2FgIPEk7WDSCXTw8XCqQoFTiUewen/xO46W3jCMujqo3r
++icC4mqL7wGDMZwYsE3eE+kHeNosnfLnQNw6KqhXBRQYivK3ZW8TGEApTwHA/2PmN
++380LDOwbtbHz3uXgJwKcGAD3WK2f3lgyTwAYcJ/hMSxjegNVJ2lesxrANnXSg5zC
++R4ajHNSucpFnS0TLXMoCoWRGEKC9knmVhGpluhcp7NeofSPFYahCRP67fYULnoEa
++g7++ZCIK3KXngtfFJjq4AOOnjdIWeeI/pSsySN9+foMXcshCbF0oH2/6zMyJKU1u
++j5J1QuwcoQXQQG0vYMobG7Np8u3yqjH77WcdVR5HaI/yYcm3MKzbJNn67TqCAFTb
++G/Ox4wWXAKrbhKzv833hEx5W7dxAWnOztM0TR9KbRtY+Z3M+sLVcYoR1rd6H+crB
++eVOPCzvbqXI9R4e2HeVe9h2hcHb2EXvY0SrhdoyGxvTsntIx4wYOg5FkkqLjMuCD
++FoU+R0jJVWbf+Drtpu3B+ys9+iBVZYkj2mAoShwTG8fkgdjUwxl68mNTIYSN91J/
++7GQBDHA=
++=vbnt
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp
+new file mode 100644
+index 0000000..e3d64b8
+--- /dev/null
++++ b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T08:01:29.745Z
+\ No newline at end of file
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text
+new file mode 100644
+index 0000000..f3756e0
+--- /dev/null
++++ b/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text
+@@ -0,0 +1 @@
++Proposed solution: convert it into a comment event. Or should there be a separate convention for deployments?
+\ No newline at end of file
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature
+new file mode 100644
+index 0000000..06cd570
+--- /dev/null
++++ b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1ZoOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf8/eA/+PG7DOYtvQQchXP0VCtABJjacTe3JhC92VKXY
++EjmKdvvJBBTKlg9apcvqFMRAeXGeUCYgar7UF/uaOR9BiFSgArCUpLBYzDFMFalG
++OdDE+xqAXfZ6fiW/OWsDFhX70f+S4MBBQQoiMbmFlQGMX0OGk94o090IRLJsrhY8
++XEQ4bKsbrsgamen1Wp8gl3J9GMRjUyIkyk9dnsEkJvB7nnPziDOCDU0dqbb8QJQ2
++IrqwZz/4gxmOeMCBrCEoJjv7Ww8QH6D5Ewv/olTEqV6tHrBHp7qKDiWmoMjzCuqY
++EIp7AFz5wYYCNqYxlPba06MW9cYDgZkn4MHPvg9R3r6I2JHPTSKlFpiw+K78TjCF
++9Rs1zQE5/sFJLqdCaTHcdHedTuL4Hg0BEny4yInDdpqa7FFat5ufiyYTduyWh/TF
++2Qy5pQDqguMHAkdKSXTa6gZE3gv6FCeTyEdaDQLAsZirrh6wwuL1HVA6lBcdtIhr
++BE8rTYSn6N19b67AVw4BcEeWa897dRaIcoJgIvIQDPtuCkYZ1zFDPRxnB9BVARdm
++smeHGQvSF9Hd4T7hp1gqdZQjv/3pNBCAIwaSw3hsYg03J0vOHnJPSqE20tJoT3Hp
++tHP7dwmpJkW04fxBLNS9x4IGBKtLrzGzw0ZOHLd7vBvlnPlR24FMYL/SvmeC3k2c
++qb3vn/E=
++=h0Ym
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp
+new file mode 100644
+index 0000000..75a04bb
+--- /dev/null
++++ b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T08:00:23.164Z
+\ No newline at end of file
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text
+new file mode 100644
+index 0000000..7007fd3
+--- /dev/null
++++ b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text
+@@ -0,0 +1 @@
++Problem: GitHub subscription events are not supported
+\ No newline at end of file
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature
+new file mode 100644
+index 0000000..fa9be44
+--- /dev/null
++++ b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1ZoOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf+1Zw/9FRKjJriEaLVqR3pIugh3KRVlFoh3Qfs0eJus
++j0t6A8lrq5/4dHrXf/gPHOEchVwwlBseqYfc4sLWTAoUvLmydoTS9+kPXPeISo9a
++4GJ9ODw912ZVY9Bh66XtXUysI5BxUC34oIWUaQgFDcXjR6tKUkwCapr0NuebBG+L
++dNE7PbQtaHTEG039kwJyPeHHJwIKvJ76tLdvkFWcmIuHkFIfP4Hji8PStsucFsaS
++5AHxwikX+kDu1FMf58hhW1mZUKUp5UgM1XhCRQrteU49wFXnhlzSwCHUbLot6UkO
++g7nbB7dwbuZ5LRNDvPSnXNeY4oCnBnE6lL39s5ZX+MyK8+UfObbbZCRhZgtcSQmy
++5wCW8e/bNR6C3hVdkmltu51vpgXAp4GiytHNF6nSz0jl04ANXFfqecPjiHatMqnI
++FlJ+hPy6s7Vm3Rcpx0/MZqCk4Ey23hHGZk6SF1s0fSc6Ig5LLKcS1d8wZQxJ9qKV
++SHmg6ZUutAnyHeS6UewFzT5pBIRRE2zn2lNYK/TzWq6QiFa1hp16zcCHAtZSq3Lh
++6+t3b7zdVyr37vC7ZZUN65DRMIFtjQWJcQgCO/rVB+6GO2/KknUdmnID+OHcGuyk
++ahWVx46Pqdcjzy9BGj5bMkMTLGBw3C90yKU4l3y7Dyy1mRWchlE16I6++JqVdyeg
++ceJXorA=
++=6g74
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp
+new file mode 100644
+index 0000000..75a04bb
+--- /dev/null
++++ b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T08:00:23.164Z
+\ No newline at end of file
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text
+new file mode 100644
+index 0000000..ae089f1
+--- /dev/null
++++ b/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text
+@@ -0,0 +1 @@
++Not sure if there's utility behind these in SIT, but this is something to consider.
+\ No newline at end of file
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature
+new file mode 100644
+index 0000000..54e3505
+--- /dev/null
++++ b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1WYOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf/AgxAAkapU+zN/lQY+RVLpil3U8wRlWnKfngArvqKZ
++ozSfr6qvyGj1otkc6KikoJU6FgTUkIzNevSUbPC+T3W22tkFoBH/FMAehO6JWHsb
++SZUmI0NhxhC7NIk5JMR3B4QXAUL7bzMzZC913WIbz+p+kiAxym1jpI/0+3KxrGLi
++lZB/JMqeLhj0ysjgTHEtm4Sc2Z0ZV+WSiaIvoNtuR+Y0DsXKKC011g4fkXoitiPQ
++5ieVhh6OxpAhop7ken5DdF/MCt91cd4d/hE5KYdWVJsl4oSsEZk7pYCH8rM9FqMX
++20XYbm0gd++Zn9ony6xdYrWYntiN2pKFqQED1jmYyoa499AI0YYGmkVtvoaacShk
++FGIDq3rIpbUS++wkzit2f0TjVZgAaOHWP807641MxvMW0o4VNXfsRucEOUhQgbf4
++0qyt3NCIr9oFUSV6/f2h6pTaZbEnN59zf6Oh8MXmhYrTUov1hsAmNJfLetqGed2K
++m+AOVtrYJ5fPjRqp3FtryoWII+pGkIpnxrs3W5+1hnfaeiPQwKsd4WarIgg8kVBY
++xdVDkqt83XbTrOTyYyznW+Wh9ZicGwLDicfdZsj2M19ANOTCpjErUpqs6KFkggeW
++q92vpwPsaq2V3y6GGqVHCD2ECKBgUK7wBNsgMGD+LQcB4v4HqsHtuveHxoUbV2/R
++RG9f+M0=
++=Bm74
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp
+new file mode 100644
+index 0000000..4b5efc8
+--- /dev/null
++++ b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T07:59:32.235Z
+\ No newline at end of file
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text
+new file mode 100644
+index 0000000..31f529a
+--- /dev/null
++++ b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text
+@@ -0,0 +1 @@
++Problem: GitHub code review / commit comments are not supported
+\ No newline at end of file
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature
+new file mode 100644
+index 0000000..e060f85
+--- /dev/null
++++ b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqL1WYOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf9oCw//ZhsxgLW3uPQJrc23+2I3cgBgFt5pz0QZtbNp
++YLD93lqeOqHsvKl1+8CsBEI99cECyhQVkvNJGVXPzagjUa0jqDxTj9eKtUvp/uPU
++k1bWkmgkzVfp6YWpvuLlEPBSzF0s2tG5NyTfjF5ajX9R9CDhShDmw2aujLWPpuPA
++6GcitBAVSv+BvFoTwn/ghhyC/Iuo+n1RTJAGHubjxj0SC/OOMBKiq3qYFxM30oia
++4Qkmc/6H9zN1DSzPHWHmkOHYvc2i+DCWSw1TP+V3z1iH4GU2nvX0w42MDowe0Qo9
++oBWAygt+qOFdLSEA/PGTViXOkyTJ2nfSOLdvx8VB5K+jo+4geqQcr9AVriuBHMTr
++14K22ikomiBzgFmiwlRuyflQlpIcOtjvQ/d9USa9vSQSg5Glg3DWD484YSLMOKky
++jhf1ae7j162RLrOkdzHGlaBMSxEnfd5rptTM3adb8HnP3Q+BVyn7YjcvfvBaBVGB
++TmTl5z8a+HfgYiOUnMjMMcTZP6Ac5T1YlLiQHAtuyu9Q8jjwKgHTBBPOuUz5y71E
++3UQ0ESrPgeihPWBz4WMb+ckodteqHfC3Vv1GYOOnXkst4OFEfqHvWWIPqBfVQAr+
++aqUwoQcixmK/kKu7NNld7UZtjjNwhMB//CUQKNubMOhatb0WSCa787W/T7J2pb+B
++htQ5jks=
++=gsEX
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp
+new file mode 100644
+index 0000000..4b5efc8
+--- /dev/null
++++ b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp
+@@ -0,0 +1 @@
++2018-02-20T07:59:32.235Z
+\ No newline at end of file
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text
+new file mode 100644
+index 0000000..657e7e3
+--- /dev/null
++++ b/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text
+@@ -0,0 +1 @@
++These might be important for preserving work context. Note, though, that it looks like importing these will be a bit more hassle and they might slow down import of pull requests.
+\ No newline at end of file
+diff --git a/.sit/reducers/Commented.js b/.sit/reducers/Commented.js
+new file mode 100644
+index 0000000..b5a6a65
+--- /dev/null
++++ b/.sit/reducers/Commented.js
+@@ -0,0 +1,36 @@
++function(state, record) {
++    var state = state;
++
++    // Handle Merged as a comment, too
++    if (typeof record.files[".type/Merged"] !== 'undefined') {
++        var comments = this.comments || [];
++        var decoder = new TextDecoder("utf-8");
++        var merge_request = state.merge_request || "";
++        if (typeof record.files["record"] !== 'undefined') {
++            merge_request = decoder.decode(record.files["record"]);
++        }
++        comments.push({
++            text: ("Merged " + merge_request).trim(),
++            authors: decoder.decode(record.files[".authors"]),
++            timestamp: decoder.decode(record.files[".timestamp"]),
++        });
++        this.comments = comments;
++        state = Object.assign(state, {comments: comments});
++    }
++
++    if (typeof record.files[".type/Commented"] !== 'undefined') {
++        var comments = this.comments || [];
++        var decoder = new TextDecoder("utf-8");
++        var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : null;
++        comments.push({
++            text: decoder.decode(record.files.text),
++            authors: decoder.decode(record.files[".authors"]),
++            timestamp: decoder.decode(record.files[".timestamp"]),
++            merge_request: merge_request,
++        });
++        this.comments = comments;
++        state = Object.assign(state, {comments: comments});
++    }
++
++    return state;
++}
+\ No newline at end of file
+diff --git a/.sit/reducers/DetailsChanges.js b/.sit/reducers/DetailsChanges.js
+new file mode 100644
+index 0000000..34e09e4
+--- /dev/null
++++ b/.sit/reducers/DetailsChanges.js
+@@ -0,0 +1,14 @@
++function(state, record) {
++    if (typeof record.files[".type/DetailsChanged"] !== 'undefined') {
++        var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : null ;
++        var decoder = new TextDecoder("utf-8");
++        return Object.assign(state, {
++            authors: state.authors || decoder.decode(record.files[".authors"]),
++            merge_request: merge_request,
++            details: decoder.decode(record.files.text).trim(),
++            timestamp: state.timestamp || decoder.decode(record.files[".timestamp"]),
++        });
++    } else {
++        return state;
++    }
++}
+diff --git a/.sit/reducers/MergeRequested.js b/.sit/reducers/MergeRequested.js
+new file mode 100644
+index 0000000..e61b1eb
+--- /dev/null
++++ b/.sit/reducers/MergeRequested.js
+@@ -0,0 +1,8 @@
++function(state, record) {
++    if (typeof record.files[".type/MergeRequested"] !== 'undefined') {
++        var merge_requests = record.merge_requests || [];
++        merge_requests.push(record.hash);
++        return Object.assign(state, {merge_requests: merge_requests});
++    }
++    return state;
++}
+\ No newline at end of file
+diff --git a/.sit/reducers/Merged.js b/.sit/reducers/Merged.js
+new file mode 100644
+index 0000000..d009a68
+--- /dev/null
++++ b/.sit/reducers/Merged.js
+@@ -0,0 +1,20 @@
++function(state, record) {
++
++    if (typeof record.files[".type/Merged"] !== 'undefined') {
++        var decoder = new TextDecoder("utf-8");
++        var merges = this.merges || [];
++
++        var merge_request = state.merge_request || "";
++
++        if (typeof record.files["record"] !== 'undefined') {
++            merge_request = decoder.decode(record.files["record"]);
++        }
++
++        merges.push({hash: record.hash, record: merge_request});
++
++        this.merges = merges;
++
++        return Object.assign(state, {merges: merges});
++    }
++    return state;
++}
+\ No newline at end of file
+diff --git a/.sit/reducers/State.js b/.sit/reducers/State.js
+new file mode 100644
+index 0000000..547f8f0
+--- /dev/null
++++ b/.sit/reducers/State.js
+@@ -0,0 +1,14 @@
++function(state, record) {
++    if (typeof this.state == 'undefined') {
++        this.state = 'open';
++    }
++    if (typeof record.files[".type/Closed"] !== 'undefined') {
++        this.state = 'closed';
++        return Object.assign(state, {state: 'closed'});
++    }
++    if (typeof record.files[".type/Reopened"] !== 'undefined') {
++        this.state = 'open';
++        return Object.assign(state, {state: 'open'});
++    }
++    return Object.assign(state, {state: this.state});
++}
+\ No newline at end of file
+diff --git a/.sit/reducers/SummaryChanged.js b/.sit/reducers/SummaryChanged.js
+new file mode 100644
+index 0000000..67d199e
+--- /dev/null
++++ b/.sit/reducers/SummaryChanged.js
+@@ -0,0 +1,12 @@
++function(state, record) {
++    if (typeof record.files[".type/SummaryChanged"] !== 'undefined') {
++        var decoder = new TextDecoder("utf-8");
++        return Object.assign(state, {
++            authors: state.authors || decoder.decode(record.files[".authors"]),
++            summary: decoder.decode(record.files.text).trim(),
++            timestamp: state.timestamp || decoder.decode(record.files[".timestamp"]),
++        });
++    } else {
++        return state;
++    }
++}
+\ No newline at end of file
+diff --git a/.sit/reducers/activity.js b/.sit/reducers/activity.js
+new file mode 100644
+index 0000000..e4cbd1d
+--- /dev/null
++++ b/.sit/reducers/activity.js
+@@ -0,0 +1,5 @@
++function(state, record) {
++    if (typeof record.files[".timestamp"] !== 'undefined') {
++        return Object.assign(state, {last_updated_timestamp: new TextDecoder('utf-8').decode(record.files[".timestamp"])})
++    }
++}
+\ No newline at end of file
+diff --git a/Cargo.lock b/Cargo.lock
+new file mode 100644
+index 0000000..a5ed647
+--- /dev/null
++++ b/Cargo.lock
+@@ -0,0 +1,1584 @@
++[[package]]
++name = "adler32"
++version = "1.0.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "aho-corasick"
++version = "0.5.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "memchr 0.1.11 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "aho-corasick"
++version = "0.6.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "memchr 2.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "ansi_term"
++version = "0.10.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "arrayref"
++version = "0.3.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "askama"
++version = "0.5.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "askama_derive 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "askama_shared 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "askama_derive"
++version = "0.5.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "askama_shared 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "syn 0.11.11 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "askama_shared"
++version = "0.5.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "error-chain 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "nom 3.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)",
++ "syn 0.11.11 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "atty"
++version = "0.2.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "termion 1.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "backtrace"
++version = "0.3.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "backtrace-sys 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)",
++ "cfg-if 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "rustc-demangle 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "backtrace-sys"
++version = "0.1.16"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "cc 1.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "base64"
++version = "0.9.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "safemem 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "bitflags"
++version = "0.9.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "bitflags"
++version = "1.0.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "blake2"
++version = "0.7.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "byte-tools 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "crypto-mac 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "digest 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "block-buffer"
++version = "0.3.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "arrayref 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "byte-tools 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "build_const"
++version = "0.2.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "byte-tools"
++version = "0.2.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "byteorder"
++version = "1.2.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "bytes"
++version = "0.4.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "iovec 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "case"
++version = "0.1.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "cc"
++version = "1.0.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "cesu8"
++version = "1.1.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "cfg-if"
++version = "0.1.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "clap"
++version = "2.30.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "ansi_term 0.10.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "atty 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "strsim 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "textwrap 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "unicode-width 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "vec_map 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "clicolors-control"
++version = "0.2.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "lazy_static 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "config"
++version = "0.8.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "nom 3.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde-hjson 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde_json 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
++ "toml 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "yaml-rust 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "console"
++version = "0.6.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "clicolors-control 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "lazy_static 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "parking_lot 0.5.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "regex 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "termios 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "unicode-width 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "constant_time_eq"
++version = "0.1.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "core-foundation"
++version = "0.2.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "core-foundation-sys 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "core-foundation-sys"
++version = "0.2.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "crc"
++version = "1.7.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "build_const 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "crypto-mac"
++version = "0.5.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "constant_time_eq 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "generic-array 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "data-encoding"
++version = "2.1.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "derive-error"
++version = "0.0.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "case 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)",
++ "syn 0.11.11 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "digest"
++version = "0.7.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "generic-array 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "dtoa"
++version = "0.4.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "encoding_rs"
++version = "0.7.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "cfg-if 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "error-chain"
++version = "0.11.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "backtrace 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "fake-simd"
++version = "0.1.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "foreign-types"
++version = "0.3.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "foreign-types-shared 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "foreign-types-shared"
++version = "0.1.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "fuchsia-zircon"
++version = "0.3.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "fuchsia-zircon-sys 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "fuchsia-zircon-sys"
++version = "0.3.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "futures"
++version = "0.1.18"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "futures-cpupool"
++version = "0.1.8"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
++ "num_cpus 1.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "generic-array"
++version = "0.9.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "typenum 1.9.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "glob"
++version = "0.2.11"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "httparse"
++version = "1.2.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "hyper"
++version = "0.11.18"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "base64 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "bytes 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
++ "futures-cpupool 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)",
++ "httparse 1.2.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "iovec 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "language-tags 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "mime 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "percent-encoding 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "relay 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-core 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-io 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-proto 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-service 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "unicase 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "hyper-tls"
++version = "0.1.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
++ "hyper 0.11.18 (registry+https://github.com/rust-lang/crates.io-index)",
++ "native-tls 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-core 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-io 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-service 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-tls 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "idna"
++version = "0.1.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "matches 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "unicode-bidi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "unicode-normalization 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "include_dir"
++version = "0.1.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "error-chain 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "glob 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "iovec"
++version = "0.1.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "itoa"
++version = "0.3.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "kernel32-sys"
++version = "0.2.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi-build 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "language-tags"
++version = "0.2.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "lazy_static"
++version = "0.2.11"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "lazy_static"
++version = "1.0.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "lazycell"
++version = "0.6.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "libc"
++version = "0.2.36"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "libflate"
++version = "0.1.14"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "adler32 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "crc 1.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "linked-hash-map"
++version = "0.3.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "serde 0.8.23 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde_test 0.8.23 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "linked-hash-map"
++version = "0.5.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "log"
++version = "0.3.9"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "log"
++version = "0.4.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "cfg-if 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "matches"
++version = "0.1.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "memchr"
++version = "0.1.11"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "memchr"
++version = "1.0.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "memchr"
++version = "2.0.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "memmap"
++version = "0.6.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "mime"
++version = "0.3.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "unicase 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "mime_guess"
++version = "2.0.0-alpha.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "mime 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "phf 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
++ "phf_codegen 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
++ "unicase 1.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "mio"
++version = "0.6.13"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "fuchsia-zircon 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "fuchsia-zircon-sys 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "iovec 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "lazycell 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
++ "miow 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "net2 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
++ "slab 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "miow"
++version = "0.2.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "net2 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
++ "ws2_32-sys 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "native-tls"
++version = "0.1.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "lazy_static 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "openssl 0.9.24 (registry+https://github.com/rust-lang/crates.io-index)",
++ "schannel 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)",
++ "security-framework 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)",
++ "security-framework-sys 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tempdir 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "net2"
++version = "0.2.31"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "cfg-if 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
++ "ws2_32-sys 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "nom"
++version = "3.2.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "memchr 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "num-traits"
++version = "0.1.43"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "num-traits 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "num-traits"
++version = "0.2.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "num_cpus"
++version = "1.8.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "openssl"
++version = "0.9.24"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "bitflags 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "foreign-types 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "openssl-sys 0.9.26 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "openssl-sys"
++version = "0.9.26"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "cc 1.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "pkg-config 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
++ "vcpkg 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "owning_ref"
++version = "0.3.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "stable_deref_trait 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "parking_lot"
++version = "0.5.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "owning_ref 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "parking_lot_core 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "parking_lot_core"
++version = "0.2.13"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "rand 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "pbr"
++version = "1.0.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "percent-encoding"
++version = "1.0.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "phf"
++version = "0.7.21"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "phf_shared 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "phf_codegen"
++version = "0.7.21"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "phf_generator 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
++ "phf_shared 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "phf_generator"
++version = "0.7.21"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "phf_shared 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)",
++ "rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "phf_shared"
++version = "0.7.21"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "siphasher 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "unicase 1.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "pkg-config"
++version = "0.3.9"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "quote"
++version = "0.3.15"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "rand"
++version = "0.3.22"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "fuchsia-zircon 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "rand 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "rand"
++version = "0.4.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "fuchsia-zircon 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "redox_syscall"
++version = "0.1.37"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "redox_termios"
++version = "0.1.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "redox_syscall 0.1.37 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "regex"
++version = "0.1.80"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "aho-corasick 0.5.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "memchr 0.1.11 (registry+https://github.com/rust-lang/crates.io-index)",
++ "regex-syntax 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
++ "thread_local 0.2.7 (registry+https://github.com/rust-lang/crates.io-index)",
++ "utf8-ranges 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "regex"
++version = "0.2.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "aho-corasick 0.6.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "memchr 2.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "regex-syntax 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "thread_local 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "utf8-ranges 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "regex-syntax"
++version = "0.3.9"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "regex-syntax"
++version = "0.4.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "relay"
++version = "0.1.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "remove_dir_all"
++version = "0.3.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "reqwest"
++version = "0.8.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "bytes 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "encoding_rs 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
++ "hyper 0.11.18 (registry+https://github.com/rust-lang/crates.io-index)",
++ "hyper-tls 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libflate 0.1.14 (registry+https://github.com/rust-lang/crates.io-index)",
++ "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "mime_guess 2.0.0-alpha.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "native-tls 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde_json 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde_urlencoded 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-core 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-io 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-tls 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "url 1.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "uuid 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "rustc-demangle"
++version = "0.1.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "safemem"
++version = "0.2.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "schannel"
++version = "0.1.10"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "scoped-tls"
++version = "0.1.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "security-framework"
++version = "0.1.16"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "core-foundation 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "core-foundation-sys 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "security-framework-sys 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "security-framework-sys"
++version = "0.1.16"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "core-foundation-sys 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "serde"
++version = "0.8.23"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "serde"
++version = "1.0.27"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "serde-hjson"
++version = "0.8.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "lazy_static 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)",
++ "linked-hash-map 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)",
++ "regex 0.1.80 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde 0.8.23 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "serde_derive"
++version = "1.0.27"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde_derive_internals 0.19.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "syn 0.11.11 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "serde_derive_internals"
++version = "0.19.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "syn 0.11.11 (registry+https://github.com/rust-lang/crates.io-index)",
++ "synom 0.11.3 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "serde_json"
++version = "1.0.9"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "dtoa 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "itoa 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "serde_test"
++version = "0.8.23"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "serde 0.8.23 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "serde_urlencoded"
++version = "0.5.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "dtoa 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "itoa 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++ "url 1.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "sha-1"
++version = "0.7.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "block-buffer 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "byte-tools 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "digest 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "fake-simd 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "siphasher"
++version = "0.2.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "sit-core"
++version = "0.1.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "blake2 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "cc 1.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "cesu8 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "data-encoding 2.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "derive-error 0.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "digest 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "glob 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)",
++ "include_dir 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "memmap 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde_derive 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde_json 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
++ "sha-1 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tempdir 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tini 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "typed-builder 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "uuid 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "sit-import"
++version = "0.1.0"
++dependencies = [
++ "askama 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "clap 2.30.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "config 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "console 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "pbr 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "regex 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "reqwest 0.8.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde_derive 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde_json 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
++ "sit-core 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "xdg 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "slab"
++version = "0.3.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "slab"
++version = "0.4.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "smallvec"
++version = "0.2.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "smallvec"
++version = "0.6.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "stable_deref_trait"
++version = "1.0.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "strsim"
++version = "0.7.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "syn"
++version = "0.11.11"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)",
++ "synom 0.11.3 (registry+https://github.com/rust-lang/crates.io-index)",
++ "unicode-xid 0.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "synom"
++version = "0.11.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "unicode-xid 0.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "take"
++version = "0.1.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "tempdir"
++version = "0.3.6"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "rand 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "remove_dir_all 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "termion"
++version = "1.5.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "redox_syscall 0.1.37 (registry+https://github.com/rust-lang/crates.io-index)",
++ "redox_termios 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "termios"
++version = "0.2.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "textwrap"
++version = "0.9.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "unicode-width 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "thread-id"
++version = "2.0.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "thread_local"
++version = "0.2.7"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "thread-id 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "thread_local"
++version = "0.3.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "unreachable 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "time"
++version = "0.1.39"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)",
++ "redox_syscall 0.1.37 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "tini"
++version = "0.2.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "tokio-core"
++version = "0.1.12"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "bytes 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
++ "iovec 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "mio 0.6.13 (registry+https://github.com/rust-lang/crates.io-index)",
++ "scoped-tls 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "slab 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-io 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "tokio-io"
++version = "0.1.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "bytes 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
++ "log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "tokio-proto"
++version = "0.1.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
++ "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
++ "net2 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
++ "rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)",
++ "slab 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "smallvec 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "take 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-core 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-io 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-service 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "tokio-service"
++version = "0.1.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "tokio-tls"
++version = "0.1.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
++ "native-tls 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-core 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
++ "tokio-io 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "toml"
++version = "0.4.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "typed-builder"
++version = "0.1.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)",
++ "syn 0.11.11 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "typenum"
++version = "1.9.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "unicase"
++version = "1.4.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "version_check 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "unicase"
++version = "2.1.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "version_check 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "unicode-bidi"
++version = "0.3.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "matches 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "unicode-normalization"
++version = "0.1.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "unicode-width"
++version = "0.1.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "unicode-xid"
++version = "0.0.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "unreachable"
++version = "1.0.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "void 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "url"
++version = "1.6.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "idna 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
++ "matches 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "percent-encoding 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "utf8-ranges"
++version = "0.1.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "utf8-ranges"
++version = "1.0.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "uuid"
++version = "0.5.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "vcpkg"
++version = "0.2.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "vec_map"
++version = "0.8.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "version_check"
++version = "0.1.3"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "void"
++version = "1.0.2"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "winapi"
++version = "0.2.8"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "winapi"
++version = "0.3.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "winapi-i686-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi-x86_64-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "winapi-build"
++version = "0.1.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "winapi-i686-pc-windows-gnu"
++version = "0.4.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "winapi-x86_64-pc-windows-gnu"
++version = "0.4.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "ws2_32-sys"
++version = "0.2.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
++ "winapi-build 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
++name = "xdg"
++version = "2.1.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
++name = "yaml-rust"
++version = "0.4.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "linked-hash-map 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[metadata]
++"checksum adler32 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "6cbd0b9af8587c72beadc9f72d35b9fbb070982c9e6203e46e93f10df25f8f45"
++"checksum aho-corasick 0.5.3 (registry+https://github.com/rust-lang/crates.io-index)" = "ca972c2ea5f742bfce5687b9aef75506a764f61d37f8f649047846a9686ddb66"
++"checksum aho-corasick 0.6.4 (registry+https://github.com/rust-lang/crates.io-index)" = "d6531d44de723825aa81398a6415283229725a00fa30713812ab9323faa82fc4"
++"checksum ansi_term 0.10.2 (registry+https://github.com/rust-lang/crates.io-index)" = "6b3568b48b7cefa6b8ce125f9bb4989e52fbcc29ebea88df04cc7c5f12f70455"
++"checksum arrayref 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)" = "0fd1479b7c29641adbd35ff3b5c293922d696a92f25c8c975da3e0acbc87258f"
++"checksum askama 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "f7a512bda67cd1fec46d53a2bf9d8a152230357a1e2c56d6467f9b6b4c5265bb"
++"checksum askama_derive 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "d832e1c03d4ea2dee7358380d806f5487327b2ca833d1a250a9d8b3b1ce3f5ba"
++"checksum askama_shared 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "d722d31c71ed727ade159d64aab7019be0df6363338e83c4751ac5af1730c562"
++"checksum atty 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)" = "8352656fd42c30a0c3c89d26dea01e3b77c0ab2af18230835c15e2e13cd51859"
++"checksum backtrace 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)" = "ebbbf59b1c43eefa8c3ede390fcc36820b4999f7914104015be25025e0d62af2"
++"checksum backtrace-sys 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)" = "44585761d6161b0f57afc49482ab6bd067e4edef48c12a152c237eb0203f7661"
++"checksum base64 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "229d032f1a99302697f10b27167ae6d03d49d032e6a8e2550e8d3fc13356d2b4"
++"checksum bitflags 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4efd02e230a02e18f92fc2735f44597385ed02ad8f831e7c1c1156ee5e1ab3a5"
++"checksum bitflags 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "b3c30d3802dfb7281680d6285f2ccdaa8c2d8fee41f93805dba5c4cf50dc23cf"
++"checksum blake2 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b0da79fe9391e02df251e0d86197332d398b4721e80722fc91b9c4cbde3ce355"
++"checksum block-buffer 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "a076c298b9ecdb530ed9d967e74a6027d6a7478924520acddcddc24c1c8ab3ab"
++"checksum build_const 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e90dc84f5e62d2ebe7676b83c22d33b6db8bd27340fb6ffbff0a364efa0cb9c9"
++"checksum byte-tools 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "560c32574a12a89ecd91f5e742165893f86e3ab98d21f8ea548658eb9eef5f40"
++"checksum byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "652805b7e73fada9d85e9a6682a4abd490cb52d96aeecc12e33a0de34dfd0d23"
++"checksum bytes 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)" = "1b7db437d718977f6dc9b2e3fd6fc343c02ac6b899b73fdd2179163447bd9ce9"
++"checksum case 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e88b166b48e29667f5443df64df3c61dc07dc2b1a0b0d231800e07f09a33ecc1"
++"checksum cc 1.0.4 (registry+https://github.com/rust-lang/crates.io-index)" = "deaf9ec656256bb25b404c51ef50097207b9cbb29c933d31f92cae5a8a0ffee0"
++"checksum cesu8 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "6d43a04d8753f35258c91f8ec639f792891f748a1edbd759cf1dcea3382ad83c"
++"checksum cfg-if 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "d4c819a1287eb618df47cc647173c5c4c66ba19d888a6e50d605672aed3140de"
++"checksum clap 2.30.0 (registry+https://github.com/rust-lang/crates.io-index)" = "1c07b9257a00f3fc93b7f3c417fc15607ec7a56823bc2c37ec744e266387de5b"
++"checksum clicolors-control 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "1f84dec9bc083ce2503908cd305af98bd363da6f54bf8d4bf0ac14ee749ad5d1"
++"checksum config 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e595d1735d8ab6b04906bbdcfc671cce2a5e609b6f8e92865e67331cc2f41ba4"
++"checksum console 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)" = "7649ca90478264b9686aac8d269fcb014f14c2bed7c79a7e51b9f6afd4d783eb"
++"checksum constant_time_eq 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "8ff012e225ce166d4422e0e78419d901719760f62ae2b7969ca6b564d1b54a9e"
++"checksum core-foundation 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "25bfd746d203017f7d5cbd31ee5d8e17f94b6521c7af77ece6c9e4b2d4b16c67"
++"checksum core-foundation-sys 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "065a5d7ffdcbc8fa145d6f0746f3555025b9097a9e9cda59f7467abae670c78d"
++"checksum crc 1.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "bd5d02c0aac6bd68393ed69e00bbc2457f3e89075c6349db7189618dc4ddc1d7"
++"checksum crypto-mac 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)" = "0999b4ff4d3446d4ddb19a63e9e00c1876e75cd7000d20e57a693b4b3f08d958"
++"checksum data-encoding 2.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "67df0571a74bf0d97fb8b2ed22abdd9a48475c96bd327db968b7d9cace99655e"
++"checksum derive-error 0.0.4 (registry+https://github.com/rust-lang/crates.io-index)" = "ec098440b29ea3b1ece3e641bac424c19cf996779b623c9e0f2171495425c2c8"
++"checksum digest 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)" = "00a49051fef47a72c9623101b19bd71924a45cca838826caae3eaa4d00772603"
++"checksum dtoa 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "09c3753c3db574d215cba4ea76018483895d7bff25a31b49ba45db21c48e50ab"
++"checksum encoding_rs 0.7.2 (registry+https://github.com/rust-lang/crates.io-index)" = "98fd0f24d1fb71a4a6b9330c8ca04cbd4e7cc5d846b54ca74ff376bc7c9f798d"
++"checksum error-chain 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ff511d5dc435d703f4971bc399647c9bc38e20cb41452e3b9feb4765419ed3f3"
++"checksum fake-simd 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
++"checksum foreign-types 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "f6f339eb8adc052cd2ca78910fda869aefa38d22d5cb648e6485e4d3fc06f3b1"
++"checksum foreign-types-shared 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "00b0228411908ca8685dba7fc2cdd70ec9990a6e753e89b6ac91a84c40fbaf4b"
++"checksum fuchsia-zircon 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "2e9763c69ebaae630ba35f74888db465e49e259ba1bc0eda7d06f4a067615d82"
++"checksum fuchsia-zircon-sys 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "3dcaa9ae7725d12cdb85b3ad99a434db70b468c09ded17e012d86b5c1010f7a7"
++"checksum futures 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)" = "0bab5b5e94f5c31fc764ba5dd9ad16568aae5d4825538c01d6bca680c9bf94a7"
++"checksum futures-cpupool 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)" = "ab90cde24b3319636588d0c35fe03b1333857621051837ed769faefb4c2162e4"
++"checksum generic-array 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ef25c5683767570c2bbd7deba372926a55eaae9982d7726ee2a1050239d45b9d"
++"checksum glob 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)" = "8be18de09a56b60ed0edf84bc9df007e30040691af7acd1c41874faac5895bfb"
++"checksum httparse 1.2.4 (registry+https://github.com/rust-lang/crates.io-index)" = "c2f407128745b78abc95c0ffbe4e5d37427fdc0d45470710cfef8c44522a2e37"
++"checksum hyper 0.11.18 (registry+https://github.com/rust-lang/crates.io-index)" = "c4f9b276c87e3fc1902a8bdfcce264c3f7c8a1c35e5e0c946062739f55026664"
++"checksum hyper-tls 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "9c81fa95203e2a6087242c38691a0210f23e9f3f8f944350bd676522132e2985"
++"checksum idna 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)" = "014b298351066f1512874135335d62a789ffe78a9974f94b43ed5621951eaf7d"
++"checksum include_dir 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "a5d066c5b9c676ef54b5f5da74db3eb92af7fc64c2e2e74333cdf5b58a9cfbf2"
++"checksum iovec 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "dbe6e417e7d0975db6512b90796e8ce223145ac4e33c377e4a42882a0e88bb08"
++"checksum itoa 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)" = "8324a32baf01e2ae060e9de58ed0bc2320c9a2833491ee36cd3b4c414de4db8c"
++"checksum kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "7507624b29483431c0ba2d82aece8ca6cdba9382bff4ddd0f7490560c056098d"
++"checksum language-tags 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "a91d884b6667cd606bb5a69aa0c99ba811a115fc68915e7056ec08a46e93199a"
++"checksum lazy_static 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)" = "76f033c7ad61445c5b347c7382dd1237847eb1bce590fe50365dcb33d546be73"
++"checksum lazy_static 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c8f31047daa365f19be14b47c29df4f7c3b581832407daabe6ae77397619237d"
++"checksum lazycell 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a6f08839bc70ef4a3fe1d566d5350f519c5912ea86be0df1740a7d247c7fc0ef"
++"checksum libc 0.2.36 (registry+https://github.com/rust-lang/crates.io-index)" = "1e5d97d6708edaa407429faa671b942dc0f2727222fb6b6539bf1db936e4b121"
++"checksum libflate 0.1.14 (registry+https://github.com/rust-lang/crates.io-index)" = "1a429b86418868c7ea91ee50e9170683f47fd9d94f5375438ec86ec3adb74e8e"
++"checksum linked-hash-map 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "6d262045c5b87c0861b3f004610afd0e2c851e2908d08b6c870cbb9d5f494ecd"
++"checksum linked-hash-map 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "70fb39025bc7cdd76305867c4eccf2f2dcf6e9a57f5b21a93e1c2d86cd03ec9e"
++"checksum log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)" = "e19e8d5c34a3e0e2223db8e060f9e8264aeeb5c5fc64a4ee9965c062211c024b"
++"checksum log 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "89f010e843f2b1a31dbd316b3b8d443758bc634bed37aabade59c686d644e0a2"
++"checksum matches 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)" = "100aabe6b8ff4e4a7e32c1c13523379802df0772b82466207ac25b013f193376"
++"checksum memchr 0.1.11 (registry+https://github.com/rust-lang/crates.io-index)" = "d8b629fb514376c675b98c1421e80b151d3817ac42d7c667717d282761418d20"
++"checksum memchr 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "148fab2e51b4f1cfc66da2a7c32981d1d3c083a803978268bb11fe4b86925e7a"
++"checksum memchr 2.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "796fba70e76612589ed2ce7f45282f5af869e0fdd7cc6199fa1aa1f1d591ba9d"
++"checksum memmap 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e2ffa2c986de11a9df78620c01eeaaf27d94d3ff02bf81bfcca953102dd0c6ff"
++"checksum mime 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)" = "e2e00e17be181010a91dbfefb01660b17311059dc8c7f48b9017677721e732bd"
++"checksum mime_guess 2.0.0-alpha.3 (registry+https://github.com/rust-lang/crates.io-index)" = "013572795763289e14710c7b279461295f2673b2b338200c235082cd7ca9e495"
++"checksum mio 0.6.13 (registry+https://github.com/rust-lang/crates.io-index)" = "7da01a5e23070d92d99b1ecd1cd0af36447c6fd44b0fe283c2db199fa136724f"
++"checksum miow 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "8c1f2f3b1cf331de6896aabf6e9d55dca90356cc9960cca7eaaf408a355ae919"
++"checksum native-tls 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "f74dbadc8b43df7864539cedb7bc91345e532fdd913cfdc23ad94f4d2d40fbc0"
++"checksum net2 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)" = "3a80f842784ef6c9a958b68b7516bc7e35883c614004dd94959a4dca1b716c09"
++"checksum nom 3.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "05aec50c70fd288702bcd93284a8444607f3292dbdf2a30de5ea5dcdbe72287b"
++"checksum num-traits 0.1.43 (registry+https://github.com/rust-lang/crates.io-index)" = "92e5113e9fd4cc14ded8e499429f396a20f98c772a47cc8622a736e1ec843c31"
++"checksum num-traits 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e7de20f146db9d920c45ee8ed8f71681fd9ade71909b48c3acbd766aa504cf10"
++"checksum num_cpus 1.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c51a3322e4bca9d212ad9a158a02abc6934d005490c054a2778df73a70aa0a30"
++"checksum openssl 0.9.24 (registry+https://github.com/rust-lang/crates.io-index)" = "a3605c298474a3aa69de92d21139fb5e2a81688d308262359d85cdd0d12a7985"
++"checksum openssl-sys 0.9.26 (registry+https://github.com/rust-lang/crates.io-index)" = "a5a41ce2f5f2d939c80decde8fcfcf5837c203ca6c06a553510a2fcb84fa3ef1"
++"checksum owning_ref 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "cdf84f41639e037b484f93433aa3897863b561ed65c6e59c7073d7c561710f37"
++"checksum parking_lot 0.5.3 (registry+https://github.com/rust-lang/crates.io-index)" = "3e7f7c9857874e54afeb950eebeae662b1e51a2493666d2ea4c0a5d91dcf0412"
++"checksum parking_lot_core 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)" = "538ef00b7317875071d5e00f603f24d16f0b474c1a5fc0ccb8b454ca72eafa79"
++"checksum pbr 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e048e3afebb6c454bb1c5d0fe73fda54698b4715d78ed8e7302447c37736d23a"
++"checksum percent-encoding 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "31010dd2e1ac33d5b46a5b413495239882813e0369f8ed8a5e266f173602f831"
++"checksum phf 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)" = "cb325642290f28ee14d8c6201159949a872f220c62af6e110a56ea914fbe42fc"
++"checksum phf_codegen 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)" = "d62594c0bb54c464f633175d502038177e90309daf2e0158be42ed5f023ce88f"
++"checksum phf_generator 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)" = "6b07ffcc532ccc85e3afc45865469bf5d9e4ef5bfcf9622e3cfe80c2d275ec03"
++"checksum phf_shared 0.7.21 (registry+https://github.com/rust-lang/crates.io-index)" = "07e24b0ca9643bdecd0632f2b3da6b1b89bbb0030e0b992afc1113b23a7bc2f2"
++"checksum pkg-config 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)" = "3a8b4c6b8165cd1a1cd4b9b120978131389f64bdaf456435caa41e630edba903"
++"checksum quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)" = "7a6e920b65c65f10b2ae65c831a81a073a89edd28c7cce89475bff467ab4167a"
++"checksum rand 0.3.22 (registry+https://github.com/rust-lang/crates.io-index)" = "15a732abf9d20f0ad8eeb6f909bf6868722d9a06e1e50802b6a70351f40b4eb1"
++"checksum rand 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "eba5f8cb59cc50ed56be8880a5c7b496bfd9bd26394e176bc67884094145c2c5"
++"checksum redox_syscall 0.1.37 (registry+https://github.com/rust-lang/crates.io-index)" = "0d92eecebad22b767915e4d529f89f28ee96dbbf5a4810d2b844373f136417fd"
++"checksum redox_termios 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "7e891cfe48e9100a70a3b6eb652fef28920c117d366339687bd5576160db0f76"
++"checksum regex 0.1.80 (registry+https://github.com/rust-lang/crates.io-index)" = "4fd4ace6a8cf7860714a2c2280d6c1f7e6a413486c13298bbc86fd3da019402f"
++"checksum regex 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)" = "5be5347bde0c48cfd8c3fdc0766cdfe9d8a755ef84d620d6794c778c91de8b2b"
++"checksum regex-syntax 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)" = "f9ec002c35e86791825ed294b50008eea9ddfc8def4420124fbc6b08db834957"
++"checksum regex-syntax 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "8e931c58b93d86f080c734bfd2bce7dd0079ae2331235818133c8be7f422e20e"
++"checksum relay 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "1576e382688d7e9deecea24417e350d3062d97e32e45d70b1cde65994ff1489a"
++"checksum remove_dir_all 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b5d2f806b0fcdabd98acd380dc8daef485e22bcb7cddc811d1337967f2528cf5"
++"checksum reqwest 0.8.5 (registry+https://github.com/rust-lang/crates.io-index)" = "241faa9a8ca28a03cbbb9815a5d085f271d4c0168a19181f106aa93240c22ddb"
++"checksum rustc-demangle 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)" = "f312457f8a4fa31d3581a6f423a70d6c33a10b95291985df55f1ff670ec10ce8"
++"checksum safemem 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e27a8b19b835f7aea908818e871f5cc3a5a186550c30773be987e155e8163d8f"
++"checksum schannel 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)" = "acece75e0f987c48863a6c792ec8b7d6c4177d4a027f8ccc72f849794f437016"
++"checksum scoped-tls 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "f417c22df063e9450888a7561788e9bd46d3bb3c1466435b4eccb903807f147d"
++"checksum security-framework 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)" = "dfa44ee9c54ce5eecc9de7d5acbad112ee58755239381f687e564004ba4a2332"
++"checksum security-framework-sys 0.1.16 (registry+https://github.com/rust-lang/crates.io-index)" = "5421621e836278a0b139268f36eee0dc7e389b784dc3f79d8f11aabadf41bead"
++"checksum serde 0.8.23 (registry+https://github.com/rust-lang/crates.io-index)" = "9dad3f759919b92c3068c696c15c3d17238234498bbdcc80f2c469606f948ac8"
++"checksum serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)" = "db99f3919e20faa51bb2996057f5031d8685019b5a06139b1ce761da671b8526"
++"checksum serde-hjson 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)" = "7a2376ebb8976138927f48b49588ef73cde2f6591b8b3df22f4063e0f27b9bec"
++"checksum serde_derive 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)" = "f4ba7591cfe93755e89eeecdbcc668885624829b020050e6aec99c2a03bd3fd0"
++"checksum serde_derive_internals 0.19.0 (registry+https://github.com/rust-lang/crates.io-index)" = "6e03f1c9530c3fb0a0a5c9b826bdd9246a5921ae995d75f512ac917fc4dd55b5"
++"checksum serde_json 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)" = "c9db7266c7d63a4c4b7fe8719656ccdd51acf1bed6124b174f933b009fb10bcb"
++"checksum serde_test 0.8.23 (registry+https://github.com/rust-lang/crates.io-index)" = "110b3dbdf8607ec493c22d5d947753282f3bae73c0f56d322af1e8c78e4c23d5"
++"checksum serde_urlencoded 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "ce0fd303af908732989354c6f02e05e2e6d597152870f2c6990efb0577137480"
++"checksum sha-1 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "51b9d1f3b5de8a167ab06834a7c883bd197f2191e1dda1a22d9ccfeedbf9aded"
++"checksum siphasher 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "0df90a788073e8d0235a67e50441d47db7c8ad9debd91cbf43736a2a92d36537"
++"checksum sit-core 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "9e43bd987eb9b3056d88f1e182e25c2061346372681d1f85dff6a80ed44bf67c"
++"checksum slab 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "17b4fcaed89ab08ef143da37bc52adbcc04d4a69014f4c1208d6b51f0c47bc23"
++"checksum slab 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fdeff4cd9ecff59ec7e3744cbca73dfe5ac35c2aedb2cfba8a1c715a18912e9d"
++"checksum smallvec 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4c8cbcd6df1e117c2210e13ab5109635ad68a929fcbb8964dc965b76cb5ee013"
++"checksum smallvec 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "44db0ecb22921ef790d17ae13a3f6d15784183ff5f2a01aa32098c7498d2b4b9"
++"checksum stable_deref_trait 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "15132e0e364248108c5e2c02e3ab539be8d6f5d52a01ca9bbf27ed657316f02b"
++"checksum strsim 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "bb4f380125926a99e52bc279241539c018323fab05ad6368b56f93d9369ff550"
++"checksum syn 0.11.11 (registry+https://github.com/rust-lang/crates.io-index)" = "d3b891b9015c88c576343b9b3e41c2c11a51c219ef067b264bd9c8aa9b441dad"
++"checksum synom 0.11.3 (registry+https://github.com/rust-lang/crates.io-index)" = "a393066ed9010ebaed60b9eafa373d4b1baac186dd7e008555b0f702b51945b6"
++"checksum take 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b157868d8ac1f56b64604539990685fa7611d8fa9e5476cf0c02cf34d32917c5"
++"checksum tempdir 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)" = "f73eebdb68c14bcb24aef74ea96079830e7fa7b31a6106e42ea7ee887c1e134e"
++"checksum termion 1.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "689a3bdfaab439fd92bc87df5c4c78417d3cbe537487274e9b0b2dce76e92096"
++"checksum termios 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "d5d9cf598a6d7ce700a4e6a9199da127e6819a61e64b68609683cc9a01b5683a"
++"checksum textwrap 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c0b59b6b4b44d867f1370ef1bd91bfb262bf07bf0ae65c202ea2fbc16153b693"
++"checksum thread-id 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a9539db560102d1cef46b8b78ce737ff0bb64e7e18d35b2a5688f7d097d0ff03"
++"checksum thread_local 0.2.7 (registry+https://github.com/rust-lang/crates.io-index)" = "8576dbbfcaef9641452d5cf0df9b0e7eeab7694956dd33bb61515fb8f18cfdd5"
++"checksum thread_local 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)" = "279ef31c19ededf577bfd12dfae728040a21f635b06a24cd670ff510edd38963"
++"checksum time 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)" = "a15375f1df02096fb3317256ce2cee6a1f42fc84ea5ad5fc8c421cfe40c73098"
++"checksum tini 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "11eeaa68267376df2aacbaaed9b0092544ebbc897cd59f61e81a1105fbaf102e"
++"checksum tokio-core 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)" = "52b4e32d8edbf29501aabb3570f027c6ceb00ccef6538f4bddba0200503e74e8"
++"checksum tokio-io 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "b9532748772222bf70297ec0e2ad0f17213b4a7dd0e6afb68e0a0768f69f4e4f"
++"checksum tokio-proto 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "8fbb47ae81353c63c487030659494b295f6cb6576242f907f203473b191b0389"
++"checksum tokio-service 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "24da22d077e0f15f55162bdbdc661228c1581892f52074fb242678d015b45162"
++"checksum tokio-tls 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)" = "772f4b04e560117fe3b0a53e490c16ddc8ba6ec437015d91fa385564996ed913"
++"checksum toml 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)" = "a7540f4ffc193e0d3c94121edb19b055670d369f77d5804db11ae053a45b6e7e"
++"checksum typed-builder 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "0a17a8ff0df819694df5f61b1181fc0688b00e2bcd8951f7a5880f192d8b4cd1"
++"checksum typenum 1.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "13a99dc6780ef33c78780b826cf9d2a78840b72cae9474de4bcaf9051e60ebbd"
++"checksum unicase 1.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "7f4765f83163b74f957c797ad9253caf97f103fb064d3999aea9568d09fc8a33"
++"checksum unicase 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "284b6d3db520d67fbe88fd778c21510d1b0ba4a551e5d0fbb023d33405f6de8a"
++"checksum unicode-bidi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)" = "49f2bd0c6468a8230e1db229cff8029217cf623c767ea5d60bfbd42729ea54d5"
++"checksum unicode-normalization 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "51ccda9ef9efa3f7ef5d91e8f9b83bbe6955f9bf86aec89d5cce2c874625920f"
++"checksum unicode-width 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)" = "bf3a113775714a22dcb774d8ea3655c53a32debae63a063acc00a91cc586245f"
++"checksum unicode-xid 0.0.4 (registry+https://github.com/rust-lang/crates.io-index)" = "8c1f860d7d29cf02cb2f3f359fd35991af3d30bac52c57d265a3c461074cb4dc"
++"checksum unreachable 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "382810877fe448991dfc7f0dd6e3ae5d58088fd0ea5e35189655f84e6814fa56"
++"checksum url 1.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fa35e768d4daf1d85733418a49fb42e10d7f633e394fccab4ab7aba897053fe2"
++"checksum utf8-ranges 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "a1ca13c08c41c9c3e04224ed9ff80461d97e121589ff27c753a16cb10830ae0f"
++"checksum utf8-ranges 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "662fab6525a98beff2921d7f61a39e7d59e0b425ebc7d0d9e66d316e55124122"
++"checksum uuid 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "bcc7e3b898aa6f6c08e5295b6c89258d1331e9ac578cc992fb818759951bdc22"
++"checksum vcpkg 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "9e0a7d8bed3178a8fb112199d466eeca9ed09a14ba8ad67718179b4fd5487d0b"
++"checksum vec_map 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "887b5b631c2ad01628bbbaa7dd4c869f80d3186688f8d0b6f58774fbe324988c"
++"checksum version_check 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "6b772017e347561807c1aa192438c5fd74242a670a6cffacc40f2defd1dc069d"
++"checksum void 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "6a02e4885ed3bc0f2de90ea6dd45ebcbb66dacffe03547fadbb0eeae2770887d"
++"checksum winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)" = "167dc9d6949a9b857f3451275e911c3f44255842c1f7a76f33c55103a909087a"
++"checksum winapi 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)" = "04e3bd221fcbe8a271359c04f21a76db7d0c6028862d1bb5512d85e1e2eb5bb3"
++"checksum winapi-build 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "2d315eee3b34aca4797b2da6b13ed88266e6d612562a0c46390af8299fc699bc"
++"checksum winapi-i686-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
++"checksum winapi-x86_64-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
++"checksum ws2_32-sys 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "d59cefebd0c892fa2dd6de581e937301d8552cb44489cdff035c6187cb63fa5e"
++"checksum xdg 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a66b7c2281ebde13cf4391d70d4c7e5946c3c25e72a7b859ca8f677dcd0b0c61"
++"checksum yaml-rust 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "57ab38ee1a4a266ed033496cf9af1828d8d6e6c1cfa5f643a2809effcae4d628"
+diff --git a/Cargo.toml b/Cargo.toml
+new file mode 100644
+index 0000000..a908ff7
+--- /dev/null
++++ b/Cargo.toml
+@@ -0,0 +1,21 @@
++[package]
++name = "sit-import"
++version = "0.1.0"
++authors = ["Yurii Rashkovskii <mek@yrashk.com>"]
++
++[dependencies]
++reqwest = "0.8"
++serde = "1.0"
++serde_derive = "1.0"
++serde_json = "1.0"
++config = { version = "0.8", features = ["json"] }
++xdg = "2.1"
++clap = "2.29"
++console = "0.6"
++sit-core = "0.1"
++askama = "0.5"
++pbr = "1.0"
++regex = "0.2"
++
++[build-dependencies]
++askama = "0.5"
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..f49ea6d
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,56 @@
++# sit-import
++
++This tool allows to import issues (and merge requests) from external sources
++to [SIT](http://sit-it.org), thus enabling seamless migration.
++
++Currently supported sources:
++
++* GitHub
++
++That's it :)
++
++## Status
++
++Early version, published for testing. Certain types of data is **not imported
++yet** and likely has bugs (check with sit-import's issues).
++
++## How to build
++
++You will need Rust 1.24+, openssl, pkgconfig. To build:
++
++```
++cargo build --release
++```
++
++You can now put `target/release/sit-import` into your `PATH`.
++
++## Runnning
++
++### Importing from GitHub
++
++ Firstly, [create a personal token](https://github.com/settings/tokens). Then, create a config
++ file (say, `import.json`) and put it there:
++
++ ```json
++ {
++   "github": {
++      "token": "<TOKEN>"
++   }
++}
++```
++
++Initialize a target repo by running `sit init` (it will put it into `.sit`) or `sit -r DEST init` (it will put it into `DEST`).
++
++Run `sit-import`:
++
++```
++sit-import [-r DEST] -c import.json https://github.com/OWNER/REPO
++```
++
++Depending on the size of the project, your bandwidth and other parameters, it might take a while.
++
++If you are satisifed with your test run, it is suggested that you disable
++access to your issues/pull requests ([temporary interaction limit](https://github.com/blog/2370-introducing-temporary-interaction-limits( feature might come in handy), make sure other
++collaborators/admins are staying off the issues and do a final run, ensuring
++nothing is lost in the transition.
++
+diff --git a/build.rs b/build.rs
+new file mode 100644
+index 0000000..89e3e6b
+--- /dev/null
++++ b/build.rs
+@@ -0,0 +1,5 @@
++extern crate askama;
++
++fn main() {
++    askama::rerun_if_templates_changed();
++}
+diff --git a/src/actor.rs b/src/actor.rs
+new file mode 100644
+index 0000000..a6d1b96
+--- /dev/null
++++ b/src/actor.rs
+@@ -0,0 +1,32 @@
++use author::Author;
++#[derive(Deserialize, Debug)]
++#[serde(tag = "__typename")]
++pub enum Actor {
++    User(Author),
++    #[serde(rename_all = "camelCase")]
++    Bot {
++        login: String
++    }
++}
++
++impl<'a> Into<String> for &'a Actor {
++
++    fn into(self) -> String {
++        match self {
++            &Actor::User(ref author) => author.into(),
++            &Actor::Bot { ref login } => format!("https://github.com/{}", login),
++        }
++    }
++
++}
++
++use files::Files;
++use std::io::{Read, Cursor};
++impl<'a> Into<Files<&'a str, Box<Read>>> for &'a Actor {
++
++    fn into(self) -> Files<&'a str, Box<Read>> {
++        let s: String = self.into();
++        Files(vec![(".authors", Box::new(Cursor::new(s.into_bytes())))])
++    }
++
++}
+diff --git a/src/author.rs b/src/author.rs
+new file mode 100644
+index 0000000..771b372
+--- /dev/null
++++ b/src/author.rs
+@@ -0,0 +1,93 @@
++#[derive(Deserialize, PartialEq, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct Author {
++    pub login: String,
++    pub name: Option<String>,
++    pub email: Option<String>,
++}
++
++impl<'a> Into<String> for &'a Author {
++
++    fn into(self) -> String {
++        let name: String = self.name.as_ref().map(|s| s.clone()).unwrap_or("".into());
++        let url: String = format!("(https://github.com/{})", self.login);
++        let email: String = self.email.as_ref().map(|s| if s == "" { s.clone() } else { format!("<{}>", s) }).unwrap_or("".into());
++
++        let elements: Vec<_> = vec![name, url, email].into_iter().filter(|s| s.len() > 0)
++            .collect();
++        elements.join(" ")
++    }
++
++}
++
++use files::Files;
++use std::io::{Read, Cursor};
++impl<'a> Into<Files<&'a str, Box<Read>>> for &'a Author {
++
++    fn into(self) -> Files<&'a str, Box<Read>> {
++        let s: String = self.into();
++        Files(vec![(".authors", Box::new(Cursor::new(s.into_bytes())))])
++    }
++
++}
++
++#[cfg(test)]
++mod tests {
++
++    use super::*;
++    use serde_jsondd;
++
++    #[test]
++    fn to_string() {
++        let author = Author {
++            login: "yrashk".into(),
++            name: None,
++            email: None,
++        };
++        let s: String = (&author).into();
++        assert_eq!(s, "(https://github.com/yrashk)");
++
++        let author = Author {
++            login: "yrashk".into(),
++            name: Some("Yurii".into()),
++            email: None,
++        };
++        let s: String = (&author).into();
++        assert_eq!(s, "Yurii (https://github.com/yrashk)");
++
++        let author = Author {
++            login: "yrashk".into(),
++            name: Some("Yurii".into()),
++            email: Some("foo@bar.com".into()),
++        };
++        let s: String = (&author).into();
++        assert_eq!(s, "Yurii (https://github.com/yrashk) <foo@bar.com>");
++
++        let author = Author {
++            login: "yrashk".into(),
++            name: None,
++            email: Some("foo@bar.com".into()),
++        };
++        let s: String = (&author).into();
++        assert_eq!(s, "(https://github.com/yrashk) <foo@bar.com>");
++
++        let author = Author {
++            login: "yrashk".into(),
++            name: None,
++            email: Some("".into()),
++        };
++        let s: String = (&author).into();
++        assert_eq!(s, "(https://github.com/yrashk)");
++
++        let author = Author {
++            login: "yrashk".into(),
++            name: Some("Yurii".into()),
++            email: None,
++        };
++        let s: String = (&author).into();
++        assert_eq!(s, "Yurii (https://github.com/yrashk)");
++
++
++    }
++
++}
+\ No newline at end of file
+diff --git a/src/files.rs b/src/files.rs
+new file mode 100644
+index 0000000..23fb2b6
+--- /dev/null
++++ b/src/files.rs
+@@ -0,0 +1,38 @@
++use std::io::Read;
++
++pub struct Files<S: AsRef<str>, R: Read>(pub Vec<(S, R)>);
++
++impl<T, S, R> From<Option<T>> for Files<S, R> where S: AsRef<str>, R: Read,
++                                                    T: Into<Files<S, R>> {
++    fn from(val: Option<T>) -> Self {
++        match val {
++            None => Files(vec![]),
++            Some(v) => v.into()
++        }
++    }
++}
++
++impl<'a, S, R> From<Vec<(S, R)>> for Files<S, Box<Read + 'a>> where S: AsRef<str>, R: Read + 'a{
++    fn from(vec: Vec<(S, R)>) -> Self {
++        Files(vec.into_iter().map(|(s,r)| (s, Box::new(r) as Box<Read>)).collect())
++    }
++}
++
++
++impl<S: AsRef<str>, R: Read> Files<S, R> {
++
++    pub fn followed_by(mut self, mut other: Self) -> Self {
++        self.0.append(&mut other.0);
++        self
++    }
++
++}
++
++impl<S: AsRef<str>, R: Read> IntoIterator for Files<S, R> {
++    type Item = (S, R);
++    type IntoIter = ::std::vec::IntoIter<Self::Item>;
++
++    fn into_iter(self) -> Self::IntoIter {
++        self.0.into_iter()
++    }
++}
+\ No newline at end of file
+diff --git a/src/graphql.rs b/src/graphql.rs
+new file mode 100644
+index 0000000..02b4120
+--- /dev/null
++++ b/src/graphql.rs
+@@ -0,0 +1,197 @@
++use serde::Deserialize;
++
++pub trait Query {
++    type Result;
++    fn query(&self) -> String;
++}
++
++pub trait Pageable {
++    type Item;
++    fn after(&self, cursor: String) -> Self;
++}
++
++pub trait HasPageInfo {
++    fn page_info(&self) -> &PageInfo;
++}
++
++pub trait HasTotalCount {
++    fn total_count(&self) -> usize;
++}
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct PageInfo {
++    has_next_page: bool,
++    end_cursor: Option<String>,
++}
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct Paged<T> {
++    pub page_info: PageInfo,
++    pub nodes: Vec<T>,
++    pub total_count: usize,
++}
++
++impl<T> IntoIterator for Paged<T> {
++    type Item = T;
++    type IntoIter = ::std::vec::IntoIter<T>;
++
++    fn into_iter(self) -> Self::IntoIter {
++        self.nodes.into_iter()
++    }
++}
++
++use reqwest;
++
++enum Maybe<T> {
++    None,
++    Maybe,
++    Some(T),
++}
++
++impl<T> From<Option<T>> for Maybe<T> {
++    fn from(v: Option<T>) -> Self {
++        match v {
++            None => Maybe::None,
++            Some(v) => Maybe::Some(v),
++        }
++    }
++}
++
++#[derive(Serialize, Deserialize, Clone, Debug, Default)]
++pub struct Position {
++    index: u8,
++    end_cursor: Option<String>,
++}
++
++pub trait PageHandler {
++    fn page_position(&self) -> Position;
++    fn set_page_position(&mut self, pos: &Position);
++}
++
++#[derive(Default)]
++pub struct MemoryPageHandler {
++    position: Position,
++}
++
++impl PageHandler for MemoryPageHandler {
++    fn page_position(&self) -> Position {
++        self.position.clone()
++    }
++
++    fn set_page_position(&mut self, pos: &Position) {
++        self.position = pos.clone();
++    }
++}
++
++use std::str::FromStr;
++
++use std::fmt::Debug;
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++struct DataWrapper<T> where T : Debug {
++    data: Option<T>,
++}
++
++use std::collections::{VecDeque, HashMap};
++
++pub struct PageableRequest<S, Q, P> where S: AsRef<str>, Q : Pageable + Query, P : PageHandler {
++    url: S,
++    token: S,
++    query: Q,
++    queued: VecDeque<Q::Item>,
++    next_page: Maybe<String>,
++    client: reqwest::Client,
++    page_handler: P,
++    total_count: Option<usize>,
++}
++
++impl<S, Q, P> PageableRequest<S, Q, P> where S: AsRef<str>, Q : Pageable + Query, P : PageHandler {
++    pub fn new(url: S, token: S, query: Q, page_handler: P) -> Self {
++        let client = reqwest::Client::builder().build().unwrap();
++        PageableRequest{  url, query, token, queued: VecDeque::new(), next_page: Maybe::Maybe, client, page_handler, total_count: None }
++    }
++}
++
++impl<S, Q, P, T, Iter> PageableRequest<S, Q, P> where S: AsRef<str>,
++                                                      Q : Pageable + Query<Result = T>,
++                                                      P: PageHandler,
++                                                      Iter : Iterator<Item=Q::Item>,
++                                                      T : HasPageInfo + HasTotalCount + IntoIterator<Item=Q::Item, IntoIter=Iter> + Debug {
++
++    pub fn total_count(&self) -> Option<usize> {
++        self.total_count.clone()
++    }
++
++}
++
++impl<S, Q, P, T, Iter> Iterator for PageableRequest<S, Q, P> where S: AsRef<str>,
++                                                                   Q : Pageable + Query<Result = T>,
++                                                                   P: PageHandler,
++                                                                   Iter : Iterator<Item=Q::Item>,
++                                                                   T : HasPageInfo + HasTotalCount + IntoIterator<Item=Q::Item, IntoIter=Iter> + Debug,
++                                                                   for<'de> T : Deserialize<'de> {
++    type Item = Q::Item;
++
++    fn next(&mut self) -> Option<Self::Item> {
++        let mut pos = self.page_handler.page_position();
++        match self.queued.pop_front() {
++            Some(q) => {
++                pos.index += 1;
++                self.page_handler.set_page_position(&pos);
++                Some(q)
++            },
++            None => {
++                match self.next_page {
++                    Maybe::None => return None,
++                    Maybe::Maybe => (),
++                    Maybe::Some(ref cur) => {
++                        pos.index = 0;
++                        pos.end_cursor = Some(cur.clone());
++                        self.page_handler.set_page_position(&pos);
++                        self.query = self.query.after(cur.clone());
++                    }
++                }
++                self.page_handler.set_page_position(&pos);
++                let mut map = HashMap::new();
++                map.insert("query", self.query.query());
++                match self.client.execute(self.client
++                    .post(self.url.as_ref())
++                    .header(reqwest::header::Authorization(reqwest::header::Bearer::from_str(self.token.as_ref()).unwrap()))
++                    .json(&map)
++                    .build()
++                    .unwrap()) {
++                    Err(e) => panic!("{}", e),
++                    Ok(mut resp) => {
++                        let response : DataWrapper<T> = resp.json().unwrap();
++                        let result = response.data.unwrap();
++                        if result.page_info().has_next_page {
++                            self.next_page = result.page_info().end_cursor.clone().into();
++                        } else {
++                            self.next_page = Maybe::None;
++                        }
++                        self.total_count = Some(result.total_count());
++                        let mut iter = result.into_iter().skip(pos.index as usize);
++
++                        match iter.next() {
++                            None => None,
++                            Some(item) => {
++                                loop {
++                                    match iter.next() {
++                                        Some(v) => self.queued.push_back(v),
++                                        None => break,
++                                    }
++                                }
++                                pos.index += 1;
++                                self.page_handler.set_page_position(&pos);
++                                Some(item)
++                            }
++                        }
++                    }
++                }
++            }
++        }
++    }
++}
+diff --git a/src/issues.rs b/src/issues.rs
+new file mode 100644
+index 0000000..044d78f
+--- /dev/null
++++ b/src/issues.rs
+@@ -0,0 +1,81 @@
++use std::fmt::Display;
++use askama::Template;
++use graphql::{Query as GraphQLQuery, Pageable, HasPageInfo, HasTotalCount, PageInfo, Paged};
++use author::Author;
++
++#[derive(Template)]
++#[template(path = "issues.graphql")]
++pub struct Query<S> where S : AsRef<str> + Display {
++    pub owner: S,
++    pub repository: S,
++    pub after: Option<String>,
++}
++
++impl<S> Query<S> where S : AsRef<str> + Display {
++    pub fn new(owner: S, repository: S) -> Self {
++        Query { owner, repository, after: None }
++    }
++
++}
++
++impl<S> GraphQLQuery for Query<S> where S : AsRef<str> + Display + Copy {
++    type Result = Response;
++    fn query(&self) -> String {
++        self.render().unwrap()
++    }
++}
++
++impl<S> Pageable for Query<S> where S : AsRef<str> + Display + Copy {
++    type Item = Issue;
++    fn after(&self, cursor: String) -> Self {
++        Query{ owner: self.owner, repository: self.repository, after: Some(cursor) }
++    }
++}
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct Issue {
++    pub number: usize,
++    pub url: String,
++    pub state: String,
++    pub title: String,
++    pub body: String,
++    pub created_at: String,
++    pub updated_at: String,
++    pub closed_at: Option<String>,
++    pub author: Option<Author>,
++}
++
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct IssueNode {
++    issues: Paged<Issue>,
++}
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct Response {
++    repository: IssueNode,
++}
++
++impl HasPageInfo for Response {
++    fn page_info(&self) -> &PageInfo {
++        &self.repository.issues.page_info
++    }
++}
++
++impl HasTotalCount for Response {
++    fn total_count(&self) -> usize {
++        self.repository.issues.total_count
++    }
++}
++
++impl IntoIterator for Response {
++    type Item = Issue;
++    type IntoIter = ::std::vec::IntoIter<Self::Item>;
++
++    fn into_iter(self) -> Self::IntoIter {
++        self.repository.issues.into_iter()
++    }
++}
+diff --git a/src/main.rs b/src/main.rs
+new file mode 100644
+index 0000000..4846068
+--- /dev/null
++++ b/src/main.rs
+@@ -0,0 +1,300 @@
++extern crate serde;
++#[macro_use] extern crate serde_derive;
++extern crate serde_json;
++
++extern crate reqwest;
++
++#[macro_use] extern crate clap;
++extern crate console;
++
++#[macro_use] extern crate askama;
++
++extern crate xdg;
++extern crate config;
++
++extern crate pbr;
++
++extern crate regex;
++
++extern crate sit_core;
++
++mod graphql;
++
++mod issues;
++mod pull_requests;
++mod timeline;
++mod author;
++mod actor;
++mod files;
++use files::Files;
++
++use std::env;
++use std::path::PathBuf;
++use clap::{App, Arg};
++
++const GITHUB_GRAPHQL : &str = "https://api.github.com/graphql";
++
++fn main() {
++    ::std::process::exit(real_main())
++}
++
++#[derive(Deserialize)]
++struct GitHubProviderConfig {
++    token: String,
++}
++
++#[derive(Deserialize)]
++struct Config {
++    github: Option<GitHubProviderConfig>,
++}
++
++fn real_main() -> i32 {
++
++    let cwd = env::current_dir().expect("can't get currenGt working directory");
++
++    let matches = App::new("SIT Import")
++        .version(crate_version!())
++        .about("Imports foreign issues into SIT repositories")
++        .global_settings(&[clap::AppSettings::ColoredHelp, clap::AppSettings::ColorAuto])
++        .arg(Arg::with_name("working_directory")
++            .short("d")
++            .help("Working directory"))
++        .arg(Arg::with_name("repository")
++            .short("r")
++            .long("repository")
++            .takes_value(true)
++            .help("Point to a specific directory of SIT's repository"))
++        .arg(Arg::with_name("config")
++                 .short("c")
++                 .long("config")
++                 .takes_value(true)
++                 .help("Configuration file"))
++        .arg(Arg::with_name("SOURCE")
++                 .required(true)
++                 .long_help("Where to import from\
++                 \nFor GitHub: https://github.com/OWNER/REPO"))
++        .get_matches();
++
++    let working_dir = matches.value_of("working_directory").map(PathBuf::from).unwrap_or(cwd);
++
++    let repo = matches.value_of("repository").map(sit_core::Repository::open)
++            .or_else(|| Some(sit_core::Repository::find_in_or_above(".sit",&working_dir)))
++            .unwrap()
++            .expect("can't open repository");
++
++    let source = matches.value_of("SOURCE").unwrap();
++
++    if source.starts_with("https://github.com/") {
++
++        if !matches.is_present("config") {
++            eprintln!("-c/--config required for GitHub to configure the token");
++            return 1;
++        }
++        let mut cfg = config::Config::new();
++        cfg.merge(config::File::with_name(matches.value_of("config").unwrap()).required(true)).unwrap();
++        let configuration: Config = cfg.try_into().expect("Can't deserialize configuration");
++
++        if configuration.github.is_none() {
++            eprintln!("github provider configuration required");
++            return -1;
++        }
++
++        let re = regex::Regex::new("https://github.com/([^/]+)/([^/]+)(\\.git)?").unwrap();
++        let captures = re.captures(source).unwrap();
++        if captures.len() < 3 {
++            println!("Invalid source URL");
++            return 1;
++        }
++        let owner = &captures[1];
++        let repository = &captures[2];
++
++        let mut req0 = graphql::PageableRequest::new(GITHUB_GRAPHQL, &configuration.github.as_ref().unwrap().token, issues::Query::new(owner, repository), graphql::MemoryPageHandler::default());
++        let req = graphql::PageableRequest::new(GITHUB_GRAPHQL, &configuration.github.as_ref().unwrap().token, issues::Query::new(owner, repository), graphql::MemoryPageHandler::default());
++
++        let mut preq0 = graphql::PageableRequest::new(GITHUB_GRAPHQL, &configuration.github.as_ref().unwrap().token, pull_requests::Query::new(owner, repository), graphql::MemoryPageHandler::default());
++        let preq = graphql::PageableRequest::new(GITHUB_GRAPHQL, &configuration.github.as_ref().unwrap().token, pull_requests::Query::new(owner, repository), graphql::MemoryPageHandler::default());
++
++        use sit_core::Issue;
++
++        if req0.next().is_none() {
++            // Nothing to see
++            return 0
++        }
++        let prs = match preq0.next() {
++            None => 0 as u64,
++            Some(_) => preq0.total_count().unwrap() as u64,
++        };
++
++        let mut progress_bar = pbr::ProgressBar::new(req0.total_count().unwrap() as u64 + prs);
++
++        progress_bar.message("[ Importing issues ] ");
++        progress_bar.set(0);
++
++        for ext_issue in req {
++            let issue = repo.new_named_issue(format!("github-issue-{}", ext_issue.number)).unwrap();
++
++            issue.new_record(Files::from(vec![(".type/SummaryChanged", &b""[..]),
++                                              (".timestamp", ext_issue.created_at.as_bytes()),
++                                              ("text", ext_issue.title.as_bytes()),
++                                              (".imported", ext_issue.url.as_bytes())])
++                                 .followed_by(ext_issue.author.as_ref().into())
++                                 .into_iter(), true).unwrap();
++
++            issue.new_record(Files::from(vec![(".type/DetailsChanged", &b""[..]),
++                                              (".timestamp", ext_issue.created_at.as_bytes()),
++                                              ("text", ext_issue.body.as_bytes()),
++                                              (".imported", ext_issue.url.as_bytes())])
++                                 .followed_by(ext_issue.author.as_ref().into())
++                                 .into_iter(), true).unwrap();
++
++            let treq = graphql::PageableRequest::new(GITHUB_GRAPHQL, &configuration.github.as_ref().unwrap().token,
++                                                     timeline::Query::new(owner, repository, timeline::Kind::Issue, ext_issue.number), graphql::MemoryPageHandler::default());
++
++            for item in treq {
++
++                match item {
++                    timeline::TimelineItem::IssueComment { created_at, body, author, url, .. } => {
++                        issue.new_record(Files::from(vec![(".type/Commented", &b""[..]),
++                                              (".timestamp", created_at.as_bytes()),
++                                              ("text", body.as_bytes()),
++                                              (".imported", url.as_bytes())])
++                                             .followed_by(author.as_ref().into())
++                                             .into_iter(), true).unwrap();
++                    },
++                    timeline::TimelineItem::ClosedEvent { created_at, actor, closer } => {
++                         issue.new_record(Files::from(vec![(".type/Closed", &b""[..]),
++                                               (".timestamp", created_at.as_bytes()),
++                                               (".imported", ext_issue.url.as_bytes())])
++                                              .followed_by(closer.as_ref().into())
++                                              .followed_by(actor.as_ref().into())
++                                              .into_iter(), true).unwrap();
++                    },
++                    timeline::TimelineItem::ReopenedEvent { created_at, actor } => {
++                         issue.new_record(Files::from(vec![(".type/Reopened", &b""[..]),
++                                               (".timestamp", created_at.as_bytes()),
++                                               (".imported", ext_issue.url.as_bytes())])
++                                              .followed_by(actor.as_ref().into())
++                                              .into_iter(), true).unwrap();
++                    },
++                    timeline::TimelineItem::LockedEvent { created_at, actor } => {
++                         issue.new_record(Files::from(vec![(".type/Locked", &b""[..]),
++                                               (".timestamp", created_at.as_bytes()),
++                                               (".imported", ext_issue.url.as_bytes())])
++                                              .followed_by(actor.as_ref().into())
++                                              .into_iter(), true).unwrap();
++                    },
++                    timeline::TimelineItem::UnlockedEvent { created_at, actor } => {
++                         issue.new_record(Files::from(vec![(".type/Unlocked", &b""[..]),
++                                               (".timestamp", created_at.as_bytes()),
++                                               (".imported", ext_issue.url.as_bytes())])
++                                              .followed_by(actor.as_ref().into())
++                                              .into_iter(), true).unwrap();
++
++                    },
++                    _ => (),
++                }
++            }
++
++            progress_bar.inc();
++        }
++
++       let client = reqwest::Client::builder().build().unwrap();
++
++        progress_bar.message("[ Importing pull requests ] ");
++
++        for pr in preq {
++
++            let issue = repo.new_named_issue(format!("github-pr-{}", pr.number)).unwrap();
++
++            issue.new_record(Files::from(vec![(".type/SummaryChanged", &b""[..]),
++                                  (".timestamp", pr.created_at.as_bytes()),
++                                  ("text", pr.title.as_bytes()),
++                                  (".imported", pr.url.as_bytes())])
++                                 .followed_by(pr.author.as_ref().into())
++                                 .into_iter(), true).unwrap();
++
++            let mut response = client.get(&format!("{}.patch", pr.url)).send().unwrap();
++            let patch = response.text().unwrap();
++
++            let mut mr_rec = vec![(".type/DetailsChanged", &b""[..]),
++                                  (".type/MergeRequested", &b""[..]),
++                                  (".timestamp", pr.created_at.as_bytes()),
++                                  ("text", pr.body.as_bytes()),
++                                  (".imported", pr.url.as_bytes())];
++
++            if response.status().is_success() {
++                mr_rec.push(("git/pr.patch", patch.as_bytes()));
++            }
++
++            issue.new_record(Files::from(mr_rec).followed_by(pr.author.as_ref().into()).into_iter(), true).unwrap();
++
++            let treq = graphql::PageableRequest::new(GITHUB_GRAPHQL, &configuration.github.as_ref().unwrap().token,
++                                                     timeline::Query::new(owner, repository, timeline::Kind::PullRequest, pr.number), graphql::MemoryPageHandler::default());
++
++            for item in treq {
++                match item {
++                    timeline::TimelineItem::IssueComment { created_at, body, author, url, .. } => {
++                        issue.new_record(Files::from(vec![(".type/Commented", &b""[..]),
++                                              (".timestamp", created_at.as_bytes()),
++                                              ("text", body.as_bytes()),
++                                              (".imported", url.as_bytes())])
++                                             .followed_by(author.as_ref().into())
++                                             .into_iter(), true).unwrap();
++                    },
++                    timeline::TimelineItem::ClosedEvent { created_at, actor, closer } => {
++                         issue.new_record(Files::from(vec![(".type/Closed", &b""[..]),
++                                               (".timestamp", created_at.as_bytes()),
++                                               (".imported", pr.url.as_bytes())])
++                                              .followed_by(closer.as_ref().into())
++                                              .followed_by(actor.as_ref().into())
++                                              .into_iter(), true).unwrap();
++                    },
++                    timeline::TimelineItem::ReopenedEvent { created_at, actor } => {
++                         issue.new_record(Files::from(vec![(".type/Reopened", &b""[..]),
++                                               (".timestamp", created_at.as_bytes()),
++                                               (".imported", pr.url.as_bytes())])
++                                              .followed_by(actor.as_ref().into())
++                                              .into_iter(), true).unwrap();
++                    },
++                    timeline::TimelineItem::LockedEvent { created_at, actor } => {
++                         issue.new_record(Files::from(vec![(".type/Locked", &b""[..]),
++                                               (".timestamp", created_at.as_bytes()),
++                                               (".imported", pr.url.as_bytes())])
++                                              .followed_by(actor.as_ref().into())
++                                              .into_iter(), true).unwrap();
++                    },
++                    timeline::TimelineItem::UnlockedEvent { created_at, actor } => {
++                         issue.new_record(Files::from(vec![(".type/Unlocked", &b""[..]),
++                                               (".timestamp", created_at.as_bytes()),
++                                               (".imported", pr.url.as_bytes())])
++                                              .followed_by(actor.as_ref().into())
++                                              .into_iter(), true).unwrap();
++
++                    },
++                    timeline::TimelineItem::MergedEvent { created_at, actor } => {
++                         issue.new_record(Files::from(vec![(".type/Closed", &b""[..]),
++                                               (".type/Merged", &b""[..]),
++                                               (".timestamp", created_at.as_bytes()),
++                                               (".imported", pr.url.as_bytes())])
++                                              .followed_by(actor.as_ref().into())
++                                              .into_iter(), true).unwrap();
++                    },
++                    _ => (),
++                }
++            }
++
++            progress_bar.inc();
++        }
++
++        progress_bar.finish();
++
++
++    } else {
++        eprintln!("Unrecognized source provider: {}", source);
++        return -1;
++    }
++
++    return 0;
++
++
++}
+\ No newline at end of file
+diff --git a/src/pull_requests.rs b/src/pull_requests.rs
+new file mode 100644
+index 0000000..5902aaa
+--- /dev/null
++++ b/src/pull_requests.rs
+@@ -0,0 +1,83 @@
++use std::fmt::Display;
++use askama::Template;
++use graphql::{Query as GraphQLQuery, Pageable, HasPageInfo, HasTotalCount, PageInfo, Paged};
++use author::Author;
++
++#[derive(Template)]
++#[template(path = "pull_requests.graphql")]
++pub struct Query<S> where S : AsRef<str> + Display {
++    pub owner: S,
++    pub repository: S,
++    pub after: Option<String>,
++}
++
++impl<S> Query<S> where S : AsRef<str> + Display {
++    pub fn new(owner: S, repository: S) -> Self {
++        Query { owner, repository, after: None }
++    }
++
++}
++
++impl<S> GraphQLQuery for Query<S> where S : AsRef<str> + Display + Copy {
++    type Result = Response;
++    fn query(&self) -> String {
++        self.render().unwrap()
++    }
++}
++
++impl<S> Pageable for Query<S> where S : AsRef<str> + Display + Copy {
++    type Item = PullRequest;
++    fn after(&self, cursor: String) -> Self {
++        Query{ owner: self.owner, repository: self.repository, after: Some(cursor) }
++    }
++}
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct PullRequest {
++    pub number: usize,
++    pub url: String,
++    pub state: String,
++    pub title: String,
++    pub body: String,
++    pub created_at: String,
++    pub updated_at: String,
++    pub closed_at: Option<String>,
++    pub author: Option<Author>,
++    pub merged: bool,
++    pub merged_at: Option<String>,
++}
++
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct PullRequestNode {
++    pull_requests: Paged<PullRequest>,
++}
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct Response {
++    repository: PullRequestNode,
++}
++
++impl HasPageInfo for Response {
++    fn page_info(&self) -> &PageInfo {
++        &self.repository.pull_requests.page_info
++    }
++}
++
++impl HasTotalCount for Response {
++    fn total_count(&self) -> usize {
++        self.repository.pull_requests.total_count
++    }
++}
++
++impl IntoIterator for Response {
++    type Item = PullRequest;
++    type IntoIter = ::std::vec::IntoIter<Self::Item>;
++
++    fn into_iter(self) -> Self::IntoIter {
++        self.repository.pull_requests.into_iter()
++    }
++}
+diff --git a/src/timeline.rs b/src/timeline.rs
+new file mode 100644
+index 0000000..03db693
+--- /dev/null
++++ b/src/timeline.rs
+@@ -0,0 +1,186 @@
++use std::fmt::Display;
++use askama::Template;
++use graphql::{Query as GraphQLQuery, Pageable, HasPageInfo, HasTotalCount, PageInfo, Paged};
++use author::Author;
++use actor::Actor;
++
++#[derive(Clone, Copy)]
++pub enum Kind {
++    Issue,
++    PullRequest,
++}
++
++
++#[derive(Template)]
++#[template(path = "timeline.graphql")]
++pub struct Query<S> where S : AsRef<str> + Display {
++    pub owner: S,
++    pub repository: S,
++    pub kind: &'static str,
++    pub after: Option<String>,
++    pub number: usize,
++}
++
++impl<S> Query<S> where S : AsRef<str> + Display {
++    pub fn new(owner: S, repository: S, kind: Kind, number: usize) -> Self {
++        let kind = match kind {
++            Kind::Issue => "issue",
++            Kind::PullRequest => "pullRequest",
++        };
++        Query { owner, repository, after: None, kind, number }
++    }
++
++}
++
++impl<S> GraphQLQuery for Query<S> where S : AsRef<str> + Display + Copy {
++    type Result = Response;
++    fn query(&self) -> String {
++        self.render().unwrap()
++    }
++}
++
++impl<S> Pageable for Query<S> where S : AsRef<str> + Display + Copy {
++    type Item = TimelineItem;
++    fn after(&self, cursor: String) -> Self {
++        Query { owner: self.owner, repository: self.repository, after: Some(cursor),
++                kind: self.kind, number: self.number }
++    }
++}
++#[derive(Deserialize, Debug)]
++#[serde(tag = "__typename")]
++pub enum Closer {
++    #[serde(rename_all = "camelCase")]
++    Commit {
++        oid: String,
++    },
++    #[serde(rename_all = "camelCase")]
++    PullRequest {
++        number: usize,
++    }
++}
++
++impl<'a> Into<String> for &'a Closer {
++    fn into(self) -> String {
++        match self {
++            &Closer::Commit { ref oid } => format!("Closed with {}", oid),
++            &Closer::PullRequest { number } => format!("Closed with pull request {}", number),
++        }
++    }
++}
++
++use files::Files;
++use std::io::{Read, Cursor};
++impl<'a> Into<Files<&'a str, Box<Read>>> for &'a Closer {
++
++    fn into(self) -> Files<&'a str, Box<Read>> {
++        let s: String = self.into();
++        Files(vec![(".type/Commented", Box::new(&b""[..])),
++                   ("text", Box::new(Cursor::new(s.into_bytes())))])
++    }
++
++}
++
++
++#[derive(Deserialize, Debug)]
++#[serde(tag = "__typename")]
++pub enum TimelineItem {
++    Commit {},
++    #[serde(rename_all = "camelCase")]
++    IssueComment {
++        url: String,
++        body: String,
++        created_at: String,
++        updated_at: String,
++        author: Option<Author>,
++    },
++    CrossReferencedEvent {},
++    #[serde(rename_all = "camelCase")]
++    ClosedEvent {
++        actor: Option<Actor>,
++        closer: Option<Closer>,
++        created_at: String,
++    },
++    #[serde(rename_all = "camelCase")]
++    MergedEvent {
++        actor: Option<Actor>,
++        created_at: String,
++    },
++    #[serde(rename_all = "camelCase")]
++    ReopenedEvent {
++        actor: Option<Actor>,
++        created_at: String,
++    },
++    SubscribedEvent {},
++    UnsubscribedEvent {},
++    ReferencedEvent {},
++    AssignedEvent {},
++    UnassignedEvent {},
++    LabeledEvent {},
++    UnlabeledEvent {},
++    MilestonedEvent {},
++    DemilestonedEvent {},
++    RenamedTitleEvent {},
++    #[serde(rename_all = "camelCase")]
++    LockedEvent {
++        actor: Option<Actor>,
++        created_at: String,
++    },
++    #[serde(rename_all = "camelCase")]
++    UnlockedEvent {
++        actor: Option<Actor>,
++        created_at: String,
++    },
++    HeadRefDeletedEvent {},
++    HeadRefRestoredEvent {},
++    HeadRefForcePushedEvent {},
++    BaseRefForcePushedEvent {},
++    ReviewRequestedEvent {},
++    ReviewRequestedRemovedEvent {},
++    ReviewDismissedEvent {},
++    DeployedEvent {},
++    CommitCommentThread {},
++    PullRequestReview {},
++    PullRequestReviewThread {},
++    PullRequestReviewComment {},
++
++}
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct TimelineNode {
++    timeline: Paged<TimelineItem>,
++}
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct IssueNode {
++    issue: TimelineNode,
++}
++
++#[derive(Deserialize, Debug)]
++#[serde(rename_all = "camelCase")]
++pub struct Response {
++    repository: IssueNode,
++}
++
++impl HasPageInfo for Response {
++    fn page_info(&self) -> &PageInfo {
++        &self.repository.issue.timeline.page_info
++    }
++}
++
++impl HasTotalCount for Response {
++    fn total_count(&self) -> usize {
++        self.repository.issue.timeline.total_count
++    }
++}
++
++impl IntoIterator for Response {
++    type Item = TimelineItem;
++    type IntoIter = ::std::vec::IntoIter<Self::Item>;
++
++    fn into_iter(self) -> Self::IntoIter {
++        self.repository.issue.timeline.into_iter()
++    }
++}
++
+diff --git a/templates/actor.graphql b/templates/actor.graphql
+new file mode 100644
+index 0000000..a55a0f7
+--- /dev/null
++++ b/templates/actor.graphql
+@@ -0,0 +1,12 @@
++
++actor {
++       __typename
++        ... on User {
++             name
++             email
++             login
++        }
++        ... on Bot {
++             login
++        }
++}
+diff --git a/templates/author.graphql b/templates/author.graphql
+new file mode 100644
+index 0000000..c716281
+--- /dev/null
++++ b/templates/author.graphql
+@@ -0,0 +1,8 @@
++
++author {
++  ... on User {
++     name
++     email
++     login
++  }
++}
+\ No newline at end of file
+diff --git a/templates/issues.graphql b/templates/issues.graphql
+new file mode 100644
+index 0000000..9fdcd4e
+--- /dev/null
++++ b/templates/issues.graphql
+@@ -0,0 +1,22 @@
++{
++  repository(owner: "{{ owner }}", name: "{{ repository }}") {
++    issues(orderBy: {field: CREATED_AT, direction: ASC}, first: 100 {%- if after.is_some() %}, after: "{{ after.as_ref().unwrap() }}" {%- endif %})  {
++      pageInfo {
++        hasNextPage
++        endCursor
++      }
++      totalCount
++      nodes {
++        number
++        url
++        state
++        title
++        body
++        createdAt
++        updatedAt
++        closedAt
++        {% include "author.graphql" %}
++      }
++    }
++  }
++}
+diff --git a/templates/pull_requests.graphql b/templates/pull_requests.graphql
+new file mode 100644
+index 0000000..e37e237
+--- /dev/null
++++ b/templates/pull_requests.graphql
+@@ -0,0 +1,24 @@
++{
++  repository(owner: "{{ owner }}", name: "{{ repository }}") {
++    pullRequests(orderBy: {field: CREATED_AT, direction: ASC}, first: 100 {%- if after.is_some() %}, after: "{{ after.as_ref().unwrap() }}" {%- endif %})  {
++      pageInfo {
++        hasNextPage
++        endCursor
++      }
++      totalCount
++      nodes {
++        number
++        url
++        state
++        title
++        body
++        createdAt
++        updatedAt
++        closedAt
++        {% include "author.graphql" %}
++        merged
++        mergedAt
++      }
++    }
++  }
++}
+diff --git a/templates/timeline.graphql b/templates/timeline.graphql
+new file mode 100644
+index 0000000..6b1a5f5
+--- /dev/null
++++ b/templates/timeline.graphql
+@@ -0,0 +1,54 @@
++{
++  repository(owner: "{{ owner }}", name: "{{ repository }}") {
++    issue: {{ kind }}(number: {{ number }}) {
++       timeline(first: 100 {%- if after.is_some() %}, after: "{{ after.as_ref().unwrap() }}" {%- endif %})  {
++       pageInfo {
++         hasNextPage
++         endCursor
++       }
++       totalCount
++       nodes {
++         __typename
++         ... on IssueComment {
++           url
++           body
++           createdAt
++           updatedAt
++           {% include "author.graphql" %}
++         }
++         ... on LockedEvent {
++           {% include "actor.graphql" %}
++           createdAt
++         }
++         ... on UnlockedEvent {
++           {% include "actor.graphql" %}
++           createdAt
++         }
++         ... on ReopenedEvent {
++           {% include "actor.graphql" %}
++           createdAt
++         }
++         ... on ClosedEvent {
++           {% include "actor.graphql" %}
++           createdAt
++           closer {
++              __typename
++              ... on Commit {
++                oid
++              }
++              ... on PullRequest {
++                number
++              }
++           }
++         }
++         {% if kind == "pullRequest" %}
++         ... on MergedEvent {
++           {% include "actor.graphql" %}
++           createdAt
++         }
++         {% endif %}
++       }
++     }
++   }
++  }
++}
+-- 
+2.16.2
+

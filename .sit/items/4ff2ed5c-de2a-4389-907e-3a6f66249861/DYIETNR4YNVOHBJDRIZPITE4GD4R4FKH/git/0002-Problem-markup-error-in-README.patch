@@ -1,0 +1,26 @@
+From cd9b1d0067929cf20c4f6f4f7106b5d79a0d7645 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Tue, 20 Feb 2018 15:09:41 +0700
+Subject: [PATCH 02/16] Problem: markup error in README
+
+Solution: fix it
+---
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/README.md b/README.md
+index f49ea6d..aba4a39 100644
+--- a/README.md
++++ b/README.md
+@@ -50,7 +50,7 @@ sit-import [-r DEST] -c import.json https://github.com/OWNER/REPO
+ Depending on the size of the project, your bandwidth and other parameters, it might take a while.
+ 
+ If you are satisifed with your test run, it is suggested that you disable
+-access to your issues/pull requests ([temporary interaction limit](https://github.com/blog/2370-introducing-temporary-interaction-limits( feature might come in handy), make sure other
++access to your issues/pull requests ([temporary interaction limit](https://github.com/blog/2370-introducing-temporary-interaction-limits) feature might come in handy), make sure other
+ collaborators/admins are staying off the issues and do a final run, ensuring
+ nothing is lost in the transition.
+ 
+-- 
+2.16.2
+

@@ -1,0 +1,81 @@
+From 5fe29c4f77b436ea94a4cb36d3c3a40700c1c0fd Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Fri, 13 Apr 2018 08:36:54 -0700
+Subject: [PATCH 13/16] Closed merge request
+ 39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI
+
+---
+ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.authors           |  1 +
+ .../.prev/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI              |  0
+ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature         | 17 +++++++++++++++++
+ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp         |  1 +
+ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Closed       |  0
+ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Merged       |  0
+ .../SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record             |  1 +
+ 7 files changed, 20 insertions(+)
+ create mode 100644 .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.authors
+ create mode 100644 .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.prev/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI
+ create mode 100644 .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature
+ create mode 100644 .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp
+ create mode 100644 .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Closed
+ create mode 100644 .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Merged
+ create mode 100644 .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record
+
+diff --git a/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.authors b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.prev/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.prev/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature
+new file mode 100644
+index 0000000..7cbca5b
+--- /dev/null
++++ b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlrQzm0OHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf81lhAAsTKrJpEGghF1TSV1klFDYopvLs+5zdOA6kSO
++hyLdOcoz86wh45KRaxkk5ta4fIQkQ0QNiyskAtk6SoYtKfWtGNruJemrU3vNK3hs
++SO5Y5QBuHrloTIm9JDxoFdQii3h1DPErv+pi/poBkaFb4YxQXBz/JxnGoDY6tgfE
++bxTYYsWhcV8XTTp28r4MFnIPowhESxvibwGw++TDz9bXjO4LSxBkDTNtVk5GrODY
++vC/fQl/NnYRBrMpzIWQ/IIlmMUwivzda9o84xLlITDdyt+fFNyccWuTOYKkEcqn+
++VDWXUftxTYk3JALyvhf+12B6VzQXy+N2XU5KXUM2d7RtctkPHYTAjhY0t4keP3+d
++Ig1yOEC8hB67Ay6fk4DrLHU/IWj2wEbpQUtR5K9D51R0OLOhG6ZJtfDI4rcg75C1
++aODgVPXxP7bpkV8p6dNAo8pxulCF/hUU1K4KPkb335AmfGx9n6mzazD0X8Hdu6VM
++JfL3S/v57cXg98WxRi+J7keffh4w4sLBDcLeFgouMoe2B6MYQ63t/qQsACptd67D
++GTTQgAAIWWpbUsUoNePkMdyculaq1NP9zTJDEm3CKXRWIL7DPKQnQKEAttO/u1dQ
++J/DnTj/MrtriaYqLjLIxjtaPcuRtS/0kMjv2z3VP5c+BSWBn19lvnk5UPTdct8E2
++oAjScZM=
++=ejH4
++-----END PGP SIGNATURE-----
+diff --git a/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp
+new file mode 100644
+index 0000000..10c433e
+--- /dev/null
++++ b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.timestamp
+@@ -0,0 +1 @@
++2018-04-13T15:36:13.474613116Z
+\ No newline at end of file
+diff --git a/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Closed b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Closed
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Merged b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/.type/Merged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record
+new file mode 100644
+index 0000000..bb9ea8d
+--- /dev/null
++++ b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/SR4LXQHVINHCRTCKVYXSO7BVY7C35V7G/record
+@@ -0,0 +1 @@
++LMD23XP4ACY64CURLCOA7HQN6SSTVYTI
+-- 
+2.16.2
+

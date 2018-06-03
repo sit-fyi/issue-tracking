@@ -1,0 +1,36 @@
+From e47925b424e7da5cfcf387b90a8a3eb433349b5b Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Fri, 23 Feb 2018 17:36:28 +0700
+Subject: [PATCH 12/16] Problem: progress bar is not very informative
+
+It does show how far along it is but that's about it
+
+Solution: show current item being imported
+---
+ src/main.rs | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/main.rs b/src/main.rs
+index 91b89f7..ffd8963 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -138,6 +138,8 @@ fn real_main() -> i32 {
+         for ext_issue in req {
+             let issue = repo.new_named_item(format!("github-issue-{}", ext_issue.number)).unwrap();
+ 
++            progress_bar.message(&format!("[ #{} {} ] ", ext_issue.number, ext_issue.title));
++
+             issue.new_record(Files::from(vec![(".type/SummaryChanged", &b""[..]),
+                                               (".timestamp", ext_issue.created_at.as_bytes()),
+                                               ("text", ext_issue.title.as_bytes()),
+@@ -210,6 +212,7 @@ fn real_main() -> i32 {
+         for pr in preq {
+ 
+             let issue = repo.new_named_item(format!("github-pr-{}", pr.number)).unwrap();
++            progress_bar.message(&format!("[ #{} {} ] ", pr.number, pr.title));
+ 
+             issue.new_record(Files::from(vec![(".type/SummaryChanged", &b""[..]),
+                                   (".timestamp", pr.created_at.as_bytes()),
+-- 
+2.16.2
+

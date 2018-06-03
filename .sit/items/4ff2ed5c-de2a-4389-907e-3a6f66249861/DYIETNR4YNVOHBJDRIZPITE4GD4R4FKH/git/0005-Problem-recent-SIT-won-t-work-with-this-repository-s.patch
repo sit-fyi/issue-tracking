@@ -1,0 +1,107 @@
+From 5d2b7b3e6ef64c7e9803615135ce3f3ab1caaa46 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Fri, 2 Mar 2018 14:37:58 +0700
+Subject: [PATCH 05/16] Problem: recent SIT won't work with this repository's
+ reducers
+
+Solution: repopulate the reducers
+---
+ .sit/reducers/Commented.js      | 7 ++++++-
+ .sit/reducers/DetailsChanges.js | 2 +-
+ .sit/reducers/MergeRequested.js | 2 +-
+ .sit/reducers/Merged.js         | 2 +-
+ .sit/reducers/State.js          | 2 +-
+ .sit/reducers/SummaryChanged.js | 2 +-
+ .sit/reducers/activity.js       | 2 +-
+ 7 files changed, 12 insertions(+), 7 deletions(-)
+
+diff --git a/.sit/reducers/Commented.js b/.sit/reducers/Commented.js
+index b5a6a65..17e1462 100644
+--- a/.sit/reducers/Commented.js
++++ b/.sit/reducers/Commented.js
+@@ -1,4 +1,4 @@
+-function(state, record) {
++module.exports = function(state, record) {
+     var state = state;
+ 
+     // Handle Merged as a comment, too
+@@ -22,11 +22,16 @@ function(state, record) {
+         var comments = this.comments || [];
+         var decoder = new TextDecoder("utf-8");
+         var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : null;
++        var merge_request_report = !!record.files[".type/MergeRequestVerificationSucceeded"] ?
++            "success" : null;
++        merge_request_report = merge_request_report || !!record.files[".type/MergeRequestVerificationFailed"] ?
++            "failure" : null;
+         comments.push({
+             text: decoder.decode(record.files.text),
+             authors: decoder.decode(record.files[".authors"]),
+             timestamp: decoder.decode(record.files[".timestamp"]),
+             merge_request: merge_request,
++            merge_request_report: merge_request_report,
+         });
+         this.comments = comments;
+         state = Object.assign(state, {comments: comments});
+diff --git a/.sit/reducers/DetailsChanges.js b/.sit/reducers/DetailsChanges.js
+index 34e09e4..86e13ef 100644
+--- a/.sit/reducers/DetailsChanges.js
++++ b/.sit/reducers/DetailsChanges.js
+@@ -1,4 +1,4 @@
+-function(state, record) {
++module.exports = function(state, record) {
+     if (typeof record.files[".type/DetailsChanged"] !== 'undefined') {
+         var merge_request = !!record.files[".type/MergeRequested"] ? record.hash : null ;
+         var decoder = new TextDecoder("utf-8");
+diff --git a/.sit/reducers/MergeRequested.js b/.sit/reducers/MergeRequested.js
+index e61b1eb..70bef57 100644
+--- a/.sit/reducers/MergeRequested.js
++++ b/.sit/reducers/MergeRequested.js
+@@ -1,4 +1,4 @@
+-function(state, record) {
++module.exports = function(state, record) {
+     if (typeof record.files[".type/MergeRequested"] !== 'undefined') {
+         var merge_requests = record.merge_requests || [];
+         merge_requests.push(record.hash);
+diff --git a/.sit/reducers/Merged.js b/.sit/reducers/Merged.js
+index d009a68..92564b7 100644
+--- a/.sit/reducers/Merged.js
++++ b/.sit/reducers/Merged.js
+@@ -1,4 +1,4 @@
+-function(state, record) {
++module.exports = function(state, record) {
+ 
+     if (typeof record.files[".type/Merged"] !== 'undefined') {
+         var decoder = new TextDecoder("utf-8");
+diff --git a/.sit/reducers/State.js b/.sit/reducers/State.js
+index 547f8f0..eabf1d8 100644
+--- a/.sit/reducers/State.js
++++ b/.sit/reducers/State.js
+@@ -1,4 +1,4 @@
+-function(state, record) {
++module.exports = function(state, record) {
+     if (typeof this.state == 'undefined') {
+         this.state = 'open';
+     }
+diff --git a/.sit/reducers/SummaryChanged.js b/.sit/reducers/SummaryChanged.js
+index 67d199e..22bfd26 100644
+--- a/.sit/reducers/SummaryChanged.js
++++ b/.sit/reducers/SummaryChanged.js
+@@ -1,4 +1,4 @@
+-function(state, record) {
++module.exports = function(state, record) {
+     if (typeof record.files[".type/SummaryChanged"] !== 'undefined') {
+         var decoder = new TextDecoder("utf-8");
+         return Object.assign(state, {
+diff --git a/.sit/reducers/activity.js b/.sit/reducers/activity.js
+index e4cbd1d..e1c2eea 100644
+--- a/.sit/reducers/activity.js
++++ b/.sit/reducers/activity.js
+@@ -1,4 +1,4 @@
+-function(state, record) {
++module.exports = function(state, record) {
+     if (typeof record.files[".timestamp"] !== 'undefined') {
+         return Object.assign(state, {last_updated_timestamp: new TextDecoder('utf-8').decode(record.files[".timestamp"])})
+     }
+-- 
+2.16.2
+

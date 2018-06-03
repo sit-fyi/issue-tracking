@@ -1,0 +1,207 @@
+From 1d7bd7db1cce26a5f9d56ac02b033261b7f30944 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Wed, 14 Mar 2018 17:23:50 +0700
+Subject: [PATCH 06/16] Added merge request:
+ 05b17931-4c12-4381-9892-7438fa1cbae0
+
+---
+ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors      |  1 +
+ .../.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG         |  0
+ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature    | 17 +++++++
+ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp    |  1 +
+ .../.type/DetailsChanged                           |  0
+ .../.type/MergeRequested                           |  0
+ .../0001-Problem-sit-core-0.1.2-is-outdated.patch  | 58 ++++++++++++++++++++++
+ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text          |  2 +
+ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors      |  1 +
+ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature    | 17 +++++++
+ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp    |  1 +
+ .../.type/SummaryChanged                           |  0
+ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text          |  1 +
+ 13 files changed, 99 insertions(+)
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged
+ create mode 100644 .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text
+
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature
+new file mode 100644
+index 0000000..c441ace
+--- /dev/null
++++ b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqo+DYOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf+E0hAAiYPLOf154bJaXjzK97OTJGUG+Wxf3CUga+i9
++S6MA1sjoLaY92Dcsuh7tV64dePJwT5WAEATHs4AyED+iMLj5YvqjM7D1Gj4udykg
++MxnA8lZoORVgs1PTGH/jQhyFeVsb+fCl2sFZMXA5y9/9J1Z+dsoQbwX/MU/+Nwba
++Hxa9QOjEBNcT3/NRd6v+C7yjLvZPcRPdUraDnjBx1gc7z2J1Js6BtfLDopzkPq1J
++HP8T6r/7To3b7T2T+1NSmTAD81ejbfm2DIW1X8eQdzsGPa3kJntdO2krrgmX3ngx
++A/YlQMhU2P+hNH44jZ2fFfGMZoFV3e9uxioulDgsdAQX8fsbjpOX0+SqCVivck97
++2TPsQttBJTdpSfvhZy7OFRqeQtuqsLxdPBZni+ZCuWa66ql+VIzHHINRgxdJpGxD
++ShdsbUi/kkHVSpyZ0BEsJi/22UPMfZJUHZovO2JsNux42hqN5mCau1nTbHqq0AVX
++sPifVnEqYJKVH1qi84MsRu+wO3HkNbXTXbEqyZvBLm/5+ftorBaRR3+MWd59L96H
++SBbhBZXBmokiYZlnKmaq0IlCI50YDxp4m5oHt2+CRD9iHQkljjXZ+ueZUCq/Epry
++P1c4gVkZ+J/C6/G3+jISHjDq6/0F/Iz0crpH/kbhReI51ezsyi6CrJl9ya4sXQ7d
++quhkZ2I=
++=9zhc
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp
+new file mode 100644
+index 0000000..75bffb3
+--- /dev/null
++++ b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp
+@@ -0,0 +1 @@
++2018-03-14T10:23:50.282784723Z
+\ No newline at end of file
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch
+new file mode 100644
+index 0000000..c8b85ed
+--- /dev/null
++++ b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch
+@@ -0,0 +1,58 @@
++From 361c63166a3a62e9aef976b29d1714863aabe1e6 Mon Sep 17 00:00:00 2001
++From: Yurii Rashkovskii <yrashk@gmail.com>
++Date: Wed, 14 Mar 2018 17:23:01 +0700
++Subject: [PATCH] Problem: sit-core 0.1.2 is outdated
++
++Solution: use sit-core 0.2.0
++---
++ Cargo.lock | 6 +++---
++ Cargo.toml | 2 +-
++ 2 files changed, 4 insertions(+), 4 deletions(-)
++
++diff --git a/Cargo.lock b/Cargo.lock
++index a5ed647..839bb3c 100644
++--- a/Cargo.lock
+++++ b/Cargo.lock
++@@ -1011,7 +1011,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
++ 
++ [[package]]
++ name = "sit-core"
++-version = "0.1.2"
+++version = "0.2.0"
++ source = "registry+https://github.com/rust-lang/crates.io-index"
++ dependencies = [
++  "blake2 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
++@@ -1048,7 +1048,7 @@ dependencies = [
++  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++  "serde_derive 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
++  "serde_json 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
++- "sit-core 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+++ "sit-core 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
++  "xdg 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ ]
++ 
++@@ -1532,7 +1532,7 @@ dependencies = [
++ "checksum serde_urlencoded 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "ce0fd303af908732989354c6f02e05e2e6d597152870f2c6990efb0577137480"
++ "checksum sha-1 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "51b9d1f3b5de8a167ab06834a7c883bd197f2191e1dda1a22d9ccfeedbf9aded"
++ "checksum siphasher 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "0df90a788073e8d0235a67e50441d47db7c8ad9debd91cbf43736a2a92d36537"
++-"checksum sit-core 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "9e43bd987eb9b3056d88f1e182e25c2061346372681d1f85dff6a80ed44bf67c"
+++"checksum sit-core 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "2e1e3a639b284888fc6bd3853475855c0da31740cdc2c771d672e6d2794a0df6"
++ "checksum slab 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "17b4fcaed89ab08ef143da37bc52adbcc04d4a69014f4c1208d6b51f0c47bc23"
++ "checksum slab 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fdeff4cd9ecff59ec7e3744cbca73dfe5ac35c2aedb2cfba8a1c715a18912e9d"
++ "checksum smallvec 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4c8cbcd6df1e117c2210e13ab5109635ad68a929fcbb8964dc965b76cb5ee013"
++diff --git a/Cargo.toml b/Cargo.toml
++index a908ff7..c4d2dd5 100644
++--- a/Cargo.toml
+++++ b/Cargo.toml
++@@ -12,7 +12,7 @@ config = { version = "0.8", features = ["json"] }
++ xdg = "2.1"
++ clap = "2.29"
++ console = "0.6"
++-sit-core = "0.1"
+++sit-core = "0.2"
++ askama = "0.5"
++ pbr = "1.0"
++ regex = "0.2"
++-- 
++2.15.0
++
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text
+new file mode 100644
+index 0000000..a9d67bd
+--- /dev/null
++++ b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text
+@@ -0,0 +1,2 @@
++Solution: use sit-core 0.2.0
++
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature
+new file mode 100644
+index 0000000..99fc59b
+--- /dev/null
++++ b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqo+DYOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf8fKA/9FzAnkH36ktztnwsT9RiI1s26MM0GBiwV0vvT
++3gAPdpcNFiADaMwJMlOUNOKmAye1aeLXSlxuW0DnOBXhWw2C/pbiPOOmSom+m5fC
++Y9/Ch9hjMrcu4lZyY2MB0NXVvPqMSZ7dm1qmnoNZVbOyMTpR5Uov5S48PTQ6T8ri
++lVQSlFWBGD4njw79BL7O/mj5HSNFuzzKOTa8dUKt3l7US64ClNl48nHZAgMZqnqW
++0q2OEVlMkYkY0+r75GWoVjM1y1vHXUQ8hhXrG6f35McXltYhiGaKqNtyeaa9mcEZ
++bf6MMm3dI9wn9JEniGPDhwembi+eYES7sJ8IsWOqJyG1kJSNYDCSvx/qzvPl11Kg
++uIgSH+zvWltfHPfJ/hDWfV/DfIrZSxsabMPb4/9kOs+RHpxK4v6A+DDfvpM/HTr1
++6pYZ5bZ7zVMHJApx5M6z/+cR6u6d3TT1VS5BS1fwKixHk94/6PHHiAZ4Zbl0SWnq
++S42ZOTpKDqiOAKZ8evmh4et6OYn92CvztlSw/katfHEuxy3uOttom1w/4yk3Uhjf
++XMaTdWQPkBFLjZkxf784cXV0gna6/+JUXdanzcPqkGWVT/0Sa9cJOLfUMYNHBPBz
++UqUqK03+jy4sshSZ3Qy7jIlzlC4GmQhjo8/MkTPTS6myVl4rBJPmbJqCtOTWESdu
++vWaPFbE=
++=xcxZ
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp
+new file mode 100644
+index 0000000..c99ff09
+--- /dev/null
++++ b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp
+@@ -0,0 +1 @@
++2018-03-14T10:23:50.139194822Z
+\ No newline at end of file
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text
+new file mode 100644
+index 0000000..b8ea41e
+--- /dev/null
++++ b/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text
+@@ -0,0 +1 @@
++Problem: sit-core 0.1.2 is outdated
+-- 
+2.16.2
+

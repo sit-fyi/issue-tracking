@@ -1,0 +1,135 @@
+From 4f2b5e38aec3d4ec080bca6d0dd6e196ebbcb2f6 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Wed, 14 Mar 2018 22:07:31 +0700
+Subject: [PATCH 07/16] Added issue deb734d8-f5f2-4632-951b-f631adfd6951
+
+---
+ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors           |  1 +
+ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature         | 17 +++++++++++++++++
+ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp         |  1 +
+ .../.type/SummaryChanged                                |  0
+ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text               |  1 +
+ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors           |  1 +
+ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature         | 17 +++++++++++++++++
+ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp         |  1 +
+ .../.type/DetailsChanged                                |  0
+ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text               |  5 +++++
+ 10 files changed, 44 insertions(+)
+ create mode 100644 .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors
+ create mode 100644 .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature
+ create mode 100644 .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp
+ create mode 100644 .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged
+ create mode 100644 .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text
+ create mode 100644 .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors
+ create mode 100644 .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature
+ create mode 100644 .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp
+ create mode 100644 .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged
+ create mode 100644 .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text
+
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature
+new file mode 100644
+index 0000000..51058c4
+--- /dev/null
++++ b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqpOkUOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf+80RAAqAlVo+nGqoAVaXxROCOl2x+PlcoWQz6X8Z3B
++WLYCZHPiyDNhR79diyEWJwRYOEdwlbWeVSS6VO5DPMN/w6VR04LrHVoLQhhqAJxv
+++JUuoryRvKu0yeZq9vtJbzUWRy+2H2BLyr8ASXae/wEzIGFZ+wLO0GIs99y7rsQP
++AqNILVYZSquaFUlhmN/MXU//dLfGMSFbeGY1TV5KkaOHZ/9BJmlQScQgAJ4wD506
++HE5oxyetEVImbDemDAnFO7viw3v3hxlbSZFY+gRGI5kY6eTPVTR3ZOvcLNfBNi24
++Xpb1QsqQ0Ekzq28vC8Ic0gGJJpdaGVOLivLZkTXnKdvAvu0BwnQsGw4tnmrsc3mZ
++COXN4aKXHmGoISHQ0xbNjmdK1V5YoPFe2Kp0LezOwa4TVr8A+TGQwr2TOhMrMwlt
++e8usD6x2flI8GIWPd317ULjicPXkX6u+h/yg954bdLuL6Cyo8+k5ZMyNsQ7NBt5C
++qOqGZF+B4W+FQ4E0f1t15WLJMwuLaIOiRjuLJgWICrKKSzcu7IfU5GKcs8CD5WKN
++gbMS2HJDSyDPK2e/RkqeSVTBgLEOK54QLh0I6wVEq4UuD96QhCJ4Vdl5J8L4Mn8W
++gofHtSqO7IlWMJZYdUZ+ArvmziVdXuZBbwtdqwdsrbesRF8SP4N6RYk4gZCZMjn/
++ZxI9/yM=
++=xknT
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp
+new file mode 100644
+index 0000000..80a4870
+--- /dev/null
++++ b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp
+@@ -0,0 +1 @@
++2018-03-14T15:05:38.412Z
+\ No newline at end of file
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text
+new file mode 100644
+index 0000000..f4f2e73
+--- /dev/null
++++ b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text
+@@ -0,0 +1 @@
++Problem: ReviewRequestRemovedEvent event is not handled
+\ No newline at end of file
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors
+new file mode 100644
+index 0000000..8022052
+--- /dev/null
++++ b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors
+@@ -0,0 +1 @@
++Yurii Rashkovskii <me@yrashk.com>
+\ No newline at end of file
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature
+new file mode 100644
+index 0000000..8b7968f
+--- /dev/null
++++ b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature
+@@ -0,0 +1,17 @@
++-----BEGIN PGP SIGNATURE-----
++
++iQJCBAABCAAsFiEEjmkaFOaskcs7s6g8HWDXz9gIRf8FAlqpOkUOHG1lQHlyYXNo
++ay5jb20ACgkQHWDXz9gIRf/usw//ZeCXOzWFyBgcNDNn2AsgKZPGdjK8953uxvhZ
++q0iyDflGSM1e6Mu/0uBXqFxicw7lEslXph2cBS3F1PDDjhwYLc1aWwRxUfkZy/Yb
++0JKf/aJxK2YoZakvpia4hpbNkZ00zYQrIWOr6EbFqzFS+U4Ctnb41nWVsJzO8FdA
++kXE7KfXRAa1sYP1VWmFRgvooh9nTJNcgGTkdybXAqQlgOQZkzIQcPTphjFbLwj5K
++p8FBhUgirnZmSc8EiFCpGkKt931y6cxSlqJmAYadhRYcEsVX1oBuyVcuXdCMOVI8
++XQ7e1lDsGvB5sUa4YSWDb4CD6SqWneHftBcl/fEgp5jqEbmf6VrFitAh7cayFosA
++lxISGV8xqxxcrGYblXmTeaD23ip9wmxt95GPz7uGCZ2YbfLzDeRfZhtm8k4Tc7Jj
++py4JcwjZ+V2VRQFjLfLr21s6DoiA10GfISU/kaHHYXuqlb27M8mYoQ44stW57hvl
++8maLG3K2M2tBddY82S2hvBm85Q1A80z0i1H17QF7ylDcDaroagphhL1CGKTyN1jn
++VlSI9J9GqYJdUm5+FI1i1asGLy2XyQ7SCP/NKjTkRahRf7E+MS4qb6OADUXw1Trb
++p3b5Zhozy92G40EXlImPm+FDpdzrZcZCZr4Fy+sN0Nfwf7I51yZgHt278+LHzfLu
++qOOHrT8=
++=Ybgj
++-----END PGP SIGNATURE-----
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp
+new file mode 100644
+index 0000000..80a4870
+--- /dev/null
++++ b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp
+@@ -0,0 +1 @@
++2018-03-14T15:05:38.412Z
+\ No newline at end of file
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text
+new file mode 100644
+index 0000000..259899d
+--- /dev/null
++++ b/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text
+@@ -0,0 +1,5 @@
++```
++thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: Error { kind: Json(ErrorImpl { code: Message("unknown variant `ReviewRequestRemovedEvent`, expected one of `Commit`, `IssueComment`, `CrossReferencedEvent`, `ClosedEvent`, `MergedEvent`, `ReopenedEvent`, `SubscribedEvent`, `UnsubscribedEvent`, `ReferencedEvent`, `AssignedEvent`, `UnassignedEvent`, `LabeledEvent`, `UnlabeledEvent`, `MilestonedEvent`, `DemilestonedEvent`, `RenamedTitleEvent`, `LockedEvent`, `UnlockedEvent`, `HeadRefDeletedEvent`, `HeadRefRestoredEvent`, `HeadRefForcePushedEvent`, `BaseRefForcePushedEvent`, `ReviewRequestedEvent`, `ReviewRequestedRemovedEvent`, `ReviewDismissedEvent`, `DeployedEvent`, `CommitCommentThread`, `PullRequestReview`, `PullRequestReviewThread`, `PullRequestReviewComment`"), line: 1, column: 801 }), url: None }', /checkout/src/libcore/result.rs:916:5
++```
++
++Proposed solution: ignore it (for now, as review requests are not supported yet)
+\ No newline at end of file
+-- 
+2.16.2
+

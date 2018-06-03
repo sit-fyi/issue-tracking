@@ -1,0 +1,690 @@
+From 6847e7b7b0a86a5e72cdecdcb6e60fd93ec2b272 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Sun, 8 Apr 2018 10:40:18 +0200
+Subject: [PATCH 08/16] Problem: newer version of SIT requires .sit/items
+
+Solution: rneame .sit/issues to .sit/items
+---
+ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors                             | 0
+ .../.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG                                | 0
+ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature                           | 0
+ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp                           | 0
+ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged                 | 0
+ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested                 | 0
+ .../git/0001-Problem-sit-core-0.1.2-is-outdated.patch                     | 0
+ .../AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text                                 | 0
+ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors                             | 0
+ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature                           | 0
+ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp                           | 0
+ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged                 | 0
+ .../V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text                                 | 0
+ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors                             | 0
+ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature                           | 0
+ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp                           | 0
+ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged                 | 0
+ .../DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text                                 | 0
+ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors                             | 0
+ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature                           | 0
+ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp                           | 0
+ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged                 | 0
+ .../RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text                                 | 0
+ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors                             | 0
+ .../.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66                                | 0
+ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature                           | 0
+ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp                           | 0
+ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged                 | 0
+ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested                 | 0
+ .../git/0001-Problem-progress-bar-is-not-very-informative.patch           | 0
+ .../LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text                                 | 0
+ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors                             | 0
+ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature                           | 0
+ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp                           | 0
+ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged                 | 0
+ .../QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text                                 | 0
+ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors                             | 0
+ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature                           | 0
+ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp                           | 0
+ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged                 | 0
+ .../27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text                                 | 0
+ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors                             | 0
+ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature                           | 0
+ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp                           | 0
+ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged                 | 0
+ .../AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text                                 | 0
+ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors                             | 0
+ .../.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q                                | 0
+ .../.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU                                | 0
+ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature                           | 0
+ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp                           | 0
+ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented                      | 0
+ .../ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text                                 | 0
+ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors                             | 0
+ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature                           | 0
+ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp                           | 0
+ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged                 | 0
+ .../ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text                                 | 0
+ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors                             | 0
+ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature                           | 0
+ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp                           | 0
+ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged                 | 0
+ .../XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text                                 | 0
+ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors                             | 0
+ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature                           | 0
+ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp                           | 0
+ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged                 | 0
+ .../D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text                                 | 0
+ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors                             | 0
+ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature                           | 0
+ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp                           | 0
+ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged                 | 0
+ .../PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text                                 | 0
+ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors                             | 0
+ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature                           | 0
+ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp                           | 0
+ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged                 | 0
+ .../F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text                                 | 0
+ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors                             | 0
+ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature                           | 0
+ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp                           | 0
+ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged                 | 0
+ .../MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text                                 | 0
+ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors                             | 0
+ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature                           | 0
+ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp                           | 0
+ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged                 | 0
+ .../QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text                                 | 0
+ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors                             | 0
+ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature                           | 0
+ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp                           | 0
+ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged                 | 0
+ .../YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text                                 | 0
+ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors                             | 0
+ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature                           | 0
+ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp                           | 0
+ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged                 | 0
+ .../56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text                                 | 0
+ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors                             | 0
+ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature                           | 0
+ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp                           | 0
+ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged                 | 0
+ .../7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text                                 | 0
+ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors                             | 0
+ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature                           | 0
+ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp                           | 0
+ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged                 | 0
+ .../5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text                                 | 0
+ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors                             | 0
+ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature                           | 0
+ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp                           | 0
+ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged                 | 0
+ .../MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text                                 | 0
+ 113 files changed, 0 insertions(+), 0 deletions(-)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged (100%)
+ rename .sit/{issues => items}/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text (100%)
+ rename .sit/{issues => items}/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors (100%)
+ rename .sit/{issues => items}/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature (100%)
+ rename .sit/{issues => items}/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp (100%)
+ rename .sit/{issues => items}/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged (100%)
+ rename .sit/{issues => items}/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text (100%)
+ rename .sit/{issues => items}/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors (100%)
+ rename .sit/{issues => items}/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature (100%)
+ rename .sit/{issues => items}/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp (100%)
+ rename .sit/{issues => items}/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged (100%)
+ rename .sit/{issues => items}/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66 (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged (100%)
+ rename .sit/{issues => items}/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented (100%)
+ rename .sit/{issues => items}/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text (100%)
+ rename .sit/{issues => items}/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors (100%)
+ rename .sit/{issues => items}/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature (100%)
+ rename .sit/{issues => items}/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp (100%)
+ rename .sit/{issues => items}/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged (100%)
+ rename .sit/{issues => items}/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text (100%)
+ rename .sit/{issues => items}/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors (100%)
+ rename .sit/{issues => items}/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature (100%)
+ rename .sit/{issues => items}/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp (100%)
+ rename .sit/{issues => items}/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged (100%)
+ rename .sit/{issues => items}/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text (100%)
+ rename .sit/{issues => items}/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors (100%)
+ rename .sit/{issues => items}/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature (100%)
+ rename .sit/{issues => items}/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp (100%)
+ rename .sit/{issues => items}/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged (100%)
+ rename .sit/{issues => items}/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text (100%)
+ rename .sit/{issues => items}/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors (100%)
+ rename .sit/{issues => items}/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature (100%)
+ rename .sit/{issues => items}/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp (100%)
+ rename .sit/{issues => items}/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged (100%)
+ rename .sit/{issues => items}/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text (100%)
+ rename .sit/{issues => items}/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors (100%)
+ rename .sit/{issues => items}/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature (100%)
+ rename .sit/{issues => items}/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp (100%)
+ rename .sit/{issues => items}/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged (100%)
+ rename .sit/{issues => items}/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text (100%)
+ rename .sit/{issues => items}/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors (100%)
+ rename .sit/{issues => items}/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature (100%)
+ rename .sit/{issues => items}/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp (100%)
+ rename .sit/{issues => items}/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged (100%)
+ rename .sit/{issues => items}/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text (100%)
+ rename .sit/{issues => items}/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors (100%)
+ rename .sit/{issues => items}/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature (100%)
+ rename .sit/{issues => items}/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp (100%)
+ rename .sit/{issues => items}/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged (100%)
+ rename .sit/{issues => items}/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text (100%)
+ rename .sit/{issues => items}/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors (100%)
+ rename .sit/{issues => items}/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature (100%)
+ rename .sit/{issues => items}/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp (100%)
+ rename .sit/{issues => items}/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged (100%)
+ rename .sit/{issues => items}/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text (100%)
+ rename .sit/{issues => items}/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors (100%)
+ rename .sit/{issues => items}/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature (100%)
+ rename .sit/{issues => items}/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp (100%)
+ rename .sit/{issues => items}/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged (100%)
+ rename .sit/{issues => items}/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text (100%)
+ rename .sit/{issues => items}/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors (100%)
+ rename .sit/{issues => items}/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature (100%)
+ rename .sit/{issues => items}/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp (100%)
+ rename .sit/{issues => items}/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged (100%)
+ rename .sit/{issues => items}/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text (100%)
+ rename .sit/{issues => items}/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors (100%)
+ rename .sit/{issues => items}/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature (100%)
+ rename .sit/{issues => items}/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp (100%)
+ rename .sit/{issues => items}/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged (100%)
+ rename .sit/{issues => items}/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text (100%)
+ rename .sit/{issues => items}/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors (100%)
+ rename .sit/{issues => items}/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature (100%)
+ rename .sit/{issues => items}/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp (100%)
+ rename .sit/{issues => items}/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged (100%)
+ rename .sit/{issues => items}/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text (100%)
+
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.authors
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.prev/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.signature
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.timestamp
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/DetailsChanged
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/.type/MergeRequested
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/git/0001-Problem-sit-core-0.1.2-is-outdated.patch
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/AJJCC2JRVSFBVK634DC5M32MQ642RWVT/text
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.authors
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.signature
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.timestamp
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/.type/SummaryChanged
+diff --git a/.sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text b/.sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text
+similarity index 100%
+rename from .sit/issues/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text
+rename to .sit/items/05b17931-4c12-4381-9892-7438fa1cbae0/V3SOVKZLY3JOY2IWC3KBB5F7HDL3MTJG/text
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors
+similarity index 100%
+rename from .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors
+rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.authors
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature
+similarity index 100%
+rename from .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature
+rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.signature
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp
+similarity index 100%
+rename from .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp
+rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.timestamp
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged
+similarity index 100%
+rename from .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged
+rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/.type/DetailsChanged
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text
+similarity index 100%
+rename from .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text
+rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/DMWRQFGSGRLKKFMTSMP23SX5YIBUHXHD/text
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors
+similarity index 100%
+rename from .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors
+rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.authors
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature
+similarity index 100%
+rename from .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature
+rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.signature
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp
+similarity index 100%
+rename from .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp
+rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.timestamp
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged
+similarity index 100%
+rename from .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged
+rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/.type/SummaryChanged
+diff --git a/.sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text b/.sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text
+similarity index 100%
+rename from .sit/issues/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text
+rename to .sit/items/076c63f4-b06a-4ade-8ab7-0e4c4111c953/RSBT2UHJAGSRVNMJ66FGHAC25E44FNQT/text
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.authors
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66 b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.prev/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.signature
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.timestamp
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/DetailsChanged
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/.type/MergeRequested
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/git/0001-Problem-progress-bar-is-not-very-informative.patch
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/LMD23XP4ACY64CURLCOA7HQN6SSTVYTI/text
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.authors
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.signature
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.timestamp
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/.type/SummaryChanged
+diff --git a/.sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text b/.sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text
+similarity index 100%
+rename from .sit/issues/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text
+rename to .sit/items/39f6dc93-e3e4-4fa8-b875-a092e8ec0fe5/QU6EQRV2ILEN3235FI34C4F5ZVC3BS66/text
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.authors
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.signature
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.timestamp
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/.type/SummaryChanged
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q/text
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.authors
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.signature
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.timestamp
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/.type/DetailsChanged
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU/text
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.authors
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/27ZWPMEXGP3LOFDIXXAM33BPKCSHOB2Q
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.prev/AFYXA4GOO75VTVHPMREFDI5JEMPI4LTU
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.signature
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.timestamp
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/.type/Commented
+diff --git a/.sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text b/.sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text
+similarity index 100%
+rename from .sit/issues/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text
+rename to .sit/items/3a307b43-feb9-40fb-8544-0e716afb05b4/ZTURXFP3JCRGOHDT2LR3F26FK2QNM2FJ/text
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors
+similarity index 100%
+rename from .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors
+rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.authors
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature
+similarity index 100%
+rename from .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature
+rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.signature
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp
+similarity index 100%
+rename from .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp
+rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.timestamp
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged
+similarity index 100%
+rename from .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged
+rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/.type/SummaryChanged
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text
+similarity index 100%
+rename from .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text
+rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/ADVKHW667LKPPLZQYZGDUZ2LVG3A2NJI/text
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors
+similarity index 100%
+rename from .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors
+rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.authors
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature
+similarity index 100%
+rename from .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature
+rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.signature
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp
+similarity index 100%
+rename from .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp
+rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.timestamp
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged
+similarity index 100%
+rename from .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged
+rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/.type/DetailsChanged
+diff --git a/.sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text b/.sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text
+similarity index 100%
+rename from .sit/issues/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text
+rename to .sit/items/5c2fb261-05f6-4455-890e-7025af8b2dcf/XINEZYWL56YKH5AEV2GS7FD5ZXMGTXEG/text
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors
+similarity index 100%
+rename from .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors
+rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.authors
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature
+similarity index 100%
+rename from .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature
+rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.signature
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp
+similarity index 100%
+rename from .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp
+rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.timestamp
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged
+similarity index 100%
+rename from .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged
+rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/.type/SummaryChanged
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text
+similarity index 100%
+rename from .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text
+rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/D35OIQWB5EVPADNFLEMEKZ5H45TO7K3Z/text
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors
+similarity index 100%
+rename from .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors
+rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.authors
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature
+similarity index 100%
+rename from .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature
+rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.signature
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp
+similarity index 100%
+rename from .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp
+rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.timestamp
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged
+similarity index 100%
+rename from .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged
+rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/.type/DetailsChanged
+diff --git a/.sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text b/.sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text
+similarity index 100%
+rename from .sit/issues/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text
+rename to .sit/items/70e99a68-0cd6-4a83-aac7-3d4c8f958843/PO7DJRRVLR6BUVUNB6PET2U7WJJOLJ7R/text
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors
+similarity index 100%
+rename from .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors
+rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.authors
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature
+similarity index 100%
+rename from .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature
+rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.signature
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp
+similarity index 100%
+rename from .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp
+rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.timestamp
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged
+similarity index 100%
+rename from .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged
+rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/.type/SummaryChanged
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text
+similarity index 100%
+rename from .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text
+rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/F7JD2QBFR7H5525YJG2BCDHJ57KWCSXK/text
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors
+similarity index 100%
+rename from .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors
+rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.authors
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature
+similarity index 100%
+rename from .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature
+rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.signature
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp
+similarity index 100%
+rename from .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp
+rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.timestamp
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged
+similarity index 100%
+rename from .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged
+rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/.type/DetailsChanged
+diff --git a/.sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text b/.sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text
+similarity index 100%
+rename from .sit/issues/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text
+rename to .sit/items/c79906fe-44a4-40fb-a1eb-30aa890c82f2/MEJCJTG2XB3DHD6OIZRKJKEWQRMM2TET/text
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors
+similarity index 100%
+rename from .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors
+rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.authors
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature
+similarity index 100%
+rename from .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature
+rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.signature
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp
+similarity index 100%
+rename from .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp
+rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.timestamp
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged
+similarity index 100%
+rename from .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged
+rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/.type/SummaryChanged
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text
+similarity index 100%
+rename from .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text
+rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/QCFXLS2LZ2ATOXGDFYSBIEC5XKN7RJZH/text
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors
+similarity index 100%
+rename from .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors
+rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.authors
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature
+similarity index 100%
+rename from .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature
+rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.signature
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp
+similarity index 100%
+rename from .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp
+rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.timestamp
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged
+similarity index 100%
+rename from .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged
+rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/.type/DetailsChanged
+diff --git a/.sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text b/.sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text
+similarity index 100%
+rename from .sit/issues/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text
+rename to .sit/items/cd928c59-7f52-48b7-867c-cbd47b5a3aa9/YBBS6K3FSCOAKHRLVDRZ2YJMKZNAFKBG/text
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors
+similarity index 100%
+rename from .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors
+rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.authors
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature
+similarity index 100%
+rename from .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature
+rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.signature
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp
+similarity index 100%
+rename from .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp
+rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.timestamp
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged
+similarity index 100%
+rename from .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged
+rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/.type/SummaryChanged
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text
+similarity index 100%
+rename from .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text
+rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/56V2V57XNNFNTI5C4TBRDXWE3QDTTZYC/text
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors
+similarity index 100%
+rename from .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors
+rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.authors
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature
+similarity index 100%
+rename from .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature
+rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.signature
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp
+similarity index 100%
+rename from .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp
+rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.timestamp
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged
+similarity index 100%
+rename from .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged
+rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/.type/DetailsChanged
+diff --git a/.sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text b/.sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text
+similarity index 100%
+rename from .sit/issues/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text
+rename to .sit/items/deb734d8-f5f2-4632-951b-f631adfd6951/7DLW2B4ZZSGTV7IIKC4GNAQ4OX3IX4BB/text
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors
+similarity index 100%
+rename from .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors
+rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.authors
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature
+similarity index 100%
+rename from .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature
+rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.signature
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp
+similarity index 100%
+rename from .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp
+rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.timestamp
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged
+similarity index 100%
+rename from .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged
+rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/.type/SummaryChanged
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text
+similarity index 100%
+rename from .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text
+rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/5PITG5ZTKDF3M452LCRG7WIHSCGBUFHY/text
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors
+similarity index 100%
+rename from .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors
+rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.authors
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature
+similarity index 100%
+rename from .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature
+rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.signature
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp
+similarity index 100%
+rename from .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp
+rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.timestamp
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged
+similarity index 100%
+rename from .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged
+rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/.type/DetailsChanged
+diff --git a/.sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text b/.sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text
+similarity index 100%
+rename from .sit/issues/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text
+rename to .sit/items/f3c19db1-d468-4121-becd-d3f13f22b6fd/MX7KII2FNWPYHBQNHL2GJOIQUXVMRARB/text
+-- 
+2.16.2
+
