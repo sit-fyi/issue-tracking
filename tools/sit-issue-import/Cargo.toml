@@ -1,6 +1,6 @@
 [package]
-name = "sit-import"
-version = "0.1.0"
+name = "sit-issue-import"
+version = "0.5.0-pre"
 authors = ["Yurii Rashkovskii <mek@yrashk.com>"]
 
 [dependencies]
@@ -12,7 +12,7 @@ config = { version = "0.8", features = ["json"] }
 xdg = "2.1"
 clap = "2.29"
 console = "0.6"
-sit-core = "0.3"
+sit-core = "0.4"
 askama = "0.5"
 pbr = "1.0"
 regex = "0.2"

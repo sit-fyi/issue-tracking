@@ -54,7 +54,7 @@ fn real_main() -> i32 {
 
     let cwd = env::current_dir().expect("can't get currenGt working directory");
 
-    let matches = App::new("SIT Import")
+    let matches = App::new("SIT Issue Import")
         .version(crate_version!())
         .about("Imports foreign issues into SIT repositories")
         .global_settings(&[clap::AppSettings::ColoredHelp, clap::AppSettings::ColorAuto])
