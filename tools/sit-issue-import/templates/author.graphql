@@ -1,0 +1,8 @@
+
+author {
+  ... on User {
+     name
+     email
+     login
+  }
+}

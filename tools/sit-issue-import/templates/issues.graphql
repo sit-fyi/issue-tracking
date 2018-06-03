@@ -1,0 +1,22 @@
+{
+  repository(owner: "{{ owner }}", name: "{{ repository }}") {
+    issues(orderBy: {field: CREATED_AT, direction: ASC}, first: 100 {%- if after.is_some() %}, after: "{{ after.as_ref().unwrap() }}" {%- endif %})  {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      totalCount
+      nodes {
+        number
+        url
+        state
+        title
+        body
+        createdAt
+        updatedAt
+        closedAt
+        {% include "author.graphql" %}
+      }
+    }
+  }
+}
