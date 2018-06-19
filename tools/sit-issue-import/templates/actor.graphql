@@ -1,0 +1,12 @@
+
+actor {
+       __typename
+        ... on User {
+             name
+             email
+             login
+        }
+        ... on Bot {
+             login
+        }
+}

@@ -1,0 +1,54 @@
+{
+  repository(owner: "{{ owner }}", name: "{{ repository }}") {
+    issue: {{ kind }}(number: {{ number }}) {
+       timeline(first: 100 {%- if after.is_some() %}, after: "{{ after.as_ref().unwrap() }}" {%- endif %})  {
+       pageInfo {
+         hasNextPage
+         endCursor
+       }
+       totalCount
+       nodes {
+         __typename
+         ... on IssueComment {
+           url
+           body
+           createdAt
+           updatedAt
+           {% include "author.graphql" %}
+         }
+         ... on LockedEvent {
+           {% include "actor.graphql" %}
+           createdAt
+         }
+         ... on UnlockedEvent {
+           {% include "actor.graphql" %}
+           createdAt
+         }
+         ... on ReopenedEvent {
+           {% include "actor.graphql" %}
+           createdAt
+         }
+         ... on ClosedEvent {
+           {% include "actor.graphql" %}
+           createdAt
+           closer {
+              __typename
+              ... on Commit {
+                oid
+              }
+              ... on PullRequest {
+                number
+              }
+           }
+         }
+         {% if kind == "pullRequest" %}
+         ... on MergedEvent {
+           {% include "actor.graphql" %}
+           createdAt
+         }
+         {% endif %}
+       }
+     }
+   }
+  }
+}

@@ -1,0 +1,58 @@
+From 361c63166a3a62e9aef976b29d1714863aabe1e6 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Wed, 14 Mar 2018 17:23:01 +0700
+Subject: [PATCH] Problem: sit-core 0.1.2 is outdated
+
+Solution: use sit-core 0.2.0
+---
+ Cargo.lock | 6 +++---
+ Cargo.toml | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/Cargo.lock b/Cargo.lock
+index a5ed647..839bb3c 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -1011,7 +1011,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
+ 
+ [[package]]
+ name = "sit-core"
+-version = "0.1.2"
++version = "0.2.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ dependencies = [
+  "blake2 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -1048,7 +1048,7 @@ dependencies = [
+  "serde 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
+  "serde_derive 1.0.27 (registry+https://github.com/rust-lang/crates.io-index)",
+  "serde_json 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)",
+- "sit-core 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "sit-core 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "xdg 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ ]
+ 
+@@ -1532,7 +1532,7 @@ dependencies = [
+ "checksum serde_urlencoded 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "ce0fd303af908732989354c6f02e05e2e6d597152870f2c6990efb0577137480"
+ "checksum sha-1 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "51b9d1f3b5de8a167ab06834a7c883bd197f2191e1dda1a22d9ccfeedbf9aded"
+ "checksum siphasher 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "0df90a788073e8d0235a67e50441d47db7c8ad9debd91cbf43736a2a92d36537"
+-"checksum sit-core 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "9e43bd987eb9b3056d88f1e182e25c2061346372681d1f85dff6a80ed44bf67c"
++"checksum sit-core 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "2e1e3a639b284888fc6bd3853475855c0da31740cdc2c771d672e6d2794a0df6"
+ "checksum slab 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "17b4fcaed89ab08ef143da37bc52adbcc04d4a69014f4c1208d6b51f0c47bc23"
+ "checksum slab 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fdeff4cd9ecff59ec7e3744cbca73dfe5ac35c2aedb2cfba8a1c715a18912e9d"
+ "checksum smallvec 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4c8cbcd6df1e117c2210e13ab5109635ad68a929fcbb8964dc965b76cb5ee013"
+diff --git a/Cargo.toml b/Cargo.toml
+index a908ff7..c4d2dd5 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -12,7 +12,7 @@ config = { version = "0.8", features = ["json"] }
+ xdg = "2.1"
+ clap = "2.29"
+ console = "0.6"
+-sit-core = "0.1"
++sit-core = "0.2"
+ askama = "0.5"
+ pbr = "1.0"
+ regex = "0.2"
+-- 
+2.15.0
+
