@@ -1,0 +1,6 @@
+Also, VERSION still has 0.4.0 even though we're
+developing 0.5.0 already.
+
+Solution: update VERSION and add a Makefile target to update it in place
+(`make update-version`)
+

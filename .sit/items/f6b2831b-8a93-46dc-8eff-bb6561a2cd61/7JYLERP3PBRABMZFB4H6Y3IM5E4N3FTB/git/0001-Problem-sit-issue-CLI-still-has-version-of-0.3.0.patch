@@ -1,0 +1,50 @@
+From c0340846d63d41152bdcbb013609179c755c7e6f Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Wed, 18 Jul 2018 08:43:38 +0700
+Subject: [PATCH] Problem: sit issue CLI still has version of 0.3.0
+
+Also, VERSION still has 0.4.0 even though we're
+developing 0.5.0 already.
+
+Solution: update VERSION and add a Makefile target to update it in place
+(`make update-version`)
+---
+ Makefile           | 6 ++++++
+ VERSION            | 2 +-
+ cli/sit-issue.yaml | 2 +-
+ 3 files changed, 8 insertions(+), 2 deletions(-)
+ create mode 100644 Makefile
+
+diff --git a/Makefile b/Makefile
+new file mode 100644
+index 0000000..ddabd9a
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,6 @@
++.PHONY: update-version
++
++all: update-version
++
++update-version:
++	sed -i "s/version:.*$$/version: $(shell cat VERSION)/g" cli/sit-issue.yaml
+diff --git a/VERSION b/VERSION
+index 1d0ba9e..4259c64 100644
+--- a/VERSION
++++ b/VERSION
+@@ -1 +1 @@
+-0.4.0
++0.5.0-dev
+diff --git a/cli/sit-issue.yaml b/cli/sit-issue.yaml
+index fe0fa54..d8d77b4 100644
+--- a/cli/sit-issue.yaml
++++ b/cli/sit-issue.yaml
+@@ -1,5 +1,5 @@
+ name: SIT Issue Tracking
+-version: "0.3.0"
++version: 0.5.0-dev
+ settings: [ColoredHelp, ColorAuto, DisableHelpSubcommand]
+ subcommands:
+   - list:
+-- 
+2.16.4
+
