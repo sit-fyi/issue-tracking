@@ -26,11 +26,10 @@ if [ "${curbranch}" != "merge-${item}-${mr}" ]; then
         git am -3 $(ls ${repo}/items/${item}/${mr}/git/*.patch) || exit 2
 else
         echo "Reusing current merge branch"
+        # Find the branch we forked from
+        forkpoint=$(git merge-base --fork-point HEAD)
+        curbranch=$(git branch --contains ${forkpoint}~ --points-at ${forkpoint}~)
 fi
-
-# Find the branch we forked from
-forkpoint=$(git merge-base --fork-point HEAD)
-curbranch=$(git branch --contains ${forkpoint}~ --points-at ${forkpoint}~)
 
 pushd $(pwd) >/dev/null
 cd "${tmpdir}"
