@@ -1,0 +1,10 @@
+In certain cases (for example, if there was more than one
+patch) mr-merge fails to return to the previous branch and
+perform a merge.
+
+Solution: try to guess the previous branch only if resuming
+a merge.
+
+I suspect that it will only be functional in the simplest case
+of a single patch, so it'll have to be fixed down the road.
+

@@ -1,0 +1,41 @@
+From f1dee094a0d4cbaae12a90a3c3e5dbbb9d499cb0 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Tue, 24 Jul 2018 18:17:44 +0700
+Subject: [PATCH] Problem: mr-merge not returning to the previous branch
+
+In certain cases (for example, if there was more than one
+patch) mr-merge fails to return to the previous branch and
+perform a merge.
+
+Solution: try to guess the previous branch only if resuming
+a merge.
+
+I suspect that it will only be functional in the simplest case
+of a single patch, so it'll have to be fixed down the road.
+---
+ cli/sit-mr-merge | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/cli/sit-mr-merge b/cli/sit-mr-merge
+index c0f7950..5121182 100755
+--- a/cli/sit-mr-merge
++++ b/cli/sit-mr-merge
+@@ -26,12 +26,11 @@ if [ "${curbranch}" != "merge-${item}-${mr}" ]; then
+         git am -3 $(ls ${repo}/items/${item}/${mr}/git/*.patch) || exit 2
+ else
+         echo "Reusing current merge branch"
++        # Find the branch we forked from
++        forkpoint=$(git merge-base --fork-point HEAD)
++        curbranch=$(git branch --contains ${forkpoint}~ --points-at ${forkpoint}~)
+ fi
+ 
+-# Find the branch we forked from
+-forkpoint=$(git merge-base --fork-point HEAD)
+-curbranch=$(git branch --contains ${forkpoint}~ --points-at ${forkpoint}~)
+-
+ pushd $(pwd) >/dev/null
+ cd "${tmpdir}"
+ 
+-- 
+2.16.4
+
