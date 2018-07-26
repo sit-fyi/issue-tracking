@@ -1,0 +1,57 @@
+From 991530d656f82363b3eb18171a9d3cc09c8c96f7 Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Thu, 26 Jul 2018 08:15:31 +0700
+Subject: [PATCH] Problem: sit-mr produces garbled details/summary on macOS
+
+More specifically, the summary message's instructions are
+shown without leading hash signs (#) and such commented out
+lines are not subsequently removed.
+
+Similarly, while details instructions are prepended with hash
+signs, those are not subsequently removed.
+
+Solution: enforce use of regular expressions in sed with -E
+
+(For some reason, GNU sed didn't need -E (POSIX) or -r to work)
+---
+ cli/sit-mr | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/cli/sit-mr b/cli/sit-mr
+index a73684c..b82ee75 100755
+--- a/cli/sit-mr
++++ b/cli/sit-mr
+@@ -25,17 +25,17 @@ run() {
+           echo "  If your patchset contained more than one commit, you will see a few options below. Please choose one." >> "${tmpdir}/summary"
+           echo "  (ALL LINES STARTING WITH '#' WILL BE REMOVED)" >> "${tmpdir}/summary" 
+           git log --reverse --pretty=format:"%s" "${range}" >> "${tmpdir}/summary" || exit 2
+-          sed -i 's/^/#/' "${tmpdir}/summary"
+-          sed -i '4s/^#//' "${tmpdir}/summary"
++          sed -iE 's/^/#/' "${tmpdir}/summary"
++          sed -iE '4s/^#//' "${tmpdir}/summary"
+           $editor "${tmpdir}/summary" || exit 2
+-          sed -i '/^#/ d'  "${tmpdir}/summary"
++          sed -iE '/^#/ d'  "${tmpdir}/summary"
+ 
+           # Details
+           echo "# Details of the merge request" >> "${tmpdir}/details"
+           echo "#  (ALL LINES STARTING WITH '#' WILL BE REMOVED)" >> "${tmpdir}/details" 
+           git log --reverse --pretty=format:"%b%n" "${range}" >> "${tmpdir}/details" || exit 2
+           $editor "${tmpdir}/details" || exit 2
+-          sed -i '/^#/ d'  "${tmpdir}/details"
++          sed -iE '/^#/ d'  "${tmpdir}/details"
+ 
+           item=$(${sit} item)
+           item_branch=${item}
+@@ -45,7 +45,7 @@ run() {
+           echo "#  (ALL LINES STARTING WITH '#' WILL BE REMOVED)" >> "${tmpdir}/text" 
+           git log --reverse --pretty=format:"%s%n%n%b" "${range}" >> "${tmpdir}/text" || exit 2
+           $editor "${tmpdir}/text" || exit 2
+-          sed -i '/^#/ d'  "${tmpdir}/text"
++          sed -iE '/^#/ d'  "${tmpdir}/text"
+ 
+           last_record=$(${sit} records ${item} | tail -1)
+           item_branch="${item}-${last_record}-$(date +%s)"
+-- 
+2.16.4
+

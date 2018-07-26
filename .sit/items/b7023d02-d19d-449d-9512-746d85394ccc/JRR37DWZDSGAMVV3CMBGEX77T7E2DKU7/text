@@ -1,0 +1,11 @@
+More specifically, the summary message's instructions are
+shown without leading hash signs (#) and such commented out
+lines are not subsequently removed.
+
+Similarly, while details instructions are prepended with hash
+signs, those are not subsequently removed.
+
+Solution: enforce use of regular expressions in sed with -E
+
+(For some reason, GNU sed didn't need -E (POSIX) or -r to work)
+
