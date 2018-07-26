@@ -25,17 +25,17 @@ run() {
           echo "  If your patchset contained more than one commit, you will see a few options below. Please choose one." >> "${tmpdir}/summary"
           echo "  (ALL LINES STARTING WITH '#' WILL BE REMOVED)" >> "${tmpdir}/summary" 
           git log --reverse --pretty=format:"%s" "${range}" >> "${tmpdir}/summary" || exit 2
-          sed -i 's/^/#/' "${tmpdir}/summary"
-          sed -i '4s/^#//' "${tmpdir}/summary"
+          sed -iE 's/^/#/' "${tmpdir}/summary"
+          sed -iE '4s/^#//' "${tmpdir}/summary"
           $editor "${tmpdir}/summary" || exit 2
-          sed -i '/^#/ d'  "${tmpdir}/summary"
+          sed -iE '/^#/ d'  "${tmpdir}/summary"
 
           # Details
           echo "# Details of the merge request" >> "${tmpdir}/details"
           echo "#  (ALL LINES STARTING WITH '#' WILL BE REMOVED)" >> "${tmpdir}/details" 
           git log --reverse --pretty=format:"%b%n" "${range}" >> "${tmpdir}/details" || exit 2
           $editor "${tmpdir}/details" || exit 2
-          sed -i '/^#/ d'  "${tmpdir}/details"
+          sed -iE '/^#/ d'  "${tmpdir}/details"
 
           item=$(${sit} item)
           item_branch=${item}
@@ -45,7 +45,7 @@ run() {
           echo "#  (ALL LINES STARTING WITH '#' WILL BE REMOVED)" >> "${tmpdir}/text" 
           git log --reverse --pretty=format:"%s%n%n%b" "${range}" >> "${tmpdir}/text" || exit 2
           $editor "${tmpdir}/text" || exit 2
-          sed -i '/^#/ d'  "${tmpdir}/text"
+          sed -iE '/^#/ d'  "${tmpdir}/text"
 
           last_record=$(${sit} records ${item} | tail -1)
           item_branch="${item}-${last_record}-$(date +%s)"
