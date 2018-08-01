@@ -1,0 +1,28 @@
+From 00920bf4f7b154daafeb948f8c8f235b8c6001fa Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <me@yrashk.com>
+Date: Wed, 1 Aug 2018 23:44:58 +0700
+Subject: [PATCH] Problem: sit-mr-merge garbles output with BSD sed
+
+This is the same problem sit-mr once had
+
+Solution: use -E flag to enable regular expressions
+---
+ cli/sit-mr-merge | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cli/sit-mr-merge b/cli/sit-mr-merge
+index 5121182..7648721 100755
+--- a/cli/sit-mr-merge
++++ b/cli/sit-mr-merge
+@@ -41,7 +41,7 @@ else
+         echo "# Leave a comment below. All lines starting with # will be removed" > text
+         echo "${comment}" >> text
+         $editor text || exit 2
+-        sed -i '/^#/ d'  text
++        sed -iE '/^#/ d'  text
+         ${sit} -d ${curdir} record -t Commented,Merged,Closed ${item} text record || exit 2
+ fi
+ 
+-- 
+2.16.4
+
