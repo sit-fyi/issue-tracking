@@ -41,7 +41,7 @@ else
         echo "# Leave a comment below. All lines starting with # will be removed" > text
         echo "${comment}" >> text
         $editor text || exit 2
-        sed -i '/^#/ d'  text
+        sed -iE '/^#/ d'  text
         ${sit} -d ${curdir} record -t Commented,Merged,Closed ${item} text record || exit 2
 fi
 
