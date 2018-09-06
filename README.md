@@ -17,7 +17,7 @@
 <p align="center">
   [
     <a href="https://github.com/sit-fyi/issue-tracking/releases"><b>Download</b></a> |
-    <a href="doc/getting_started.md"><b>Getting Started</b></a> |
+    <a href="web/documentation/getting_started.md"><b>Getting Started</b></a> |
     <a href="#questions-bug-reports-etc"><b>Issues & Merge Requests</b></a>
   ]
 </p>
@@ -34,7 +34,7 @@ $ sit init
 $ sit-web
 ```
 
-That's it. Now you can check out the [Getting Started](doc/getting_started.md) guide.
+That's it. Now you can check out the [Getting Started](web/documentation/getting_started.md) guide.
 
 <center>
 <p align="center">
