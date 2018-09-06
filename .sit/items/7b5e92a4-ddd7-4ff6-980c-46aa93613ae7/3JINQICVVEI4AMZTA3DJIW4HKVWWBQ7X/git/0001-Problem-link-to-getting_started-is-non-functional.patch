@@ -1,0 +1,37 @@
+From c30d6f1df6ea571543522740035fd7b0a297e1a8 Mon Sep 17 00:00:00 2001
+From: ch044229 <Carter.Harwood@Cerner.com>
+Date: Thu, 6 Sep 2018 12:53:20 -0500
+Subject: [PATCH] Problem: link to getting_started is non-functional
+
+Link to getting_started does not resolve
+
+Solution: fix link
+---
+ README.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/README.md b/README.md
+index 4ae5b67..7324f4e 100644
+--- a/README.md
++++ b/README.md
+@@ -17,7 +17,7 @@
+ <p align="center">
+   [
+     <a href="https://github.com/sit-fyi/issue-tracking/releases"><b>Download</b></a> |
+-    <a href="doc/getting_started.md"><b>Getting Started</b></a> |
++    <a href="web/documentation/getting_started.md"><b>Getting Started</b></a> |
+     <a href="#questions-bug-reports-etc"><b>Issues & Merge Requests</b></a>
+   ]
+ </p>
+@@ -34,7 +34,7 @@ $ sit init
+ $ sit-web
+ ```
+ 
+-That's it. Now you can check out the [Getting Started](doc/getting_started.md) guide.
++That's it. Now you can check out the [Getting Started](web/documentation/getting_started.md) guide.
+ 
+ <center>
+ <p align="center">
+-- 
+2.18.0
+
