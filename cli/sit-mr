@@ -71,6 +71,9 @@ run() {
   rm -rf "${tmpdir}"
 
   git add .sit/items/"${item}" || exit 2
+  for record in $(${sit} records ${item}); do
+          git add $(${sit} path --record ${record}) || exit 2
+  done
   git commit -m "Added merge request: ${item}" || exit 2
   git checkout "${curbranch}" || exit 2
 
