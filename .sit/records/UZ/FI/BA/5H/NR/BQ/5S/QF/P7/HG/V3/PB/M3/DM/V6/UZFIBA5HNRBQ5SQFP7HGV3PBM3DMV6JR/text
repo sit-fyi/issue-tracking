@@ -1,0 +1,5 @@
+Merge request CLI does not support new flat records namespace
+functionality
+
+Solution: make sure it takes care of records as well
+

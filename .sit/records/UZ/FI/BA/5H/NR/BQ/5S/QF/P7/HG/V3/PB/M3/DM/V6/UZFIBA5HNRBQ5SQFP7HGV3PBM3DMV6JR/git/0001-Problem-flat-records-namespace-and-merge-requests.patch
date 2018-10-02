@@ -1,0 +1,55 @@
+From 43568456bc6524534478943c9d89b2216d74934c Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Mon, 1 Oct 2018 19:36:14 -0700
+Subject: [PATCH] Problem: flat records namespace and merge requests
+
+Merge request CLI does not support new flat records namespace
+functionality
+
+Solution: make sure it takes care of records as well
+---
+ cli/sit-mr       | 3 +++
+ cli/sit-mr-merge | 6 +++++-
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/cli/sit-mr b/cli/sit-mr
+index b82ee75..cb19c3f 100755
+--- a/cli/sit-mr
++++ b/cli/sit-mr
+@@ -71,6 +71,9 @@ run() {
+   rm -rf "${tmpdir}"
+ 
+   git add .sit/items/"${item}" || exit 2
++  for record in $(${sit} records ${item}); do
++          git add $(${sit} path --record ${record}) || exit 2
++  done
+   git commit -m "Added merge request: ${item}" || exit 2
+   git checkout "${curbranch}" || exit 2
+ 
+diff --git a/cli/sit-mr-merge b/cli/sit-mr-merge
+index 7648721..e0a2ec8 100755
+--- a/cli/sit-mr-merge
++++ b/cli/sit-mr-merge
+@@ -23,7 +23,8 @@ repo=$(${sit} path)
+ 
+ if [ "${curbranch}" != "merge-${item}-${mr}" ]; then
+         git checkout -b merge-${item}-${mr} || exit 2
+-        git am -3 $(ls ${repo}/items/${item}/${mr}/git/*.patch) || exit 2
++        _path=`${sit} path --record ${mr}`
++        git am -3 $(ls ${_path}/git/*.patch) || exit 2
+ else
+         echo "Reusing current merge branch"
+         # Find the branch we forked from
+@@ -50,6 +51,9 @@ popd >/dev/null
+ rm -rf "${tmpdir}"
+ 
+ git add .sit/items/${item} || exit 2
++for record in $(${sit} records ${item}); do
++    git add $(${sit} path --record ${record}) || exit 2
++done
+ git commit -m "Closed merge request ${item}/${mr}" || exit 2
+ git checkout ${curbranch} || exit 2
+ git merge --no-ff merge-${item}-${mr}
+-- 
+2.16.4
+
