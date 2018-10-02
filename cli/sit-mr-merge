@@ -23,7 +23,8 @@ repo=$(${sit} path)
 
 if [ "${curbranch}" != "merge-${item}-${mr}" ]; then
         git checkout -b merge-${item}-${mr} || exit 2
-        git am -3 $(ls ${repo}/items/${item}/${mr}/git/*.patch) || exit 2
+        _path=`${sit} path --record ${mr}`
+        git am -3 $(ls ${_path}/git/*.patch) || exit 2
 else
         echo "Reusing current merge branch"
         # Find the branch we forked from
@@ -50,6 +51,9 @@ popd >/dev/null
 rm -rf "${tmpdir}"
 
 git add .sit/items/${item} || exit 2
+for record in $(${sit} records ${item}); do
+    git add $(${sit} path --record ${record}) || exit 2
+done
 git commit -m "Closed merge request ${item}/${mr}" || exit 2
 git checkout ${curbranch} || exit 2
 git merge --no-ff merge-${item}-${mr}
