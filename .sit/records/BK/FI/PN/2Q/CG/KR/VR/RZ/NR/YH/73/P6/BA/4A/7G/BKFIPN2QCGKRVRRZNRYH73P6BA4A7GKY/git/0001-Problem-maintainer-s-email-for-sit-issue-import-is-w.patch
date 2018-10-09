@@ -1,0 +1,26 @@
+From 32cd95d50c56de43e11bf46ff3bdaa8ebe9ff89e Mon Sep 17 00:00:00 2001
+From: Yurii Rashkovskii <yrashk@gmail.com>
+Date: Tue, 9 Oct 2018 11:03:58 -0700
+Subject: [PATCH] Problem: maintainer's email for sit-issue-import is wrong
+
+Solution: fix the typo
+---
+ tools/sit-issue-import/Cargo.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tools/sit-issue-import/Cargo.toml b/tools/sit-issue-import/Cargo.toml
+index ed01719..98b5804 100644
+--- a/tools/sit-issue-import/Cargo.toml
++++ b/tools/sit-issue-import/Cargo.toml
+@@ -1,7 +1,7 @@
+ [package]
+ name = "sit-issue-import"
+ version = "0.5.0-pre"
+-authors = ["Yurii Rashkovskii <mek@yrashk.com>"]
++authors = ["Yurii Rashkovskii <me@yrashk.com>"]
+ 
+ [dependencies]
+ reqwest = "0.8"
+-- 
+2.16.4
+
