@@ -124,29 +124,16 @@ Simply run `sit-web` in this repository's clone and open it in the browser.
 
 #### Send Updates to Upstream
 
-Once you've used sit-web or `script mr` to work on the issues,
+Once you've used `sit web` or `script mr` to work on the issues,
 you can send the updates to this repository:
 
 1. Create a branch (as a convention, you can use your issue ID or an added record ID as a branch name, but free to choose anything else, preferrably unique)
 2. Add new files in `.sit` and commit them. Commit message can be simply "Added issue <ISSUE-ID>"
    or, say, "Commented on issue <ISSUE-ID>"
-3. Push it out to the Inbox: `GIT_SSH_COMMAND="ssh -i sit-inbox" git push git@git.sit.fyi:sit-fyi/issue-tracking-inbox.git <branch>`
+3. Send it out to the Inbox: `git send-email --to=issue-tracking@inbox.sit.fyi master..<branch>`
 4. If the commit only contains new records (nothing else is permitted!) the Inbox
    will accept the push and immediately forward it to sit's master repository on GitHub.
    Otherwise, the push will be rejected.
-
-To further simplify the process of sending records to the upstream,
-it's highly recommended to add a remote (such as `issues`) for `git@git.sit.fyi:sit-fyi/issue-tracking-inbox.git`
-and this to your `~/.ssh/config`:
-
-```
-host git.sit.fyi
-  HostName git.sit.fyi
-  IdentityFile /path/to/sit/repo/sit-inbox
-  User git
-```
-
-This way, pushing out, will be as nice as `git push issues <branch>`
 
 ### Preparing a merge request
 
